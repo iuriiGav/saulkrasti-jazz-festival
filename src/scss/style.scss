@@ -1,0 +1,20 @@
+/*!
+Theme Name: Saulkrasti Jazz Festival
+Theme URI: 
+Author: Iurii Gavryliuk 
+Author URI: 
+Description: Homepage Of Saulkrasti Jazz Festival
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: saulkrasti-jazz-festival
+Tags: 
+*/
+
+@import "./base/reset.scss";
+@import "./base/base.scss";
+@import "./typography/typography";
+@import "./colors/colors.scss";
+@import "./nav/main-nav";
+@import "./allpages";
+@import "./utils";

@@ -1,0 +1,56 @@
+
+.homepage {
+  & .hero {
+    position: relative;
+    top: -5rem;
+    left: 0;
+    min-height: 100vh;
+  }
+
+  & .hero-main-cover-image {
+    position: relative;
+    top: -5rem;
+  }
+  & .huge-logo-container {
+    position: relative;
+    overflow: visible;
+  }
+  & .logo-main {
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    flex-shrink: 0;
+    background: radial-gradient(
+      60% 60% at 50% 50%,
+      rgba(255, 255, 255, .1) 0%,
+      rgba(146, 150, 188, 0) 50%
+    );
+   
+  }
+  & .current-festival-dates {
+    position: absolute;
+    bottom: 7.5%;
+    left: 64%;
+}
+  & .current-festival-number {
+    display: inline-block;
+    position: absolute;
+    top: 54%;
+    left: 15%;
+}
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
