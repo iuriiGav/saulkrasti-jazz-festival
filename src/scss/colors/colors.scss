@@ -10,6 +10,9 @@
 // BACKGROUND COLORS
 
 
+body {
+    color: var(--color-dark);
+}
 
 
 
@@ -21,3 +24,11 @@
 .bgc-white {
     background-color: var(--color-white) ; 
 }  
+
+@mixin linear-smoke () {
+    background: linear-gradient(93.34deg, rgba(96, 119, 205, 0.89) 11.13%, rgba(103, 125, 204, 0) 100%);
+}
+
+@mixin linear-brand () {
+    background: linear-gradient(180deg, rgba(240, 124, 0, 0.39) 0%, #F07C00 100%);
+}

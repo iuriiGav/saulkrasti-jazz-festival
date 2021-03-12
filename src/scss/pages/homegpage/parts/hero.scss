@@ -1,56 +1,46 @@
-
-.homepage {
-  & .hero {
-    position: relative;
-    top: -5rem;
-    left: 0;
-    min-height: 100vh;
-  }
-
-  & .hero-main-cover-image {
-    position: relative;
-    top: -5rem;
-  }
-  & .huge-logo-container {
-    position: relative;
-    overflow: visible;
-  }
-  & .logo-main {
-    width: 50%;
-    position: absolute;
-    top: 40%;
-    left: 10%;
-    flex-shrink: 0;
-    background: radial-gradient(
-      60% 60% at 50% 50%,
-      rgba(255, 255, 255, .1) 0%,
-      rgba(146, 150, 188, 0) 50%
-    );
-   
-  }
-  & .current-festival-dates {
-    position: absolute;
-    bottom: 7.5%;
-    left: 64%;
-}
-  & .current-festival-number {
-    display: inline-block;
-    position: absolute;
-    top: 54%;
-    left: 15%;
+.hero {
+  position: relative;
+  top: 5rem;
+  left: 0;
+  min-height: 100vh;
 }
 
-  
+.current-festival-dates {
+  position: absolute;
+  top: 10%;
+  left: 14%;
 }
 
+.logo-with-year {
+  transition: all 0.2s ease;
+  width: 45%;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(146, 150, 188, 0) 20%
+  );
 
+    @media only screen and (max-width: 1478px)  {
+      top: 31%;
+      left: 20%;
+    }
+    @media only screen and (max-width: 1205px)  {
+      width: 55%;
+      top: 34%;
+      left: 14%;
+    }
+    @media only screen and (max-width: 925px)  {
+      width: 65%;
+      top: 33%;
+      left: 10%;
+    }
+}
 
-
-
-
-
-
-
-
-
-
+.hero-button {
+  position: absolute;
+  right: 10%;
+  bottom: 20%;
+}

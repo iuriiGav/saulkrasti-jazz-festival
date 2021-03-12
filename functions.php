@@ -50,6 +50,7 @@ require  get_template_directory() . '/inc/custom-post-types/custom-post-artists.
 require  get_template_directory() . '/inc/custom-post-types/custom-post-events.php';
 require  get_template_directory() . '/inc/custom-post-types/custom-post-venues.php';
 require get_template_directory() . '/inc/acf_functions/add_acf_options_page.php';
+require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/custom-taxonomy-venues.php';
 
 
 ?>

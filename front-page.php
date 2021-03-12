@@ -1,60 +1,31 @@
 <?php get_header();
 include 'inc/helper-functions/html-helpers.php';
+$show_current_events_section = get_field_object('options_show_upcoming_events_section', 'options')['value'];
 ?>
-
-
-<main class="homepage">
 <?php while (have_posts()) : the_post();
     $headliner_hero = get_field('homepage_hero_headliners_images')
 ?>
 
+    <main class="homepage">
+        <section class="hero full-screen-cover" style="background-image: url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_hero_image_cover', 'options')
+                                                                                ?>)">
 
-    <div class="row huge-logo-container ">
-        <img src="<?php ig_saulkrasti_jazz_image_from_field('options_homepage_hero_image_cover', 'full', 'options') ?>" alt="" class="img-fluid hero-main-cover-image">
+            <?php get_template_part('template-parts/homepage/section', 'hero'); ?>
 
+        </section>
 
-
-        <!-- <?php while (have_rows('homepage_hero_headliners_images')) : the_row(); ?>
-
-
-<img src="<?php echo  esc_url(wp_get_attachment_image_src(get_sub_field('image'), 'full')[0]); ?>" alt="" class="headliner-image">
-
-<?php endwhile; ?> -->
-
-
-
-
-    </div>
+<?php if($show_current_events_section === 'true') : ?>
+        <section class="homepage-upcoming-concerts full-screen-cover" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?> url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_upcoming_concerts_cover', 'options') ?>)">
+        <?php get_template_part('template-parts/homepage/section', 'upcoming-events'); ?>
+        </section><!-- .homepage-upcoming-concerts  -->
+<?php endif; ?>
 
 
-    <section class="">
-        <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
+<section class="homepage-about-festival full-screen-cover" style="background-image: url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_homepage_about_us_cover', 'options')
+                                                                                ?>)">>
+<?php get_template_part('template-parts/homepage/section', 'about'); ?>
 
-
-
-
-
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <img src="<?php ig_saulkrasti_jazz_image_from_field('options_homepage_hero_image_cover', 'full', 'options') ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
-                </div>
-
-
-            </div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-        </div>
-    </section>
-
-
+</section>
+    </main>
 <?php endwhile; ?>
-
-
-</main>
-
 <?php get_footer(); ?>

@@ -1,0 +1,67 @@
+
+
+.btnc {
+    transition: all 0.2s ease;
+    display: inline-block;
+
+font-family: var(--font-secondary);
+font-size: 1.4rem;
+font-weight: 700;
+border-radius: 5px;
+border: none;
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+//COLORS//
+.btnc {
+    &-smoke {
+        @include linear-smoke();
+        color: var(--color-brand)
+    }
+    &-dark {
+        background-color: var(--color-dark);
+        color: var(--color-white);
+        text-transform: uppercase;
+        
+        
+    }
+    &-brand {
+        @include linear-brand ();
+        color: white;
+        text-transform: uppercase;
+    }
+}
+
+
+//SIZES//
+.btnc-xl {
+font-size: 2.5rem;
+padding: .4em 1em;
+    @media only screen and (max-width: $bp-xxl) {
+font-size: 2.2rem;
+        
+    }
+}
+
+.btnc-sm {
+    font-size: 1.2rem;
+}
+
+.btnc-underlined {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    color: var(--color-brand);
+    &:hover {
+    color: var(--color-brand);
+
+    }
+}
+
+.btnc-free-concert {
+    &:hover {
+   transform: none;
+        }
+}
+

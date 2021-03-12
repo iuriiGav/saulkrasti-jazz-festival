@@ -1,0 +1,59 @@
+.homepage-upcoming-concerts {
+    min-height: 100vh;
+    margin-top: 5rem;
+   
+}
+
+.concert-cards-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.taxonomy-triggers-container {
+    display: flex;
+}
+
+.sort-by-toggler {
+    color: var(--color-rare);
+    
+    padding-right: 1em;
+    &:hover {
+    color: var(--color-rare);
+    text-decoration: underline;
+
+    }
+    &__active {
+        font-size: 1.2rem;
+        text-decoration: underline;
+    }
+}
+
+.sort-by-options {
+    display: flex;
+    padding: .3em 0;
+    &__link {
+        transition: all 0.2s ease;
+        padding-right: 1em;
+        color: var(--color-gray-light);
+        &:hover, &:focus, &:active {
+            color: var(--color-brand);
+        }
+        &--active {
+            color: var(--color-brand);
+            transform: scale(1.01);
+        }
+    }
+
+    &__venue {
+        display: none;
+    }
+}
+
+.light-hr {
+    border-top: 2px solid var(--color-gray-light);
+}
+
+.upcoming-events__wrapper {
+    padding-top: 2em;
+}
+
