@@ -51,5 +51,47 @@ function ig_saulkrasti_jazz_get_radio_value($field, $page_ID = null) {
     return $field['value'];
 }
 
+function ig_saulkrasti_jazz_get_page_url($template_name)
+{
+	$pages = get_posts([
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'meta_query' => [
+            [
+                'key' => '_wp_page_template',
+                'value' => $template_name.'.php',
+                'compare' => '='
+            ]
+        ]
+    ]);
+    if(!empty($pages))
+    {
+      foreach($pages as $pages__value)
+      {
+          return get_permalink($pages__value->ID);
+      }
+    }
+    return get_bloginfo('url');
+}
+
+function ig_saulkrasti_jazz_get_id_of_page_by_template($template_name) {
+    $args = [
+        'post_type' => 'page',
+        'fields' => 'ids',
+        'nopaging' => true,
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $template_name.'.php',
+    ];
+    return get_posts( $args );
+
+}
+
+
+function ig_gav_get_global_text($field) {
+    $btns_page_ID = ig_saulkrasti_jazz_get_id_of_page_by_template('page-buttons');
+    return esc_html__(get_field($field, $btns_page_ID[0]), 'satiksanos-saulkrastos');
+}
+
+
 
 ?>

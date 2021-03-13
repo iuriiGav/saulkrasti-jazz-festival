@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php wp_head() ?>
+    <link rel='stylesheet' type='text/css' href='public/css/dynamic-styles.php' />
 </head>
 <body <?php body_class(); ?>>
 

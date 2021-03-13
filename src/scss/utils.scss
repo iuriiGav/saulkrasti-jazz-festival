@@ -3,6 +3,10 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+    &__static {
+      background-attachment: scroll;        
+
+    }
         @media only screen and (max-width: $bp-md) {
             background-attachment: scroll;        
         }
@@ -39,4 +43,12 @@
 
 .mb-2 {
   margin-bottom: 2em;
+}
+
+.ml-3 {
+  margin-left: 3em;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }

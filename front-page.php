@@ -21,9 +21,16 @@ $show_current_events_section = get_field_object('options_show_upcoming_events_se
 <?php endif; ?>
 
 
-<section class="homepage-about-festival full-screen-cover" style="background-image: url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_homepage_about_us_cover', 'options')
+
+<section class="homepage-about-festival full-screen-cover full-screen-cover__static" style="background-image: url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_homepage_about_us_cover', 'options')
                                                                                 ?>)">>
 <?php get_template_part('template-parts/homepage/section', 'about'); ?>
+
+</section>
+
+<section class="homepage-workshops full-screen-cover" style="background-image: url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_workshops_cover', 'options')
+                                                                                ?>)">>
+<?php get_template_part('template-parts/homepage/section', 'workshops'); ?>
 
 </section>
     </main>

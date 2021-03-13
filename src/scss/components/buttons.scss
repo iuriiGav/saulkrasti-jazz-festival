@@ -18,7 +18,10 @@ border: none;
 .btnc {
     &-smoke {
         @include linear-smoke();
-        color: var(--color-brand)
+        color: var(--color-brand);
+        &--wide {
+            padding: .3em 3em;
+        }
     }
     &-dark {
         background-color: var(--color-dark);
@@ -31,6 +34,12 @@ border: none;
         @include linear-brand ();
         color: white;
         text-transform: uppercase;
+    }
+    &-brand-square {
+        background-color: var(--color-brand);
+        border-radius: 2px;
+        padding: .5em 1.5em;
+        color: var(--color-gray-light);
     }
 }
 
@@ -65,3 +74,14 @@ font-size: 2.2rem;
         }
 }
 
+.btn-wrapper-80__left {
+    width: 80%;
+    margin: 0 auto;
+}
+.btn-wrapper-80__right {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: flex-end;
+}

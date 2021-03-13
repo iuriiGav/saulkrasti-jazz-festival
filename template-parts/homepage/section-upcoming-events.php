@@ -5,6 +5,7 @@ include get_template_directory() . '/inc/queries/current_venues_query.php';
 $num_of_concerts_to_display = 6 ;
 $all_upcoming_events = ig_saulkrasti_jazz_upcoming_events_query($num_of_concerts_to_display);
 $all_upcoming_events_count = $all_upcoming_events->found_posts;
+$more_concerts_to_show = $all_upcoming_events_count - $num_of_concerts_to_display;
 $venues = ig_saulkrasti_jazz_current_venues(-1);
 ?>
 
@@ -19,11 +20,11 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
             <h2 class="section-header"><?php esc_html_e(get_field('homepage_header_upcoming_events'), 'saulkrasti-jazz-festival') ?></h2>
             <div class="taxonomy-triggers-container">
                 <a id="ig-sort-by-venue" href="" class="sort-by-toggler sort-by-toggler__active">
-                    <?php esc_html_e(get_field('options_btn_sort_by_venue', 'options'), 'saulkrasti-jazz-festival') ?>
+                <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
                 </a>
 
                 <a id="ig-sort-by-date" href="" class="sort-by-toggler">
-                    <?php esc_html_e(get_field('options_btn_sort_by_date', 'options'), 'saulkrasti-jazz-festival') ?>
+                <?php echo ig_gav_get_global_text('btn_text_sort_by_date') ?>
                 </a>
 
             </div><!-- .taxonomy-triggers-container -->
@@ -60,10 +61,13 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
 
                 <?php while ($all_upcoming_events->have_posts()) : $all_upcoming_events->the_post();
-                    $concert_date = ig_saulkrasti_jazz_split_date_to_arr('post_events_concert_date');
+                    $day_of_the_week = date( "w", get_field('post_events_concert_date'));
+                    $concert_date = ig_saulkrasti_jazz_split_date_to_arr('post_events_concert_date'); // name of the month also awailable but needs to be adjusted
                     $venue_name = get_field('post_venues_venue_name', get_field('post_events_venue'));
                     $is_free_concert = ig_saulkrasti_jazz_get_radio_value('post_events_is_it_a_free_concert');
                 ?>
+
+            
                     <div class="col-lg-4 upcoming-events__wrapp-for-single">
 
                         <div class="ig-card">
@@ -132,11 +136,11 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
                                     <a href="<?php the_permalink() ?>" class="btnc btnc-underlined mb-2"><?php esc_html_e(get_field('options_btn_learn_more', 'options'), 'saulkrasti-jazz-festival') ?></a>
 
                                     <?php if ($is_free_concert === 'true') : ?>
-                                        <button class="btnc btnc-brand btnc-sm btnc-free-concert" disabled> <?php esc_html_e(get_field('options_btn_free_entry', 'options'), 'saulkrasti-jazz-festival') ?></button>
+                                        <button class="btnc btnc-brand btnc-sm btnc-free-concert" disabled>  <?php echo ig_gav_get_global_text('btn_text_free_entry') ?></button>
 
 
                                     <?php elseif ($is_free_concert === 'false' && !empty(get_field('post_events_link_to_ticket_sale'))) : ?>
-                                        <button class="btnc btnc-dark btnc-sm"><a href="<?php echo esc_url(get_field('post_events_link_to_ticket_sale')) ?>"><?php esc_html_e(get_field('options_btn_get_ticket', 'options'), 'saulkrasti-jazz-festival') ?></a> </button>
+                                        <button class="btnc btnc-dark btnc-sm"><a href="<?php echo esc_url(get_field('post_events_link_to_ticket_sale')) ?>"><?php echo ig_gav_get_global_text('btn_text_get_ticket') ?></a> </button>
                                     <?php endif; ?>
                                 </div>
 
@@ -154,5 +158,9 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
         </div>
     </div>
+<div class="plus-more-concerts-to-show-wrap">
+<h4 class="more-concerts-text t-light">+ <?php echo $more_concerts_to_show, ' ', ig_gav_get_global_text('btn_text_more_concerts') ?> </h4>
+<button class="btnc btnc-smoke btnc-smoke--wide ml-3 ">See all</button>
+</div>
 
 </div><!-- .concert-cards-wrapper -->

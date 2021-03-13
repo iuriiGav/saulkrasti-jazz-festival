@@ -7,6 +7,8 @@
 .concert-cards-wrapper {
     width: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .taxonomy-triggers-container {
@@ -45,7 +47,7 @@
     }
 
     &__venue {
-        display: none;
+        // display: none;
     }
 }
 
@@ -57,3 +59,12 @@
     padding-top: 2em;
 }
 
+.plus-more-concerts-to-show-wrap {
+    display: flex;
+    padding: 3em;
+    align-self: flex-end;
+}
+
+.more-concerts-text {
+    align-self: flex-end;
+}

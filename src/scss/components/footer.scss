@@ -1,0 +1,67 @@
+.main-footer {
+  background-color: var(--color-dark);
+}
+
+.sponsors-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sponsor-logo-wrap {
+  background-color: var(--color-white);
+  border-radius: 3px;
+  width: 150px;
+  padding: .3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+}
+
+.main-partner {
+  width: 180px;
+
+}
+.footer-hr {
+width: 60%;
+margin: 0 auto;
+& hr {
+  border-top: 6px solid var(--color-brand);
+}
+}
+
+.quick-links {
+width: 90%;
+margin: 0 auto;    
+
+  &__logo a{
+    padding-top: 3rem;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  &__address {
+    width: 80%;
+    padding-top: 1em;
+    margin: 0 auto;
+  }
+  &__address p {
+    color: var(--color-white);
+    font-size: .8rem;
+  }
+
+  &__address-bank-details {
+    padding-top: 3rem;
+  }
+} 
+
+.copyright-text {
+  color: var(--color-white);
+  opacity: 0.4;
+  font-size: .8rem;
+  text-align: center;
+  padding-bottom: 2em;
+}

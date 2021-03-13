@@ -29,6 +29,8 @@ function ig_saulkrasti_jazz_setup()
     add_image_size('ig-square', 350, 350, true);
     add_image_size('ig-blog', 350, 230, true);
     add_image_size('ig-mediumCover', 1250, 834, true);
+    add_image_size('ig-portrait', 400, 533, true);
+
     add_theme_support('post-thumbnails');
     add_theme_support( 'title-tag' );
 }
@@ -44,6 +46,7 @@ function ig_saulkrasti_jazz_register_navwalker()
 add_action('after_setup_theme', 'ig_saulkrasti_jazz_register_navwalker');
 
 register_nav_menu('main-menu', esc_html__('Main menu'));
+register_nav_menu('footer-menu', esc_html__('Footer menu'));
 
 
 require  get_template_directory() . '/inc/custom-post-types/custom-post-artists.php';
@@ -51,6 +54,14 @@ require  get_template_directory() . '/inc/custom-post-types/custom-post-events.p
 require  get_template_directory() . '/inc/custom-post-types/custom-post-venues.php';
 require get_template_directory() . '/inc/acf_functions/add_acf_options_page.php';
 require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/custom-taxonomy-venues.php';
+
+
+//Filter removes page template option from the dropdown menue on Page
+// add_filter( 'theme_page_templates', 'rrwd_remove_page_template' );
+//     function rrwd_remove_page_template( $pages_templates ) {
+//     unset( $pages_templates['page-buttons.php'] );
+//     return $pages_templates;
+// }
 
 
 ?>
