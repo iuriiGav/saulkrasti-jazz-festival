@@ -1,5 +1,5 @@
 <?php get_header();
-include 'inc/helper-functions/html-helpers.php';
+require_once 'inc/helper-functions/html-helpers.php';
 $show_current_events_section = get_field_object('options_show_upcoming_events_section', 'options')['value'];
 ?>
 <?php while (have_posts()) : the_post();

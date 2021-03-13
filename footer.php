@@ -70,6 +70,7 @@
                 <div class="quick-links__address">
                     <?php
 
+
                     $page_buttons_ID = ig_saulkrasti_jazz_get_id_of_page_by_template('page-buttons');
 
 

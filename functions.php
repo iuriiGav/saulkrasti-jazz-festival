@@ -1,5 +1,5 @@
 <?php
-
+require_once 'inc/helper-functions/html-helpers.php';
 function ig_saulkrasti_jazz_scripts()
 {
 
@@ -62,6 +62,7 @@ require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/cus
 //     unset( $pages_templates['page-buttons.php'] );
 //     return $pages_templates;
 // }
+
 
 
 ?>

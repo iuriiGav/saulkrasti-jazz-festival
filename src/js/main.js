@@ -23,4 +23,16 @@ jQuery(document).ready(function($) {
     },
   });
 
+
+  // open all the submenu in footer
+
+  if($('.ig-footer-navbar').length > 0) {
+    // $('.ig-footer-navbar li.menu-item-has-children a').addClass('show');
+    // $('.ig-footer-navbar li.menu-item-has-children a').attr('diabled');
+    // $('.ig-footer-navbar li.menu-item-has-children ul').addClass('show');
+
+    $('.ig-footer-navbar li.menu-item-has-children ul').removeClass('dropdown-menu');
+    $('.ig-footer-navbar li.menu-item-has-children ul').addClass('former-dropdown-menu');
+  }
+
 })
