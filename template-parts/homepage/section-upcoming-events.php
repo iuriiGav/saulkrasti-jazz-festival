@@ -132,8 +132,11 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
                                     ?>
 
                                 </div>
+
+                            
+                            
                                 <div class="ig-card__buttons">
-                                    <a href="<?php the_permalink() ?>" class="btnc btnc-underlined mb-2"><?php esc_html_e(get_field('options_btn_learn_more', 'options'), 'saulkrasti-jazz-festival') ?></a>
+                                    <a href="<?php the_permalink() ?>" class="btnc btnc-underlined mb-2"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?></a>
 
                                     <?php if ($is_free_concert === 'true') : ?>
                                         <button class="btnc btnc-brand btnc-sm btnc-free-concert" disabled>  <?php echo ig_gav_get_global_text('btn_text_free_entry') ?></button>
@@ -160,7 +163,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
     </div>
 <div class="plus-more-concerts-to-show-wrap">
 <h4 class="more-concerts-text t-light">+ <?php echo $more_concerts_to_show, ' ', ig_gav_get_global_text('btn_text_more_concerts') ?> </h4>
-<button class="btnc btnc-smoke btnc-smoke--wide ml-3 ">See all</button>
+<button class="btnc btnc-smoke btnc-smoke--wide ml-3 btnc-l"><?php echo ig_gav_get_global_text('btn_text_see_all') ?></button>
 </div>
 
 </div><!-- .concert-cards-wrapper -->

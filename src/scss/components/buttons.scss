@@ -27,6 +27,9 @@ border: none;
         background-color: var(--color-dark);
         color: var(--color-white);
         text-transform: uppercase;
+        @media only screen and (max-width: $bp-md) {
+            padding:.71em 1.5em;
+        }
         
         
     }
@@ -50,6 +53,22 @@ font-size: 2.5rem;
 padding: .4em 1em;
     @media only screen and (max-width: $bp-xxl) {
 font-size: 2.2rem;
+        
+    }
+}
+.btnc-l {
+font-size: 2rem;
+padding: .3em 1em;
+    @media only screen and (max-width: $bp-xxl) {
+font-size: 2.2rem;
+        
+    }
+}
+.btnc-m {
+font-size: 1.5rem;
+padding: .6em 1.2em;
+    @media only screen and (max-width: $bp-md) {
+font-size: 1.7rem;
         
     }
 }
@@ -84,4 +103,10 @@ font-size: 2.2rem;
 
     display: flex;
     justify-content: flex-end;
+
+    &--change-to-left {
+            @media only screen and (max-width: $bp-md) {
+                justify-content: flex-start;
+            }
+    }
 }

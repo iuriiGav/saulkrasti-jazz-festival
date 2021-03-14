@@ -47,7 +47,10 @@
     }
 
     &__venue {
-        // display: none;
+        display: none;
+    }
+    &__date {
+        display: none;
     }
 }
 
@@ -63,6 +66,16 @@
     display: flex;
     padding: 3em;
     align-self: flex-end;
+        & h4 {
+            @media only screen and (max-width: $bp-md) {
+                padding-bottom: 1em;;
+                
+            }
+        }
+        @media only screen and (max-width: $bp-md) {
+            flex-direction: column;
+            
+        }
 }
 
 .more-concerts-text {

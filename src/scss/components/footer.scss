@@ -14,54 +14,76 @@
   background-color: var(--color-white);
   border-radius: 3px;
   width: 150px;
-  padding: .3em;
+  padding: 0.3em;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 1em;
+  @media only screen and (max-width: $bp-md) {
+    width: 100px;
+  }
 }
 
 .main-partner {
   width: 180px;
-
+  @media only screen and (max-width: $bp-md) {
+    width: 130px;
+  }
 }
 .footer-hr {
-width: 60%;
-margin: 0 auto;
-& hr {
-  border-top: 6px solid var(--color-brand);
-}
+  width: 60%;
+  margin: 0 auto;
+  & hr {
+    border-top: 6px solid var(--color-brand);
+  }
 }
 
 .quick-links {
-width: 90%;
-margin: 0 auto;    
+  width: 90%;
+  margin: 0 auto;
 
-  &__logo a{
+  &__logo a {
     padding-top: 3rem;
     width: 50%;
     margin: 0 auto;
   }
 
-  &__address {
+  &__info {
     width: 80%;
     padding-top: 1em;
     margin: 0 auto;
+    @media only screen and (max-width: $bp-md) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 95%;
+    }
   }
-  &__address p {
+  &__info .quick-links__address p {
     color: var(--color-white);
-    font-size: .8rem;
+    font-size: 0.8rem;
+    @media only screen and (max-width: $bp-md) {
+      font-size: 1rem;
+    }
+  }
+  &__info .quick-links__bank p {
+    color: var(--color-white);
+    font-size: 0.8rem;
+    @media only screen and (max-width: $bp-md) {
+      font-size: 1rem;
+      text-align: right;
+    }
   }
 
   &__address-bank-details {
     padding-top: 3rem;
   }
-} 
+}
 
 .copyright-text {
   color: var(--color-white);
   opacity: 0.4;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-align: center;
   padding-bottom: 2em;
 }

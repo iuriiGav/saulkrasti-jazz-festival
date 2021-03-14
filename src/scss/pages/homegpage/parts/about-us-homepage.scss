@@ -9,5 +9,8 @@
 .about-us-small-gallery {
     display: flex;
     align-items: center;
+        @media only screen and (max-width: $bp-md) {
+            flex-direction: column;
+        }
 }
 

@@ -1,0 +1,29 @@
+.workshop {
+  &__weekly-schedule {
+    width: 60%;
+      @media only screen and (max-width: $bp-md) {
+        width: 100%;
+      }
+  }
+
+  &__camp-gallery {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-30%);
+    right: 5rem;
+    // transform: scale(1.5) translateX(-25%) translateY(-25%);
+      @media only screen and (max-width: $bp-xl) {
+        position: relative;
+        top: 0;
+        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+      }
+        @media only screen and (max-width: $bp-md) {
+          width: 90%;
+        }
+  }
+}

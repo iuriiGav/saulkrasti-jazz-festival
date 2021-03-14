@@ -1,13 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
 :root {
-    --font-primary: 'Lato', sans-serif;
-    --font-secondary: 'Cardo', serif;
-  }
+  --font-primary: "Lato", sans-serif;
+  --font-secondary: "Cardo", serif;
+}
 
-h1, h2, h3, h4, h5, h6 {
+body {
+  font-family: var(--font-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-secondary);
   font-weight: 700;
 }
@@ -18,7 +26,7 @@ h1 {
 h2 {
   font-size: 2.5rem;
 }
-h3  {
+h3 {
   font-size: 2rem;
 }
 h4 {
@@ -26,60 +34,72 @@ h4 {
 }
 h5 {
   font-size: 1.25rem;
-
 }
 h6 {
   font-size: 1rem;
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 1.25rem;
+  }
+  @media only screen and (max-width: $bp-md) {
+    font-size: 1.5rem;
+  }
 }
 
 .ig-h7 {
   font-size: 0.75rem;
 }
 
-  
-
-  .ig-main-navbar li.menu-item a.nav-link,
-  a.dropdown-item {
-    font-family: var(--font-secondary);
-    color: var(--color-gray-light);
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    @media only screen and (max-width: $bp-md) {
-      font-size: 2rem;
-    }
+.ig-main-navbar li.menu-item a.nav-link,
+a.dropdown-item {
+  font-family: var(--font-secondary);
+  color: var(--color-gray-light);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  @media only screen and (max-width: $bp-md) {
+    font-size: 2rem;
   }
+}
 
-  .current-festival-dates {
-    color: var(--color-rare);
-    font-family: var(--font-secondary);
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: .8rem;
+a[href^="mailto"] {
+  color: var(--color-brand);
+}
+.current-festival-dates {
+  color: var(--color-rare);
+  font-family: var(--font-secondary);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.8rem;
+}
+
+.current-festival-number {
+  font-family: var(--font-secondary);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-brand);
+
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 2.8rem;
   }
-  
-  .current-festival-number {
-    font-family: var(--font-secondary);
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--color-brand);
+}
 
-      @media only screen and (max-width: $bp-lg) {
-        font-size: 2.8rem;
-      }
-  }
-
-  .section-header {
-    color: var(--color-white);
-    text-transform: uppercase;
-    padding: 2em;
-    text-align: center;
+.section-header {
+  color: var(--color-white);
+  text-transform: uppercase;
+  padding: 2em;
+  text-align: center;
 }
 
 .medium-title {
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: 1.12rem;
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 1.4rem;
+  }
+  @media only screen and (max-width: $bp-md) {
+    font-size: 1.6rem;
+  }
 }
 
 //////text colors////////////////////////////////////////////////

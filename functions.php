@@ -9,6 +9,7 @@ function ig_saulkrasti_jazz_scripts()
 
     // Main Stylesheet
     wp_enqueue_style('saulkrasti-jazz-style', get_stylesheet_uri(), array(), '1.0.0');
+    wp_enqueue_style('saulkrasti-jazz-style-dynamic', get_template_directory_uri() . '/public/css/dynamic-styles.php', array(), '1.0.0');
 
     wp_enqueue_script('jquery');
 

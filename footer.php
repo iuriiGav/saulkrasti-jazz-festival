@@ -40,7 +40,7 @@
 
         <div class="row">
 
-            <div class="col-md-3 quick-links__logo-addresses">
+            <div class="col-md-3 col-xs-6 quick-links__logo-addresses">
                 <div class="quick-links__logo">
                     <a class="navbar-brand d-flex flex-column text-font-secondary" href="<?php echo get_home_url() ?>">
 
@@ -50,7 +50,7 @@
 
             </div><!-- .quick-links__logo-addresses -->
 
-            <div class="col-md-6 quick-links__nav-menu">
+            <div class="col-md-6 md-none quick-links__nav-menu">
 
                 <?php
                 wp_nav_menu(array(
@@ -66,42 +66,49 @@
 
             </div>
 
-            <div class="col-md-3 quick-links__address-bank-details">
-                <div class="quick-links__address">
-                    <?php
+            <div class="col-md-3 col-xs-6 quick-links__address-bank-details">
+                <div class="quick-links__info">
+                    <div class="quick-links__address">
+
+                        <?php
 
 
-                    $page_buttons_ID = ig_saulkrasti_jazz_get_id_of_page_by_template('page-buttons');
+                        $page_buttons_ID = ig_saulkrasti_jazz_get_id_of_page_by_template('page-buttons');
 
 
-                    if (have_rows('festival_official_address_and_bank', $page_buttons_ID[0])) :
+                        if (have_rows('festival_official_address_and_bank', $page_buttons_ID[0])) :
 
-                        while (have_rows('festival_official_address_and_bank', $page_buttons_ID[0])) : the_row(); ?>
+                            while (have_rows('festival_official_address_and_bank', $page_buttons_ID[0])) : the_row(); ?>
 
-                            <p class="quick-links__address-line"><?php esc_html_e(get_sub_field('line'), 'satiksanos-saulkrastos') ?></p>
-                    <?php
+                                <p class="quick-links__address-line"><?php esc_html_e(get_sub_field('line'), 'satiksanos-saulkrastos') ?></p>
+                        <?php
 
-                        endwhile;
+                            endwhile;
 
 
-                    endif;
-                    ?>
-
+                        endif;
+                        ?>
                     <p class="quick-links__address-line "><a class="t-brand" href="mailto: <?php esc_html_e(get_field('options_festival_email', 'options'), 'satiksanos-saulkrastos') ?>"><?php esc_html_e(get_field('options_festival_email', 'options'), 'satiksanos-saulkrastos') ?></a> </p>
-
                     <br>
-                    <?php if (have_rows('bank_account_details', $page_buttons_ID[0])) :
+                    </div>
 
-                        while (have_rows('bank_account_details', $page_buttons_ID[0])) : the_row(); ?>
+<div class="quick-links__bank">
 
-                            <p class="quick-links__address-line"><?php esc_html_e(get_sub_field('line'), 'satiksanos-saulkrastos') ?></p>
-                    <?php
+<?php if (have_rows('bank_account_details', $page_buttons_ID[0])) :
 
-                        endwhile;
+while (have_rows('bank_account_details', $page_buttons_ID[0])) : the_row(); ?>
+
+    <p class="quick-links__address-line"><?php esc_html_e(get_sub_field('line'), 'satiksanos-saulkrastos') ?></p>
+<?php
+
+endwhile;
 
 
-                    endif; ?>
-                </div>
+endif; ?>
+</div>
+</div>
+
+               
 
             </div>
 
@@ -110,7 +117,7 @@
 
     <section class="footer-copyrights">
 
-                <p class="copyright-text"><?php esc_html_e(get_field('options_copyright_text', 'options'), 'satiksanos-saulkrastos') ?> <?php  echo date("Y"), ' ', '|', ' ', esc_html_e(get_field('options_website_developed_by_text', 'options'), 'satiksanos-saulkrastos')?> <a href="<?php echo esc_url(get_field('options_developer_link', 'options'))?>"><?php esc_html_e(get_field('options_developer_name', 'options'), 'satiksanos-saulkrastos') ?></a></p>
+        <p class="copyright-text"><?php esc_html_e(get_field('options_copyright_text', 'options'), 'satiksanos-saulkrastos') ?> <?php echo date("Y"), ' ', '|', ' ', esc_html_e(get_field('options_website_developed_by_text', 'options'), 'satiksanos-saulkrastos') ?> <a href="<?php echo esc_url(get_field('options_developer_link', 'options')) ?>"><?php esc_html_e(get_field('options_developer_name', 'options'), 'satiksanos-saulkrastos') ?></a></p>
     </section>
 </footer>
 

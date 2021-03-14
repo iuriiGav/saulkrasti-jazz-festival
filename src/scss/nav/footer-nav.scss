@@ -13,10 +13,16 @@ a.dropdown-item {
   color: var(--color-white);
 }
 
-.ig-footer-navbar li.menu-item ul.dropdown-menu {
+.ig-footer-navbar li.menu-item ul.former-dropdown-menu {
   background-color: inherit;
 //   left: 50%;
   padding: 0 !important;
+  flex-direction: column;
+  display: flex;
+  text-align: right;
+}
+.ig-footer-navbar li.menu-item ul.former-dropdown-menu li {
+  text-align: left !important;
 }
 
 .ig-footer-navbar li.menu-item ul.former-dropdown-menu li a {
@@ -24,4 +30,7 @@ a.dropdown-item {
   text-transform: lowercase;
   font-weight: 400;
   opacity: 0.7;
+  &:hover {
+    color: var(--color-white);
+  }
 }
