@@ -92,6 +92,12 @@ function ig_gav_get_global_text($field) {
     return esc_html__(get_field($field, $btns_page_ID[0]), 'satiksanos-saulkrastos');
 }
 
+function ig_gav_get_medium_image($image) {
+    echo esc_url(wp_get_attachment_image_src($image, 'ig-medium')[0]);
+}
+function ig_gav_get_custom_size_image($image, $size) {
+    echo esc_url(wp_get_attachment_image_src($image, $size)[0]);
+}
 
 
 ?>

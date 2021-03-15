@@ -1,0 +1,63 @@
+
+.contacts-container div .content-card {
+    line-height: 1.4rem;
+  & p:first-child {
+    font-size: 2rem;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+  }
+  & p:not(:first-child) {
+      font-size: 1.2rem;
+  }
+}
+
+.content-card .email-contact {
+    display: inline-block;
+    margin-bottom: 2em !important;
+}
+
+.contacts-team-container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.contact-venue {
+
+  &__wrapper {
+    width: 80%; 
+    margin: 0 auto;
+    height: 60vh;
+  @media only screen and (max-width: $bp-md) {
+    // height: 160vh;
+  }
+    
+  }
+  
+  &__map {
+   height: 100%; 
+     @media only screen and (max-width: $bp-md) {
+      //  height: 30%;
+     }
+  } 
+  
+  &__stage-photo {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    @media only screen and (max-width: $bp-lg) {
+     display: none;
+    }
+    & img {
+      width: 100%;
+      position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+        }
+  }
+} 
+

@@ -14,7 +14,7 @@
         </div>
         <div class="btn-wrapper-80__right btn-wrapper-80__right--change-to-left my-5">
     
-    <button class="btnc btnc-brand-square"><a href="<?php echo ig_saulkrasti_jazz_get_page_url('page-about')?>"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?></a> </button>
+    <button class="btnc btnc-brand-square"><a href="<?php echo ig_saulkrasti_jazz_get_page_url('page-templates/page-workshop-camp')?>"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?></a> </button>
 
 </div>
     </div>

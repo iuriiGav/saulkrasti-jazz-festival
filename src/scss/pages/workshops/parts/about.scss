@@ -1,0 +1,31 @@
+.about-workshops-wrapper {
+    // width: 80%;
+    // margin: 0 auto;
+}
+
+.about-workshops {
+  &__image-container {
+      position: relative;
+    @media only screen and (max-width: $bp-lg) {
+      display: none;
+    }
+  }
+
+ &__image-1 {
+     position: absolute;
+     top: 25rem;
+     left: 8rem;
+     z-index: 2;
+    box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
+
+
+ }
+
+ &__image-2 {
+     position: absolute;
+     top: 10rem;
+     left: 2rem;
+    box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
+
+ }
+}

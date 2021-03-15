@@ -29,6 +29,7 @@ function ig_saulkrasti_jazz_setup()
 
     add_image_size('ig-square', 350, 350, true);
     add_image_size('ig-blog', 350, 230, true);
+    add_image_size('ig-medium', 620, 430, true);
     add_image_size('ig-mediumCover', 1250, 834, true);
     add_image_size('ig-portrait', 400, 533, true);
 
@@ -55,6 +56,7 @@ require  get_template_directory() . '/inc/custom-post-types/custom-post-events.p
 require  get_template_directory() . '/inc/custom-post-types/custom-post-venues.php';
 require get_template_directory() . '/inc/acf_functions/add_acf_options_page.php';
 require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/custom-taxonomy-venues.php';
+require get_template_directory() . '/inc/api-options.php';
 
 
 //Filter removes page template option from the dropdown menue on Page
@@ -63,6 +65,19 @@ require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/cus
 //     unset( $pages_templates['page-buttons.php'] );
 //     return $pages_templates;
 // }
+
+
+function my_acf_google_map_api( $api ){
+	
+	$api['key'] = get_option('google_maps_api_key');
+	
+	return $api;
+
+ 
+	
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 
