@@ -17,7 +17,7 @@
                 // Loop through rows.
                 while (have_rows('options_festival_sponsors', 'options')) : the_row(); ?>
                     <div class="sponsor-logo-wrap <?php echo get_sub_field('main_partner') === 'true' ? 'main-partner' : null ?>">
-                        <a href="<?php echo  esc_url(get_sub_field('link')) ?>" class="sponsor-logo__link">
+                        <a target="_blank" href="<?php echo  esc_url(get_sub_field('link')) ?>" class="sponsor-logo__link">
                             <img src="<?php echo esc_url(wp_get_attachment_image_src(get_sub_field('logo'), 'full')[0]) ?>" alt="" class="sponsor-logo__img">
 
                         </a>
@@ -42,7 +42,7 @@
 
             <div class="col-md-3 col-xs-6 quick-links__logo-addresses">
                 <div class="quick-links__logo">
-                    <a class="navbar-brand d-flex flex-column text-font-secondary" href="<?php echo get_home_url() ?>">
+                    <a class="navbar-brand d-flex flex-column text-font-secondary"  href="<?php echo get_home_url() ?>">
 
                         <img src="<?php echo esc_url(wp_get_attachment_image_src(get_field('options_website_logo_secondary', 'options'), 'square')[0]) ?>" alt="" class="footer-nav-logo">
                     </a>

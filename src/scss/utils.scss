@@ -89,3 +89,15 @@
 .self-start {
   align-self: start;
 }
+
+.p-0 {
+  padding: 0;
+}
+
+.bgc-dark {
+  background-color: var(--color-dark);
+}
+
+.no-overflow {
+  overflow: hidden;
+}

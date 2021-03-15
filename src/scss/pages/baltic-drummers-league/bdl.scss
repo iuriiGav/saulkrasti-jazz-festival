@@ -1,0 +1,18 @@
+.drummers-league-container  {
+    min-height: 100vh;
+
+}
+
+.drum-league-finalists-container {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+}
+
+.drummers-league-finalists {
+    min-height: 70vh;
+}
+

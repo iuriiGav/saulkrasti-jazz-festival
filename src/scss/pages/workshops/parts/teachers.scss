@@ -10,6 +10,9 @@
 
   &__reversed {
     flex-direction: row-reverse;
+    @media only screen and (max-width: $bp-md) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -54,6 +57,9 @@
   }
   &__item {
     padding: 0.5em;
+    &--active {
+      color: var(--color-brand) !important;
+    }
     &--active a {
       color: var(--color-brand);
     }
@@ -75,6 +81,7 @@
 
 .content-box {
   width: 80%;
+  position: relative;
   @media only screen and (max-width: $bp-md) {
     order: 3;
     width: 100%;
@@ -88,6 +95,8 @@
 
 .content-card {
   width: 80%;
+  transition: all 0.6s ease-in-out;
+
   min-height: 7rem;
   background-color: var(--color-white);
   border-radius: 4px;
@@ -95,6 +104,56 @@
   overflow: hidden;
   line-height: 2em;
   padding: 3em;
+
+  & p:not(:last-child) {
+    margin-bottom: 2em !important;
+  }
+
+  & p a {
+    transition: all 0.2s;
+    color: var(--color-brand);
+    display: inline-block;
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__text-lg {
+    line-height: 2.5rem;
+    font-size: 1.25rem;
+
+
+  }
+  &__teacher-bio-container {
+    display: none;
+  }
+  &__relative {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-120%);
+    &--reverse {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(120%);
+    }
+  }
+
+  &__visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%);
+    &--teachers {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+  }
+
   & p:not(:last-child) {
     margin-bottom: 1em !important;
   }
@@ -145,6 +204,3 @@
     }
   }
 }
-
-
-

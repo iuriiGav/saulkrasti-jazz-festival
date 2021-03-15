@@ -31,12 +31,12 @@
                             <h6 class="ig-h7"><?php esc_html_e($note, 'saulkrasti-jazz-festival') ?></h6>
                         </div>
                         <div class="price-cards__price">
-                            <h2><?php esc_html_e($price, 'saulkrasti-jazz-festival') ?></h2>
+                            <h2><?php esc_html_e($price, 'saulkrasti-jazz-festival') ?><span>€</span></h2>
                         </div>
                         <div class="price-cards__details">
                             <p><?php esc_html_e($details, 'saulkrasti-jazz-festival') ?></p>
                         </div>
-                        <div class="price-cards__link"><h3><a href=""><?php echo ig_gav_get_global_text('btn_text_apply') ?></a></h3></div>
+                        <div class="price-cards__link"><h3><a href="#application-section-target"><?php echo ig_gav_get_global_text('btn_text_apply') ?></a></h3></div>
                     </div>
                 </div>
 

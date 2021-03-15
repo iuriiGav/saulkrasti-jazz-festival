@@ -161,6 +161,14 @@
     & p:not(:last-child) {
       margin-bottom: 2em !important;
     }
+    & p a {
+      transition: all 0.2s;
+      color: var(--color-brand);
+      display: inline-block;
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
 
    
   }
@@ -200,4 +208,37 @@
   border-radius: 4px;
   margin: 0 auto 2em auto;
   overflow: hidden;
+ }
+
+ .card-artist {
+  max-width: 20%;
+  background-color: var(--color-white);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+   margin-bottom: 2rem;
+
+    @media only screen and (max-width: $bp-lg) {
+      max-width: 30%;
+    }
+ 
+    @media only screen and (max-width: $bp-md) {
+      max-width: 40%;
+    }
+    @media only screen and (max-width: $bp-sm) {
+      max-width: 70%;
+    }
+ 
+
+
+  &__image img {
+    width: 100%;
+  }
+  &__text {
+    padding: 1.5em;
+    display: flex;
+    justify-content: center;
+
+  }
+
  }
