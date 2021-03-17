@@ -230,6 +230,8 @@
   display: flex;
   flex-direction: column;
    margin-bottom: 2rem;
+   box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
+
 
 
     @media only screen and (max-width: $bp-lg) {
@@ -266,4 +268,75 @@
 
   }
 
+ }
+
+
+ .sidebar-card {
+  width: 100%;
+  // min-height: 140px;
+  background-color: var(--color-white);
+  border-radius: 4px;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 2rem;
+
+ 
+  &__image {
+width: 30%;
+overflow: hidden;
+background-size: cover;
+background-position: center;
+
+  }
+
+  &__content {
+width: 70%;
+padding: 1em;
+
+  }
+
+  &__date-time {
+display: flex;
+justify-content: space-between;
+  }
+
+  &__venue {
+text-align: right;
+  }
+
+
+ }
+
+ .card-small {
+  width: 100%;
+  background-color: var(--color-gray-light);
+  border-radius: 4px;
+  min-height: 4rem;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  &__date-time {
+    padding: .3em;
+    text-align: center;
+background-color: var(--color-white);
+display: flex;
+flex-direction: column; 
+justify-content: center;
+
+}
+
+&__time {
+  padding-top: 1em;
+  border-top: 2px solid var(--color-brand);
+  
+}
+&__name-country {
+  // color: var(--color-brand);
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 2em;
+
+
+}
  }

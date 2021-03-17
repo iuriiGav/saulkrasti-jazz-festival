@@ -5,7 +5,7 @@ if (have_rows('bank_account_details', $page_buttons_ID[0])) :
 
     while (have_rows('bank_account_details', $page_buttons_ID[0])) : the_row(); ?>
 
-        <p class="quick-links__address-line"><?php esc_html_e(get_sub_field('line'), 'satiksanos-saulkrastos') ?></p>
+        <p class="quick-links__address-line"><?php esc_html_e(get_sub_field('line'), 'saulkrasti-jazz-festival') ?></p>
 <?php
 
     endwhile;

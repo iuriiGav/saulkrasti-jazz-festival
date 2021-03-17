@@ -74,7 +74,7 @@
     
     get_template_part('template-parts/contact-and-bank/section', 'address'); ?>
                       
-                    <p class="quick-links__address-line "><a class="t-brand" href="mailto: <?php esc_html_e(get_field('options_festival_email', 'options'), 'satiksanos-saulkrastos') ?>"><?php esc_html_e(get_field('options_festival_email', 'options'), 'satiksanos-saulkrastos') ?></a> </p>
+                    <p class="quick-links__address-line "><a class="t-brand" href="mailto: <?php esc_html_e(get_field('options_festival_email', 'options'), 'saulkrasti-jazz-festival') ?>"><?php esc_html_e(get_field('options_festival_email', 'options'), 'saulkrasti-jazz-festival') ?></a> </p>
                     <br>
                     </div>
 
@@ -94,7 +94,7 @@
 
     <section class="footer-copyrights">
 
-        <p class="copyright-text"><?php esc_html_e(get_field('options_copyright_text', 'options'), 'satiksanos-saulkrastos') ?> <?php echo date("Y"), ' ', '|', ' ', esc_html_e(get_field('options_website_developed_by_text', 'options'), 'satiksanos-saulkrastos') ?> <a href="<?php echo esc_url(get_field('options_developer_link', 'options')) ?>"><?php esc_html_e(get_field('options_developer_name', 'options'), 'satiksanos-saulkrastos') ?></a></p>
+        <p class="copyright-text"><?php esc_html_e(get_field('options_copyright_text', 'options'), 'saulkrasti-jazz-festival') ?> <?php echo date("Y"), ' ', '|', ' ', esc_html_e(get_field('options_website_developed_by_text', 'options'), 'saulkrasti-jazz-festival') ?> <a href="<?php echo esc_url(get_field('options_developer_link', 'options')) ?>"><?php esc_html_e(get_field('options_developer_name', 'options'), 'saulkrasti-jazz-festival') ?></a></p>
     </section>
 </footer>
 

@@ -89,7 +89,7 @@ function ig_saulkrasti_jazz_get_id_of_page_by_template($template_name) {
 
 function ig_gav_get_global_text($field) {
     $btns_page_ID = ig_saulkrasti_jazz_get_id_of_page_by_template('page-buttons');
-    return esc_html__(get_field($field, $btns_page_ID[0]), 'satiksanos-saulkrastos');
+    return esc_html__(get_field($field, $btns_page_ID[0]), 'saulkrasti-jazz-festival');
 }
 
 function ig_gav_get_medium_image($image) {

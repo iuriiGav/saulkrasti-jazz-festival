@@ -56,26 +56,7 @@ font-size: 2.2rem;
         
     }
 }
-.btnc-l {
-font-size: 2rem;
-padding: .3em 1em;
-    @media only screen and (max-width: $bp-xxl) {
-font-size: 2.2rem;
-        
-    }
-}
-.btnc-m {
-font-size: 1.5rem;
-padding: .6em 1.2em;
-    @media only screen and (max-width: $bp-md) {
-font-size: 1.7rem;
-        
-    }
-}
 
-.btnc-sm {
-    font-size: 1.2rem;
-}
 
 .btnc-underlined {
     font-size: 1.2rem;
@@ -110,3 +91,27 @@ font-size: 1.7rem;
             }
     }
 }
+
+.btnc-l {
+    font-size: 2rem;
+    padding: .3em 1em;
+        @media only screen and (max-width: $bp-xxl) {
+    font-size: 2.2rem;
+            
+        }
+    }
+    .btnc-m {
+    font-size: 1.5rem;
+    padding: .6em 1.2em;
+        @media only screen and (max-width: $bp-md) {
+    font-size: 1.7rem;
+            
+        }
+    }
+    
+    .btnc-sm {
+        font-size: 1.2rem;
+    }
+    .btnc-xs {
+        font-size: 1rem;
+    }

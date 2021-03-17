@@ -1,0 +1,51 @@
+
+  .single-artist {
+    &__wrapper {
+        width: 80%;
+        margin: 0 auto;
+          @media only screen and (max-width: $bp-xl) {
+            width: 90%;
+          }
+    }
+      &__content {
+        background-color: var(--color-white);
+        box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
+        width: 100%;
+        line-height: 2.3rem;
+        font-size: 1.1rem;
+        margin-bottom: 5rem;
+      }
+      &__photo {
+          background-color: var(--color-dark);
+          padding: 5rem 0;
+
+          & img {
+          width: 70%;
+            margin: 0 auto;
+        // box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
+
+          }
+      }
+      &__bio {
+          padding: 3em;
+          & p a {
+            color: var(--color-brand);
+          }
+      }
+      &__line-up {
+          padding-bottom: 2rem;
+          &--artist {
+            display: flex;
+            align-items: baseline;
+            & p {
+                opacity: .75;
+            }
+          } 
+      }
+
+      &__link {
+          padding: 2em 0;
+          text-align: right;
+      }
+  
+  }

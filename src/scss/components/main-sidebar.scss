@@ -1,0 +1,15 @@
+.main-sidebar {
+  background-color: var(--color-dark);
+  position: relative;
+  &__content {
+
+    position: sticky;
+    top: 5rem;
+    left: 0;
+  }
+&__current-artist-concert-header {
+    padding: 2em .5em;
+    text-align: center;
+}  
+}
+

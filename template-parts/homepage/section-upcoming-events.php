@@ -2,7 +2,7 @@
 
 include get_template_directory() . '/inc/queries/upcoming_events_query.php';
 include get_template_directory() . '/inc/queries/current_venues_query.php';
-$num_of_concerts_to_display = 6 ;
+$num_of_concerts_to_display = -1 ;
 $all_upcoming_events = ig_saulkrasti_jazz_upcoming_events_query($num_of_concerts_to_display);
 $all_upcoming_events_count = $all_upcoming_events->found_posts;
 $more_concerts_to_show = $all_upcoming_events_count - $num_of_concerts_to_display;
