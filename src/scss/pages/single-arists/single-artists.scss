@@ -40,9 +40,10 @@
       }
     }
   }
-
-  &__link {
-    padding: 2em 0;
+  &__links-container {
+    margin: 2em 0;
+  }
+  &__link  {
     text-align: right;
   }
 

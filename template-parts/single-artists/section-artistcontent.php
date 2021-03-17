@@ -1,7 +1,6 @@
 <div class="single-artist__content">
 
 
-
     <?php if (have_rows('post_artists_additional_images') || get_field('post_artists_artists_photo')) : ?>
         <div class="single-artist__photo">
 
@@ -74,16 +73,43 @@
             <?php echo wp_kses_post(wpautop(get_field('post_artists_bio'))) ?>
 
 
-            <?php if (get_field('post_artists_link_to_ofiicial_website')) : ?>
-                <div class="single-artist__link">
+            <div class="single-artist__links-container">
+            <?php
 
-                <?php
-                $website_homepage = explode("/", get_field('post_artists_link_to_ofiicial_website'), 3);
-                 
-                ?>
-                    <a class="btnc btnc-underlined" href="<?php echo esc_url(get_field('post_artists_link_to_ofiicial_website')) ?>" target="_blank"><?php esc_html_e($website_homepage[2], 'saulkrasti-jazz-festival')  ?></a>
-                </div>
-            <?php endif; ?>
+            if (have_rows('post_artists_link_to_ofiicial_website')) :
+
+                while (have_rows('post_artists_link_to_ofiicial_website')) : the_row();
+
+                    $url = get_sub_field('url');
+                    $website_homepage = explode("/", $url, 3);
+
+            ?>
+
+
+                        <div class="single-artist__link">
+
+                            <?php
+
+                            ?>
+                            <a class="btnc btnc-underlined" href="<?php echo esc_url($url) ?>" target="_blank"><?php esc_html_e($website_homepage[2], 'saulkrasti-jazz-festival')  ?></a>
+                        </div>
+
+
+            <?php
+                endwhile;
+
+
+            endif;
+
+            ?>
+
+</div>
+
+
+
+
+
+
         </div>
 
 
