@@ -1,51 +1,95 @@
-
-  .single-artist {
-    &__wrapper {
-        width: 80%;
-        margin: 0 auto;
-          @media only screen and (max-width: $bp-xl) {
-            width: 90%;
-          }
+.single-artist {
+  &__wrapper {
+    width: 80%;
+    margin: 0 auto;
+    @media only screen and (max-width: $bp-xl) {
+      width: 90%;
     }
-      &__content {
-        background-color: var(--color-white);
-        box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
-        width: 100%;
-        line-height: 2.3rem;
-        font-size: 1.1rem;
-        margin-bottom: 5rem;
-      }
-      &__photo {
-          background-color: var(--color-dark);
-          padding: 5rem 0;
-
-          & img {
-          width: 70%;
-            margin: 0 auto;
-        // box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
-
-          }
-      }
-      &__bio {
-          padding: 3em;
-          & p a {
-            color: var(--color-brand);
-          }
-      }
-      &__line-up {
-          padding-bottom: 2rem;
-          &--artist {
-            display: flex;
-            align-items: baseline;
-            & p {
-                opacity: .75;
-            }
-          } 
-      }
-
-      &__link {
-          padding: 2em 0;
-          text-align: right;
-      }
-  
   }
+  &__content {
+    background-color: var(--color-white);
+    box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
+    width: 100%;
+    line-height: 2.3rem;
+    font-size: 1.1rem;
+    margin-bottom: 5rem;
+  }
+  &__photo {
+    background-color: var(--color-dark);
+    padding: 5rem 0;
+
+    & img {
+      width: 70%;
+      margin: 0 auto;
+      // box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
+    }
+  }
+  &__bio {
+    padding: 3em;
+    & p a {
+      color: var(--color-brand);
+    }
+  }
+  &__line-up {
+    padding-bottom: 2rem;
+    &--artist {
+      display: flex;
+      align-items: baseline;
+      & p {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  &__link {
+    padding: 2em 0;
+    text-align: right;
+  }
+
+  // from events styling
+
+  &__event-date-time-venue {
+    
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:2em;
+  }
+  &__event-venue--address-lines {
+line-height: 1.4em;
+opacity: .7;
+  }
+
+  &__artist-or-lineup {
+    background-color: var(--color-dark);
+    padding: 4em 2em;
+    &--single {
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+      align-items: flex-start;
+     &:not(:last-child) {
+      margin-bottom: 2em;
+     }
+    
+     
+    }
+
+    &--single-time {
+      color: var(--color-white);
+            }
+    &--artist-container {
+      margin-left: 5em;
+      & h5 {
+        color: var(--color-rare);
+      }
+    }
+    &--single-artist {
+      color: var(--color-brand);
+    
+    }
+  }
+
+  &__get_event_ticket {
+    margin-top: 3rem;
+  }
+}

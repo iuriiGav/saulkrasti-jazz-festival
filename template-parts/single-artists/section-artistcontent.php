@@ -76,7 +76,12 @@
 
             <?php if (get_field('post_artists_link_to_ofiicial_website')) : ?>
                 <div class="single-artist__link">
-                    <a class="btnc btnc-underlined" href="<?php echo esc_url(get_field('post_artists_link_to_ofiicial_website')) ?>" target="_blank"><?php echo ig_gav_get_global_text('btn_text_learn_more')  ?></a>
+
+                <?php
+                $website_homepage = explode("/", get_field('post_artists_link_to_ofiicial_website'), 3);
+                 
+                ?>
+                    <a class="btnc btnc-underlined" href="<?php echo esc_url(get_field('post_artists_link_to_ofiicial_website')) ?>" target="_blank"><?php esc_html_e($website_homepage[2], 'saulkrasti-jazz-festival')  ?></a>
                 </div>
             <?php endif; ?>
         </div>
