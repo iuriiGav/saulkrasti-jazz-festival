@@ -13,7 +13,14 @@ require 'inc/queries/upcoming_events_query.php';
                 <div class="row">
                     <div class="col-lg-8">
 
-                        <?php get_template_part('template-parts/single-artists/section', 'artistcontent'); ?>
+                        <?php 
+                        //  if(ig_saulkrasti_jazz_get_radio_value('use_default_layout') === 'true') : ;
+                        get_template_part('template-parts/single-artists/section', 'artistcontent'); 
+                    // endif;
+                    
+                    // get_template_part('template-parts/single-artists/section', 'flexible-content-artists'); 
+                    ?>
+
                     </div>
 
                     <div class="main-sidebar col-lg-4">

@@ -74,16 +74,16 @@
 
 
             <div class="single-artist__links-container">
-            <?php
+                <?php
 
-            if (have_rows('post_artists_link_to_ofiicial_website')) :
+                if (have_rows('post_artists_link_to_ofiicial_website')) :
 
-                while (have_rows('post_artists_link_to_ofiicial_website')) : the_row();
+                    while (have_rows('post_artists_link_to_ofiicial_website')) : the_row();
 
-                    $url = get_sub_field('url');
-                    $website_homepage = explode("/", $url, 3);
+                        $url = get_sub_field('url');
+                        $website_homepage = explode("/", $url, 3);
 
-            ?>
+                ?>
 
 
                         <div class="single-artist__link">
@@ -95,15 +95,15 @@
                         </div>
 
 
-            <?php
-                endwhile;
+                <?php
+                    endwhile;
 
 
-            endif;
+                endif;
 
-            ?>
+                ?>
 
-</div>
+            </div>
 
 
 
@@ -112,12 +112,13 @@
 
         </div>
 
-
         <?php if (get_field('post_artists_video')) : ?>
+         
             <div class="videoWrapper">
                 <?php echo get_field('post_artists_video') ?>
             </div>
-
         <?php endif; ?>
+
+
     </div>
 </div>

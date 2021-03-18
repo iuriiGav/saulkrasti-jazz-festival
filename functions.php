@@ -80,5 +80,9 @@ function my_acf_google_map_api( $api ){
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
-
+function wpza_replace_repeater_field( $where ) {
+    $where = str_replace( "meta_key = 'repeaterkey_$", "meta_key LIKE 'repeaterkey_%", $where );
+    return $where;
+}
+add_filter( 'posts_where', 'wpza_replace_repeater_field' );
 ?>

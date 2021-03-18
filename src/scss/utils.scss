@@ -102,10 +102,32 @@
   width: 40% !important;
 }
 
+
+.ig_w-100 {
+  width: 100% !important;
+}
+
 .bgc-dark {
   background-color: var(--color-dark);
 }
 
 .no-overflow {
   overflow: hidden;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+.flexible-content-floats {
+ &--left
+  {
+padding: 0 1em .5em 0;
+  }
+  &--right {
+    padding: 0 0 .5em .5em;
+  }
 }
