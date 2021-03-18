@@ -42,23 +42,21 @@ endif;
 
         <?php
 
-        $args = array(
+$args = array(
 
-            'post_type' => 'artists',
-            'posts_per_page' => 30,
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'wall_of_fame',
-                    'field' => 'Yes',
-                    'terms' => 23
-                )
-            ),
+    'post_type' => 'artists',
+    'posts_per_page' => 30,
+    'meta_query'	=> array(
+        'key'		=> 'years_in_which_this_artist_participated_$_year_of_participation',
+        'compare'	=> '=',
+        'value'		=> '2019',
+    )
 
 
 
-        );
+);
 
-        $current_festival_artists = new WP_Query($args); ?>
+$current_festival_artists = new WP_Query($args); ?>
 
 
 <div class="col-lg-9 history__artists-container">
