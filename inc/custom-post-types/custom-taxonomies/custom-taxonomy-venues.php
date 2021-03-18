@@ -57,7 +57,7 @@ function ig_hierarchical_taxonomy_for_venues() {
  * @return  array
  */
 function wpse_139269_term_radio_checklist( $args ) {
-    if ( ! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'is_active' /* <== Change to your required taxonomy */ ) {
+    if ( ! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'is_active' || ! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'wall_of_fame' /* <== Change to your required taxonomy */ ) {
         if ( empty( $args['walker'] ) || is_a( $args['walker'], 'Walker' ) ) { // Don't override 3rd party walkers.
             if ( ! class_exists( 'WPSE_139269_Walker_Category_Radio_Checklist' ) ) {
                 /**
@@ -103,6 +103,9 @@ function adminCSS(){
     ?><style type='text/css'>
     /* make sure tabs and the popular div itself are not shown */
     #is_active-tabs {
+        display: none !important;
+    }
+    #wall_of_fame-tabs {
         display: none !important;
     }
    

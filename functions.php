@@ -56,6 +56,7 @@ require  get_template_directory() . '/inc/custom-post-types/custom-post-events.p
 require  get_template_directory() . '/inc/custom-post-types/custom-post-venues.php';
 require get_template_directory() . '/inc/acf_functions/add_acf_options_page.php';
 require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/custom-taxonomy-venues.php';
+require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/custom-taxonomy-artists.php';
 require get_template_directory() . '/inc/api-options.php';
 
 
@@ -80,9 +81,13 @@ function my_acf_google_map_api( $api ){
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
+
+
+
 function wpza_replace_repeater_field( $where ) {
-    $where = str_replace( "meta_key = 'repeaterkey_$", "meta_key LIKE 'repeaterkey_%", $where );
+    $where = str_replace( "meta_key = 'years_in_which_this_artist_participated_$", "meta_key LIKE 'years_in_which_this_artist_participated_%", $where );
     return $where;
 }
 add_filter( 'posts_where', 'wpza_replace_repeater_field' );
+
 ?>
