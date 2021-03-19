@@ -90,6 +90,13 @@ a[href^="mailto"] {
   text-align: center;
 }
 
+.sub-section-header {
+  color: var(--color-white);
+  text-transform: uppercase;
+  padding: .5em;
+  text-align: center;
+}
+
 .medium-title {
   font-family: var(--font-primary);
   font-weight: 400;

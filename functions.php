@@ -1,5 +1,6 @@
 <?php
 require_once 'inc/helper-functions/html-helpers.php';
+require_once 'inc/scripts.php';
 function ig_saulkrasti_jazz_scripts()
 {
 
