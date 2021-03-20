@@ -152,7 +152,9 @@
   overflow: hidden;
   line-height: 2em;
   padding: 3em;
-
+  &__lg {
+    width: 100%;
+  }
   & p:not(:last-child) {
     margin-bottom: 2em !important;
   }
@@ -165,7 +167,9 @@
       transform: scale(1.02);
     }
   }
-
+&__in-cooperation {
+  margin: 0 auto;
+}
   &__text-lg {
     line-height: 2.5rem;
     font-size: 1.25rem;

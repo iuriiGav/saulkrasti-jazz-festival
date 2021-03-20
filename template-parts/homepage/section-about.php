@@ -6,6 +6,7 @@
                 <?php echo wp_kses_post(wpautop(get_field('homepage_about_festival_short_text'))) ?>
             </div>
         </div>
+        
         <div class="btn-wrapper-80__left md-none">
     
             <button class="btnc btnc-brand-square"><a href="<?php echo ig_saulkrasti_jazz_get_page_url('page-about')?>"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?></a> </button>

@@ -50,14 +50,13 @@ jQuery(function ($) {
 
       if ($(window).width() <= BP_MEDIUM) {
         const currentBoxHeight = $(".content-card__visible").outerHeight();
-        $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
+        // $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
       }
       $(window).on("resize", function () {
         if ($(window).width() <= BP_MEDIUM) {
-          console.log($(window).width());
           const currentBoxHeight = $(".content-card__visible").outerHeight();
 
-          $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
+          // $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
         } else if ($(window).width() > BP_MEDIUM) {
           $(`.main-footer`).css("margin-top", `0`);
         }
@@ -81,7 +80,7 @@ jQuery(function ($) {
 
       if ($(window).width() <= BP_MEDIUM) {
         const currentBoxHeight = $(".content-card__visible").outerHeight();
-        $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
+        // $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
       }
       $(`#${targetClass}`).addClass("side-links__item--active");
 
@@ -270,7 +269,7 @@ jQuery(function ($) {
       data: { action: "filter", venueID: venueID },
       type: "POST",
       success: function (data) {
-        $(".ajax-js-change-events-target").html(data);
+        animateAjax(".ajax-js-change-events-target", "history-wrapper__on-screen", "history-wrapper__off-screen", data);
       },
       error: function (error) {
         console.warn(error);
@@ -280,6 +279,7 @@ jQuery(function ($) {
 
   $(".show-all-concerts-js-ajax").on("click", function (e) {
     e.preventDefault();
+    $(".js-hide-div-on-ajax").hide();
     if ($(".sort-by-options__link").hasClass("sort-by-options__link--active")) {
       $(".sort-by-options__link").removeClass("sort-by-options__link--active");
     }
@@ -301,7 +301,8 @@ jQuery(function ($) {
       data: { action: "filter", venueID: null },
       type: "POST",
       success: function (data) {
-        $(".ajax-js-change-events-target").html(data);
+        animateAjax(".ajax-js-change-events-target", "history-wrapper__on-screen", "history-wrapper__off-screen", data);
+
       },
       error: function (error) {
         console.warn(error);
@@ -311,48 +312,84 @@ jQuery(function ($) {
 
 
 
-$('.sort-by-date-js-ajax').on('click', function (e) {
-  e.preventDefault();
-  const datechoice = $(this).data('concert-date');
-  console.log(datechoice);
-  
-      $.ajax({
-        url: wpAjax.ajaxUrl,
-        data: { action: "filter", venueID: 'non-venue-choice', datechoice: datechoice, dateFromAjax: true },
-        type: "POST",
-        success: function (data) {
-          $(".ajax-js-change-events-target").html(data);
-        },
-        error: function (error) {
-          console.warn(error);
-        },
-      });
-})
-
-///////////////////////////////////HISTORY AJAX = GET SPECIFIED YEAR STATS, ARTISTS AND GALLERY
 
 
-$('.festival-year-toggler-js-ajax').on('click', function (e) {
-  e.preventDefault();
-  const festivalQueryYear = $(this).data('festival-year');
-  $('.extra-year-info-js').text(festivalQueryYear)
-  if($('.festival-year-toggler-js-ajax').hasClass('sort-by-toggler__active')) {
-    $('.festival-year-toggler-js-ajax').removeClass('sort-by-toggler__active');
+  const animateAjax = (targetDiv, animationClassOn, animationClassOff, data) => {
+const targetHeightBeforeAnimation = $(targetDiv).outerHeight();
+$(targetDiv).css('height', targetHeightBeforeAnimation);
+    if($(targetDiv).hasClass(animationClassOn)) {
+      $(targetDiv).removeClass(animationClassOn);
+      console.log('here')
+    }
+    $(targetDiv).addClass(animationClassOff);
+    setTimeout(() => {
+      $(targetDiv).html(data);
+      
+      $(targetDiv).removeClass(animationClassOff);
+      $(targetDiv).addClass(animationClassOn);
+      $(targetDiv).css('height', 'auto');
+
+    }, 500);
   }
- $(this).addClass('sort-by-toggler__active')
-  $.ajax({
-    url: wpAjax.ajaxUrl,
-    data: { action: "getHistory", festivalQueryYear },
-    type: "POST",
-    success: function (data) {
-      $(".history-wrapper").html(data);
-      console.log(data)
-    },
-    error: function (error) {
-      console.warn(error);
-    },
+
+
+
+
+
+  $(".sort-by-date-js-ajax").on("click", function (e) {
+    e.preventDefault();
+    $(".js-hide-div-on-ajax").hide();
+    const datechoice = $(this).data("concert-date");
+    console.log(datechoice);
+
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: {
+        action: "filter",
+        venueID: "non-venue-choice",
+        datechoice: datechoice,
+        dateFromAjax: true,
+      },
+      type: "POST",
+      success: function (data) {
+        animateAjax(".ajax-js-change-events-target", "history-wrapper__on-screen", "history-wrapper__off-screen", data)
+    
+      },
+      error: function (error) {
+        console.warn(error);
+      },
+    });
   });
-})
 
+  ///////////////////////////////////HISTORY AJAX = GET SPECIFIED YEAR STATS, ARTISTS AND GALLERY
 
+  $(".festival-year-toggler-js-ajax").on("click", function (e) {
+    e.preventDefault();
+    const festivalQueryYear = $(this).data("festival-year");
+    $(".extra-year-info-js").text(festivalQueryYear);
+    if (
+      $(".festival-year-toggler-js-ajax").hasClass("sort-by-toggler__active")
+    ) {
+      $(".festival-year-toggler-js-ajax").removeClass(
+        "sort-by-toggler__active"
+      );
+    }
+    $(this).addClass("sort-by-toggler__active");
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: { action: "getHistory", festivalQueryYear },
+      type: "POST",
+      success: function (data) {
+        if ($(".history-wrapper").html() !== data) {
+
+          animateAjax(".history-wrapper", "history-wrapper__on-screen", "history-wrapper__off-screen", data);
+
+      
+        }
+      },
+      error: function (error) {
+        console.warn(error);
+      },
+    });
+  });
 });

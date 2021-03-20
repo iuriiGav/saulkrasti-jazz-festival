@@ -1,10 +1,52 @@
 .history-wrapper {
   width: 90%;
+  transition: all .2s;
   margin: 0 auto;
       @media only screen and (max-width: $bp-lg) {
           width: 95%
       }
+
+      &__off-screen {
+        position: absolute;
+        opacity: 0;
+        animation: slideOutHistory .5s ease forwards;
+        
+      }
+      &__on-screen {
+        position: relative;
+      opacity: 1;
+      // transform: translateX(0);
+      animation: slideInHistory .5s ease forwards;
+    }
 }
+
+
+
+
+@keyframes slideInHistory {
+  0% {
+    transform: translateX(-100%);
+  }
+  70% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOutHistory {
+  0% {
+    transform: translateX(0);
+  }
+  70% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-100);
+  }
+}
+
+
 
 .history {
 
