@@ -2,7 +2,7 @@
 
 include get_template_directory() . '/inc/queries/upcoming_events_query.php';
 include get_template_directory() . '/inc/queries/current_venues_query.php';
-$num_of_concerts_to_display = -1 ;
+$num_of_concerts_to_display = 6 ;
 $all_upcoming_events = ig_saulkrasti_jazz_upcoming_events_query($num_of_concerts_to_display);
 $all_upcoming_events_count = $all_upcoming_events->found_posts;
 $more_concerts_to_show = $all_upcoming_events_count - $num_of_concerts_to_display;
@@ -10,7 +10,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 ?>
 
 
-<?php $festival_dates_array = ig_saulkrasti_jazz_get_dates_of_festival(ig_saulkrasti_jazz_festival_start_date(), ig_saulkrasti_jazz_festival_end_date(), 'd M'); ?>
+<?php $festival_dates_array = ig_saulkrasti_jazz_get_dates_of_festival(ig_saulkrasti_jazz_festival_start_date(), ig_saulkrasti_jazz_festival_end_date(), 'd M y'); ?>
 
 
 <div class="concert-cards-wrapper">
@@ -18,46 +18,59 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
     <div class="row">
         <div class="col-12">
             <h2 class="section-header"><?php esc_html_e(get_field('homepage_header_upcoming_events'), 'saulkrasti-jazz-festival') ?></h2>
+            
             <div class="taxonomy-triggers-container">
-                <a id="ig-sort-by-venue" href="" class="sort-by-toggler sort-by-toggler__active">
+                <a id="ig-sort-by-venue" href="" class="sort-by-toggler ">
                 <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
                 </a>
 
                 <a id="ig-sort-by-date" href="" class="sort-by-toggler">
                 <?php echo ig_gav_get_global_text('btn_text_sort_by_date') ?>
                 </a>
+                <a id="ig-sort-show-all" href="" class="sort-by-toggler ig_gav-invisible show-all-concerts-js-ajax">
+                <?php echo ig_gav_get_global_text('btn_text_sort_show_all') ?>
+                </a>
 
             </div><!-- .taxonomy-triggers-container -->
 
-            <div class="sort-by-venue">
+            <div class="sort-by-venue sort-by-menu--off-screen">
 
                 <div class="sort-by-options sort-by-options__venue">
                     <?php
-                    while ($venues->have_posts()) : $venues->the_post(); ?>
+                    while ($venues->have_posts()) : $venues->the_post(); 
+                    
+                    $venue_name;
+                    if(get_field('post_venues_venue_title')) : 
+                        $venue_name = esc_html__(get_field('post_venues_venue_title'), 'saulkrasti-jazz-festival');
 
+                        else : 
+                            $venue_name =  esc_html__(get_field('post_venues_venue_name'), 'saulkrasti-jazz-festival');
 
-                        <h5 class="sort-by-options"> <a href="" class="sort-by-options__link sort-by-options__link--active"><?php echo the_title(); ?></a></h5>
+                        endif;
+                    ?>
+
+          
+                        <h5 class="sort-by-options"> <a href="" class="sort-by-options__link sort-by-venue-js-ajax" data-venue-id="<?php echo get_the_ID(); ?>"><?php echo  $venue_name ?></a></h5>
                     <?php
 
                     endwhile;
                     wp_reset_postdata(); ?>
                 </div>
             </div>
-            <div class="sort-by-date">
+            <div class="sort-by-date sort-by-menu--off-screen">
 
 
                 <div class="sort-by-options sort-by-options__date">
                     <?php foreach ($festival_dates_array as $date) : ?>
-                        <a href="" class="sort-by-options__link "><?php echo $date; ?></a>
+                        <a href="" class="sort-by-options__link sort-by-date-js-ajax" data-concert-date="<?php echo strtotime($date) ?>"><?php echo $date; ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>
 
-
             <hr class="light-hr">
 
 
-            <div class="row upcoming-events__wrapper">
+            <div class="row upcoming-events__wrapper ajax-js-change-events-target">
 
 
                 <?php while ($all_upcoming_events->have_posts()) : $all_upcoming_events->the_post();
@@ -68,7 +81,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
                 ?>
 
             
-                    <div class="col-lg-4 upcoming-events__wrapp-for-single">
+                    <div class="col-lg-4 upcoming-events__wrapp-for-single upcoming-events-js-ajax-container">
 
                         <div class="ig-card">
 
@@ -159,11 +172,18 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
             </div>
 
 
-        </div>
+        </div><!-- .col-12 -->
     </div>
-<div class="plus-more-concerts-to-show-wrap">
+<div class="plus-more-concerts-to-show-wrap js-hide-div-on-ajax">
+
+
+<?php if($more_concerts_to_show > 0) : 
+   $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concerts');
+    ?>
 <h4 class="more-concerts-text t-light">+ <?php echo $more_concerts_to_show, ' ', ig_gav_get_global_text('btn_text_more_concerts') ?> </h4>
-<button class="btnc btnc-smoke btnc-smoke--wide ml-3 btnc-l"><?php echo ig_gav_get_global_text('btn_text_see_all') ?></button>
+<button class="btnc btnc-smoke btnc-smoke--wide ml-3 btnc-l"><a href="<?php echo $page_concerts_url ?>"><?php echo ig_gav_get_global_text('btn_text_see_all') ?></a></button>
+<?php endif; ?>
 </div>
 
 </div><!-- .concert-cards-wrapper -->
+

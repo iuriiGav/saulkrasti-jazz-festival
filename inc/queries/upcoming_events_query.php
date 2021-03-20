@@ -2,9 +2,9 @@
 function ig_saulkrasti_jazz_upcoming_events_query ($number) {
 
     $today = date('Ymd');
-    
+    $textdate = date('Ymd', 1626825600);
 
-    
+ 
     $args = array(
         
         'post_type' => 'events',
@@ -21,6 +21,7 @@ function ig_saulkrasti_jazz_upcoming_events_query ($number) {
             'orderby' => 'meta_value_num',
             'order' => 'ASC',
         );
+
         
         
         return new WP_Query($args); 
