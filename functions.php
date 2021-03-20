@@ -59,7 +59,8 @@ require get_template_directory() . '/inc/acf_functions/add_acf_options_page.php'
 require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/custom-taxonomy-venues.php';
 require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/custom-taxonomy-artists.php';
 require get_template_directory() . '/inc/api-options.php';
-require_once('inc/ig-agax-call.php');
+require_once('inc/ajax/ig-agax-call.php');
+require_once('inc/ajax/ig-ajax-history.php');
 
 
 //Filter removes page template option from the dropdown menue on Page

@@ -163,5 +163,10 @@ function ig_gav_get_image_depending_on_aspect_ratio_for_floats($photoID, $class1
 }
 
 
+function ig_gav_get_dates_festival_foundation_till_now() {
+    $festival_start_year = '1997';
+    $current_year = date("Y");
 
+    return array($festival_start_year, $current_year);
+}
 ?>

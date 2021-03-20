@@ -68,6 +68,11 @@
         flex-direction: column;
     }
     }
+    &--sticky-history {
+      padding-top: 2rem;
+      position: sticky;
+      top: 7rem;
+    }
   }
   &__header {
    padding-top: 2em;
@@ -112,6 +117,12 @@
     &--larger {
       color: var(--color-brand);
       font-family: var(--font-ternary);
+      &--but-smaller {
+        font-size: 1.4rem;
+      }
+    }
+    &--smaller {
+      font-size: 1.3rem;
     }
   }
 }

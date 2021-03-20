@@ -329,7 +329,30 @@ $('.sort-by-date-js-ajax').on('click', function (e) {
       });
 })
 
+///////////////////////////////////HISTORY AJAX = GET SPECIFIED YEAR STATS, ARTISTS AND GALLERY
 
+
+$('.festival-year-toggler-js-ajax').on('click', function (e) {
+  e.preventDefault();
+  const festivalQueryYear = $(this).data('festival-year');
+  $('.extra-year-info-js').text(festivalQueryYear)
+  if($('.festival-year-toggler-js-ajax').hasClass('sort-by-toggler__active')) {
+    $('.festival-year-toggler-js-ajax').removeClass('sort-by-toggler__active');
+  }
+ $(this).addClass('sort-by-toggler__active')
+  $.ajax({
+    url: wpAjax.ajaxUrl,
+    data: { action: "getHistory", festivalQueryYear },
+    type: "POST",
+    success: function (data) {
+      $(".history-wrapper").html(data);
+      console.log(data)
+    },
+    error: function (error) {
+      console.warn(error);
+    },
+  });
+})
 
 
 });
