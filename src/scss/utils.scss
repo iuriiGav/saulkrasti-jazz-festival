@@ -1,5 +1,4 @@
 .full-screen-cover {
-  min-height: 100vh;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
@@ -139,4 +138,24 @@ padding: 0 1em .5em 0;
 
 .ig_flex-row-reverse {
 flex-direction: row-reverse;
+}
+
+.ig_no-shadow {
+  box-shadow: none;
+}
+
+.ig_pt-1em {
+  padding-top: 1em;
+}
+.ig_w-80 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.ig_min-h-100vh {
+min-height: 100vh;
+}
+
+.ig_pl-0 {
+  padding-left: 0;
 }

@@ -230,7 +230,7 @@
   display: flex;
   flex-direction: column;
    margin-bottom: 2rem;
-   box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
+  //  box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
 
 
 
@@ -271,6 +271,11 @@
       flex-direction: column;
     }
 
+  }
+
+  &__extra-note-top {
+    padding: 1em;
+    background-color: var(--color-brand);
   }
 
  }

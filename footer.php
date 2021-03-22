@@ -5,7 +5,7 @@
     <section class="footer-sponsors">
 
 
-        <h2 class="section-header"><?php esc_html_e(get_field('homepage_header_our_partners_header', get_option('page_on_front')), 'saulkrasti-jazz-festival') ?></h2>
+        <!-- <h2 class="section-header"><?php esc_html_e(get_field('homepage_header_our_partners_header', get_option('page_on_front')), 'saulkrasti-jazz-festival') ?></h2> -->
 
         <div class="sponsors-container">
 

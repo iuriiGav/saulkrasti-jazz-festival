@@ -50,13 +50,13 @@ jQuery(function ($) {
 
       if ($(window).width() <= BP_MEDIUM) {
         const currentBoxHeight = $(".content-card__visible").outerHeight();
-        // $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
+        $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
       }
       $(window).on("resize", function () {
         if ($(window).width() <= BP_MEDIUM) {
           const currentBoxHeight = $(".content-card__visible").outerHeight();
 
-          // $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
+          $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
         } else if ($(window).width() > BP_MEDIUM) {
           $(`.main-footer`).css("margin-top", `0`);
         }

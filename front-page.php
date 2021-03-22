@@ -15,7 +15,7 @@ $show_current_events_section = get_field_object('options_show_upcoming_events_se
         </section>
 
 <?php if($show_current_events_section === 'true') : ?>
-        <section class="homepage-upcoming-concerts full-screen-cover" style="background: linear-gradient(180deg, rgba(2,0,36,.6) 0%, rgba(4,7,16,.6) 63%, rgba(27,40,60,.9) 100%),  url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_upcoming_concerts_cover', 'options') ?>)">
+        <section class="homepage-upcoming-concerts full-screen-cover" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?>  url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_upcoming_concerts_cover', 'options') ?>)">
         <?php get_template_part('template-parts/homepage/section', 'upcoming-events'); ?>
         </section><!-- .homepage-upcoming-concerts  -->
 <?php endif; ?>

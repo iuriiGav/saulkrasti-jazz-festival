@@ -17,11 +17,6 @@ get_header(); ?>
 
 
 </section>
-<section class="drummers-league-finalists full-screen-cover" style="background: linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_baltic_drummers_league_covert', 'options')
-                                                                                                    ?>)">
-    <?php get_template_part('template-parts/baltic-drummers-league/section', 'bdl-finalists'); ?>
 
-
-</section>
 
 <?php get_footer(); ?>

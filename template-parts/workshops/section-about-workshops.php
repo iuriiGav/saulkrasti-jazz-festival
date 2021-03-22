@@ -8,8 +8,11 @@
 
 <div class="about-workshops__images">
 
+
+<?php the_field('about_workshops_gallery_1_shortcode') ?>
+
     
-    <?php if (have_rows('about_workshops_small_gallery')) : while (have_rows('about_workshops_small_gallery')) : the_row();
+    <!-- <?php if (have_rows('about_workshops_small_gallery')) : while (have_rows('about_workshops_small_gallery')) : the_row();
                         $image = get_sub_field('image');
                         $i++;
                         ?>
@@ -17,7 +20,7 @@
 
 <img class="about-workshops__image-<?php echo $i;?>" src="<?php ig_gav_get_medium_image($image) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
 <?php endwhile;
-                endif; ?>
+                endif; ?> -->
 
 
 </div>

@@ -1,0 +1,15 @@
+.page-about {
+    &__wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+    &__gallery-wrapper {
+        display: flex;
+        align-items: center !important;
+    }
+    &__venues-container {
+        width: 80%;
+        margin: 0 auto;
+
+    }
+}
