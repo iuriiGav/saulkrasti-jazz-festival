@@ -17,7 +17,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
         <div class="row">
             <div class="col-lg-8">
-                <div class="ig-card ig-card__80 ig-card__inner-padding">
+                <div class="ig-card ig-card__100 ig-card__inner-padding">
                     <div class="workshop__camp-text ig-card__line-high">
                         <?php echo wp_kses_post(wpautop(get_field('page_about_about_festival_text'))) ?>
 
@@ -52,7 +52,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
             ?>
 
                     <div class="col-md-4">
-                        <div class="card-artist ig_no-shadow card-artist--wide">
+                        <div class="card-artist ig_no-shadow card-artist--wide ig_mb-2em">
 
 
                             <div class="card-artist__extra-note-top">

@@ -7,6 +7,7 @@ get_header();
 $festival_from_foundation_till_now_years = ig_gav_get_dates_festival_foundation_till_now();
 ?>
 
+<div class="target-div-for-modal-and-spinner-js"></div>
 
 <!-- <div class="history__available-years-list--separator">|</div> -->
 <section class="current-year-artists__history full-screen-cover" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_page_artists_cover_image', 'options')

@@ -1,37 +1,15 @@
+
+  import {swiper} from './js-partials/swiper-config.js';
+
+
 jQuery(function ($) {
   const BP_MEDIUM = 767;
 
-  // init Swiper:
-  const swiper = new Swiper(".swiper-container", {
-    // Optional parameters
-    direction: "horizontal",
-    loop: true,
-    slidesPerView: "auto",
-
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
-  });
 
   // open all the submenu in footer
 
   if ($(".ig-footer-navbar").length > 0) {
-    // $('.ig-footer-navbar li.menu-item-has-children a').addClass('show');
-    // $('.ig-footer-navbar li.menu-item-has-children a').attr('diabled');
-    // $('.ig-footer-navbar li.menu-item-has-children ul').addClass('show');
-
+  
     $(".ig-footer-navbar li.menu-item-has-children ul").removeClass(
       "dropdown-menu"
     );
@@ -234,7 +212,7 @@ jQuery(function ($) {
     }
   };
 
-  $(".sort-by-options").on("click", function (e) {});
+
 
   $("#ig-sort-by-venue").on("click", function (e) {
     e.preventDefault();
@@ -261,15 +239,37 @@ jQuery(function ($) {
     if ($(".sort-by-options__link").hasClass("sort-by-options__link--active")) {
       $(".sort-by-options__link").removeClass("sort-by-options__link--active");
     }
+
+
+    $(".target-div-for-modal-and-spinner-js")
+      .hide()
+      .append(
+        `<div class="ig_loading-spinner   ">
+</div>`
+      ).fadeIn(200);
     $(this).addClass("sort-by-options__link--active");
     const venueID = $(this).data("venue-id");
+    const currentContainerHeight = preAjaxSetup('.ajax-js-change-events-target');
+    $('.page-upcoming-concerts').css('min-height', currentContainerHeight);
 
     $.ajax({
       url: wpAjax.ajaxUrl,
       data: { action: "filter", venueID: venueID },
       type: "POST",
       success: function (data) {
-        animateAjax(".ajax-js-change-events-target", "history-wrapper__on-screen", "history-wrapper__off-screen", data);
+        $(".ig_loading-spinner").fadeOut(function () {
+          $(".ig_loading-spinner").remove();
+        });
+
+        animateAjax(
+          ".ajax-js-change-events-target",
+          "history-wrapper__on-screen",
+          "history-wrapper__off-screen",
+          data,
+          '.page-upcoming-concerts'
+          
+        );
+
       },
       error: function (error) {
         console.warn(error);
@@ -296,13 +296,30 @@ jQuery(function ($) {
     }
     $(".show-all-concerts-js-ajax").addClass("sort-by-toggler__active");
 
+    $(".target-div-for-modal-and-spinner-js")
+    .hide()
+    .append(
+      `<div class="ig_loading-spinner   ">
+</div>`
+    ).fadeIn(200);
+
+    const currentContainerHeight = preAjaxSetup('.ajax-js-change-events-target');
+    $('.page-upcoming-concerts').css('min-height', currentContainerHeight);
     $.ajax({
       url: wpAjax.ajaxUrl,
       data: { action: "filter", venueID: null },
       type: "POST",
       success: function (data) {
-        animateAjax(".ajax-js-change-events-target", "history-wrapper__on-screen", "history-wrapper__off-screen", data);
-
+        animateAjax(
+          ".ajax-js-change-events-target",
+          "history-wrapper__on-screen",
+          "history-wrapper__off-screen",
+          data,
+          '.page-upcoming-concerts'
+        );
+        $(".ig_loading-spinner").fadeOut(function () {
+          $(".ig_loading-spinner").remove();
+        })
       },
       error: function (error) {
         console.warn(error);
@@ -310,37 +327,43 @@ jQuery(function ($) {
     });
   });
 
-
-
-
-
-  const animateAjax = (targetDiv, animationClassOn, animationClassOff, data) => {
-const targetHeightBeforeAnimation = $(targetDiv).outerHeight();
-$(targetDiv).css('height', targetHeightBeforeAnimation);
-    if($(targetDiv).hasClass(animationClassOn)) {
+  const animateAjax = (
+    targetDiv,
+    animationClassOn,
+    animationClassOff,
+    data,
+    removeMinHeightTarget
+  ) => {
+    if ($(targetDiv).hasClass(animationClassOn)) {
       $(targetDiv).removeClass(animationClassOn);
-      console.log('here')
+      
     }
     $(targetDiv).addClass(animationClassOff);
     setTimeout(() => {
       $(targetDiv).html(data);
-      
+
       $(targetDiv).removeClass(animationClassOff);
       $(targetDiv).addClass(animationClassOn);
-      $(targetDiv).css('height', 'auto');
+    $(removeMinHeightTarget).css('min-height', 'auto');
 
     }, 500);
-  }
-
-
-
-
+  };
 
   $(".sort-by-date-js-ajax").on("click", function (e) {
     e.preventDefault();
     $(".js-hide-div-on-ajax").hide();
     const datechoice = $(this).data("concert-date");
-    console.log(datechoice);
+  
+
+    $(".target-div-for-modal-and-spinner-js")
+    .hide()
+    .append(
+      `<div class="ig_loading-spinner   ">
+</div>`
+    ).fadeIn(200);
+
+    const currentContainerHeight = preAjaxSetup('.ajax-js-change-events-target');
+    $('.page-upcoming-concerts').css('min-height', currentContainerHeight);
 
     $.ajax({
       url: wpAjax.ajaxUrl,
@@ -352,8 +375,16 @@ $(targetDiv).css('height', targetHeightBeforeAnimation);
       },
       type: "POST",
       success: function (data) {
-        animateAjax(".ajax-js-change-events-target", "history-wrapper__on-screen", "history-wrapper__off-screen", data)
-    
+        animateAjax(
+          ".ajax-js-change-events-target",
+          "history-wrapper__on-screen",
+          "history-wrapper__off-screen",
+          data,
+          '.page-upcoming-concerts'
+        );
+        $(".ig_loading-spinner").fadeOut(function () {
+          $(".ig_loading-spinner").remove();
+        })
       },
       error: function (error) {
         console.warn(error);
@@ -375,16 +406,36 @@ $(targetDiv).css('height', targetHeightBeforeAnimation);
       );
     }
     $(this).addClass("sort-by-toggler__active");
+
+
+
+    $(".target-div-for-modal-and-spinner-js")
+    .hide()
+    .append(
+      `<div class="ig_loading-spinner   ">
+</div>`
+    ).fadeIn(200);
+
+    const currentContainerHeight = preAjaxSetup('.history-wrapper');
+    $('.current-year-artists__history').css('min-height', currentContainerHeight);
+    
+    
     $.ajax({
       url: wpAjax.ajaxUrl,
       data: { action: "getHistory", festivalQueryYear },
       type: "POST",
       success: function (data) {
         if ($(".history-wrapper").html() !== data) {
-
-          animateAjax(".history-wrapper", "history-wrapper__on-screen", "history-wrapper__off-screen", data);
-
-      
+          animateAjax(
+            ".history-wrapper",
+            "history-wrapper__on-screen",
+            "history-wrapper__off-screen",
+            data,
+            '.current-year-artists__history'
+          );
+          $(".ig_loading-spinner").fadeOut(function () {
+            $(".ig_loading-spinner").remove();
+          })
         }
       },
       error: function (error) {
@@ -392,4 +443,18 @@ $(targetDiv).css('height', targetHeightBeforeAnimation);
       },
     });
   });
+
+
+// get the height of the events container and change it only after ajax has been finished 
+
+
+const preAjaxSetup = (targetDiv) => {
+  if($(targetDiv).length > 0) {
+    return $(targetDiv).height();
+    
+  }
+}
+
+
+
 });

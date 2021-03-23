@@ -19,7 +19,6 @@
 .contacts-team-container {
   width: 80%;
   margin: 0 auto;
-  padding-top: 5rem;
   padding-bottom: 5rem;
 }
 
@@ -29,6 +28,7 @@
     width: 80%; 
     margin: 0 auto;
     height: 60vh;
+    padding-bottom: 2em;
   @media only screen and (max-width: $bp-md) {
     // height: 160vh;
   }

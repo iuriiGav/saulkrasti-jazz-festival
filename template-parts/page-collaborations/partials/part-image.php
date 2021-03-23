@@ -1,8 +1,17 @@
 
-<?php if(count($args['image_arr']) === 1) : 
+<?php 
+
+ 
+if(count($args['image_arr']) === 1) : 
     ig_gav_get_image_depending_on_aspect_ratio($args['image_arr'][0]);
     ?>
+<?php elseif(count($args['image_arr']) === 0 && $args['video_link_when_no_pictures']): ?>
 
+<div class="videoWrapper">
+
+<?php echo $args['video_link_when_no_pictures']; ?>
+
+</div>
 
 
     <?php else : ?>

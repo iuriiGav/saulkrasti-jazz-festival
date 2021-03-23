@@ -1,4 +1,4 @@
-<div class="section-with-side-links section-with-side-links__reversed">
+<div  class="section-with-side-links section-with-side-links__reversed">
 
     <div class="side-links__wrapper">
 
@@ -30,7 +30,7 @@
 
     <h2 class="content-box__header section-header d-md-only"><?php esc_html_e(get_field('application_section_header'), 'saulkrasti-jazz-festival') ?></h2>
 
-    <div id="application-section-target" class="content-box">
+    <div  class="content-box">
         <h2 class="content-box__header section-header md-none"><?php esc_html_e(get_field('application_section_header'), 'saulkrasti-jazz-festival') ?></h2>
 
         <?php

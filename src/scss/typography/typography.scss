@@ -47,7 +47,28 @@ h6 {
 
 .ig-h7 {
   font-size: 0.75rem;
+
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 1.1rem;
+  }
+  @media only screen and (max-width: $bp-md) {
+    font-size: 1.25rem;
+  }
 }
+
+p {
+  @media only screen and (max-width: $bp-md) {
+    font-size: 1.25rem;
+  }
+}
+
+
+div ol li {
+  @media only screen and (max-width: $bp-md) {
+    font-size: 1.4rem;
+  }
+}
+
 
 .ig-main-navbar li.menu-item a.nav-link,
 a.dropdown-item {
@@ -64,6 +85,13 @@ a.dropdown-item {
 a[href^="mailto"] {
   color: var(--color-brand);
 }
+
+div ol li a {
+  color: var(--color-brand);
+
+}
+
+
 .current-festival-dates {
   color: var(--color-rare);
   font-family: var(--font-secondary);

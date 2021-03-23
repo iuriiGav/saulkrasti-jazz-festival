@@ -26,6 +26,7 @@ get_header(); ?>
                 $text_content =  get_sub_field('text_content');
                 $website_links_to_format = array();
                 $formated_web_links = array();
+                $video_embed_link = get_sub_field('video_embed_link');
 
 
 
@@ -55,7 +56,9 @@ get_header(); ?>
                     'text_header' => $text_header,
                     'text_sub_header' => $text_sub_header,
                     'text_content' => $text_content,
-                    'website_links_arr' => $website_links_to_format
+                    'website_links_arr' => $website_links_to_format,
+                    
+                    
                 );
 
                 if (have_rows('images')) :
@@ -71,7 +74,7 @@ get_header(); ?>
                 endif;
 
 
-                $image_part_args = array('image_arr' => $images_array);
+                $image_part_args = array('image_arr' => $images_array, 'video_link_when_no_pictures' => $video_embed_link);
 
     ?>
 

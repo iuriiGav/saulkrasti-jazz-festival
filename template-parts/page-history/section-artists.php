@@ -18,6 +18,7 @@ endif;
 
 
 <div class="col-md-9 order-1 order-sm-1 order-md-2 order-lg-2 order-xl-2 history__artists-container">
+
             <div class="row history__artists-cols-wrap">
 
             <?php if(!$args['in_ajax'] === true) : ?>
