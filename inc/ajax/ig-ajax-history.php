@@ -9,7 +9,6 @@ function getHistory_ajax(){
 $page_Id = url_to_postid($page_template_url);
 
 
- 
 
     $args = array('field' => 'history_concrete_years_statistic', 'in_ajax' => true, 'festival_query_year' => $festivalQueryYear, 'page_ID' => $page_Id );
      
@@ -18,12 +17,27 @@ $page_Id = url_to_postid($page_template_url);
 
 
 
+
+
+
+
+
+  
+
+
+
     $query_args = array(
 
         'post_type' => 'artists',
-        'posts_per_page' => 1,
-        'meta_key'		=> 'test_year_field',
-        'meta_value'	=> $args['festival_query_year']
+        'posts_per_page' => -1,
+        'tax_query' => array(
+            array (
+                'taxonomy' => 'year_of_participation',
+                'field' => 'slug',
+                'terms' => $festivalQueryYear
+            )
+        ),
+       
 
 
 

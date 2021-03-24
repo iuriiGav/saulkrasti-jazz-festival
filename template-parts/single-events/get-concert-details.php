@@ -80,7 +80,8 @@
 
                                     ?>
                                     <?php if (!empty(get_field('post_events_link_to_ticket_sale'))) : ?>
-                                        <div class="btnc btnc-brand btnc-lg"><a href="<?php echo esc_url(get_field('post_events_link_to_ticket_sale')) ?>"><?php echo ig_gav_get_global_text('btn_text_get_ticket') ?></a></div>
+                                        <div class="btnc btnc-brand btnc-lg single-artist__get_event_ticket--single-btn"><a href="<?php echo esc_url(get_field('post_events_link_to_ticket_sale')) ?>"><?php echo ig_gav_get_global_text('btn_text_get_ticket') ?></a></div>
+                                        <div class="btnc btnc-dark btnc-lg single-artist__get_event_ticket--single-btn"><a href="<?php echo esc_url(get_field('options_link_to_week_pass_ticket_sail', 'options')) ?>"><?php echo ig_gav_get_global_text('btn_text_get_ticket_for_a_week') ?></a></div>
 
 
                                     <?php

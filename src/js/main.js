@@ -72,15 +72,15 @@ jQuery(function ($) {
     $(".instrument-1").removeClass("content-card__hidden--reverse ");
     $(`#instrument-1`).addClass("side-links__item--active");
     $(`.instrument-1`).addClass("content-card__visible--teachers");
-    if ($(window).width() <= BP_MEDIUM) {
-      const currentBoxHeight = $(
-        ".content-card__visible--teachers"
-      ).outerHeight();
-      $(`.workshop__teachers`).css(
-        "padding-bottom",
-        `${currentBoxHeight + 20}px`
-      );
-    }
+    // if ($(window).width() <= BP_MEDIUM) {
+    //   const currentBoxHeight = $(
+    //     ".content-card__visible--teachers"
+    //   ).outerHeight();
+    //   $(`.workshop__teachers`).css(
+    //     "padding-bottom",
+    //     `${currentBoxHeight + 20}px`
+    //   );
+    // }
 
     $(window).on("resize", function () {
       if ($(window).width() <= BP_MEDIUM) {
@@ -99,27 +99,43 @@ jQuery(function ($) {
 
     $(".side-link--target-instrument").on("click", function (e) {
       e.preventDefault();
-
+      const changeHeightOfEllementOnChangeOfCardTarget = $('.workshop__teachers')
       const activeClass = $(".content-card__visible--teachers").attr(
         "data-instrument"
       );
-      console.log(activeClass);
+
+
       const targetClass = $(this).attr("id");
+
+      const nextDiv = $(`*[data-instrument="${targetClass}"]`);
+      const nextDivHeight = nextDiv.height();
+      console.log(nextDivHeight)
+
       $(`.${targetClass}`).removeClass("content-card__hidden--reverse");
       $(`.${targetClass}`).addClass("content-card__visible--teachers");
       $(`#${targetClass}`).addClass("side-links__item--active");
       $(`.${activeClass}`).removeClass("content-card__visible--teachers");
       $(`.${activeClass}`).addClass("content-card__hidden--reverse");
       $(`#${activeClass}`).removeClass("side-links__item--active");
+      // if ($(window).width() <= BP_MEDIUM) {
+      //   const currentBoxHeight = $(
+      //     ".content-card__visible--teachers"
+      //   ).outerHeight();
+      //   $(`.workshop__teachers`).css(
+      //     "padding-bottom",
+      //     `${currentBoxHeight + 20}px`
+      //   );
+      // }
       if ($(window).width() <= BP_MEDIUM) {
-        const currentBoxHeight = $(
-          ".content-card__visible--teachers"
-        ).outerHeight();
-        $(`.workshop__teachers`).css(
-          "padding-bottom",
-          `${currentBoxHeight + 20}px`
-        );
+        changeHeightOfEllementOnChangeOfCardTarget.css('padding-bottom', nextDivHeight + 150);
+
+      } else {
+        changeHeightOfEllementOnChangeOfCardTarget.css('padding-bottom', nextDivHeight - $('.side-links__list').height() + 20);
+
+console.log('in else')
       }
+
+
     });
   }
 
@@ -455,6 +471,10 @@ const preAjaxSetup = (targetDiv) => {
   }
 }
 
+
+if($('p:has(iframe)')) {
+  // $(p).css({'display' : 'flex', 'justify-content' : 'center'})
+}
 
 
 });

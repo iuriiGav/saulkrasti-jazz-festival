@@ -169,4 +169,11 @@ function ig_gav_get_dates_festival_foundation_till_now() {
 
     return array($festival_start_year, $current_year);
 }
+
+function ig_gav_random_image_ID()
+{
+    $random_image_num = rand(1, 5);
+    $random_image_field = 'options_backup_image_' . $random_image_num;
+    return get_field($random_image_field, 'options');
+}
 ?>

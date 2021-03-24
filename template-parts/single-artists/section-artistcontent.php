@@ -114,9 +114,7 @@
 
         <?php if (get_field('post_artists_video')) : ?>
          
-            <div class="videoWrapper">
                 <?php echo get_field('post_artists_video') ?>
-            </div>
         <?php endif; ?>
 
 

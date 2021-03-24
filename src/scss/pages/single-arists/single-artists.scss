@@ -55,10 +55,15 @@
     justify-content: space-between;
     margin-bottom:2em;
   }
-  &__event-venue--address-lines {
-line-height: 1.4em;
-opacity: .7;
+  &__event-venue  {
+
+      text-align: right;
+  & --address-lines {
+    line-height: 1.4em;
+    opacity: .7;
+      }
   }
+ 
 
   &__artist-or-lineup {
     background-color: var(--color-dark);
@@ -71,6 +76,11 @@ opacity: .7;
      &:not(:last-child) {
       margin-bottom: 2em;
      }
+
+       @media only screen and (max-width: $bp-md) {
+         width: 100%;
+         flex-direction: column;
+       }
     
      
     }
@@ -83,6 +93,9 @@ opacity: .7;
       & h5 {
         color: var(--color-rare);
       }
+      @media only screen and (max-width: $bp-md) {
+       margin-left: 0;;
+      }
     }
     &--single-artist {
       color: var(--color-brand);
@@ -92,5 +105,28 @@ opacity: .7;
 
   &__get_event_ticket {
     margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (max-width: $bp-md) {
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: flex-start;
+    }
+    &--single-btn {
+      @media only screen and (max-width: $bp-md) {
+        margin-bottom: 1em;
+       }
+    }
   }
 }
+h2.single-artist__artist-or-lineup--single-artist {
+    @media only screen and (max-width: $bp-md) {
+      font-size: 2rem;
+    }
+}
+
+p:has(iframe) {
+  display: flex;
+  justify-content: center;
+} 

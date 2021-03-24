@@ -35,16 +35,16 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
             <?php endif; ?>
             <div class="taxonomy-triggers-container">
-            <?php if (is_front_page()) : ?>
+                <?php if (is_front_page()) : ?>
 
-                <a id="ig-sort-by-venue" href="" class="sort-by-toggler sort-by-toggler__active">
-                    <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
-                </a>
+                    <a id="ig-sort-by-venue" href="" class="sort-by-toggler sort-by-toggler__active">
+                        <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
+                    </a>
 
                 <?php else : ?>
                     <a id="ig-sort-by-venue" href="" class="sort-by-toggler">
-                    <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
-                </a>
+                        <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
+                    </a>
                 <?php endif; ?>
 
                 <a id="ig-sort-by-date" href="" class="sort-by-toggler">
@@ -101,10 +101,10 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
             <div class="row upcoming-events__wrapper ajax-js-change-events-target">
 
 
-                <?php 
-                
+                <?php
+
                 $querried_concerts = is_front_page() ? $main_stage_concerts : $all_upcoming_events;
-                
+
                 while ($querried_concerts->have_posts()) : $querried_concerts->the_post();
                     $day_of_the_week = date("w", get_field('post_events_concert_date'));
                     $concert_date = ig_saulkrasti_jazz_split_date_to_arr('post_events_concert_date'); // name of the month also awailable but needs to be adjusted
@@ -122,8 +122,13 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
                                 <?php if (get_field('post_events_concert_image')) : ?>
                                     <img src="<?php ig_saulkrasti_jazz_image_from_field_custom_size('post_events_concert_image', 'ig-square') ?>" alt="" class="img-fluid">
 
-                                <?php else : ?>
-                                    <img src="<?php ig_saulkrasti_jazz_image_from_field_custom_size('options_backup_events_image', 'ig-square', 'options') ?>" alt="" class="img-fluid">
+                                <?php else :
+                                    $random_image_ID = ig_gav_random_image_ID();
+                                ?>
+
+
+                                    <img src="<?php echo esc_url(wp_get_attachment_image_src($random_image_ID, 'ig-square')[0]) ?>" alt="<?php esc_html_e(get_post_meta($random_image_ID, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
+
 
                                 <?php endif; ?>
                             </div>

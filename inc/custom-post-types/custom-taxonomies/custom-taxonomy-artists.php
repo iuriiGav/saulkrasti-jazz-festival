@@ -61,3 +61,42 @@ function ig_hierarchical_taxonomy_for_artists() {
 // }, 0, 2 );
 
 
+ 
+add_action( 'init', 'ig_hierarchical_year_of_participation_taxonomy_for_artists', 0 );
+ 
+//create a custom taxonomy name it subjects for your posts
+ 
+function ig_hierarchical_year_of_participation_taxonomy_for_artists() {
+ 
+// Add new taxonomy, make it hierarchical like categories
+//first do the translations part for GUI
+ 
+  $labels = array(
+    'name' => _x( 'Year of Participation', 'taxonomy general name' ),
+    'singular_name' => _x( 'Year of Participation', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Year of Participation' ),
+    'all_items' => __( 'Year of Participation' ),
+    'parent_item' => __( 'Parent Year of Participation' ),
+    'parent_item_colon' => __( 'Parent Year of Participation:' ),
+    'edit_item' => __( 'Edit Year of Participation' ), 
+    'update_item' => __( 'Update Year of Participation' ),
+    'add_new_item' => __( 'Add New Year of Participation' ),
+    'new_item_name' => __( 'New Year of Participation Name' ),
+    'menu_name' => __( 'Year of Participation' ),
+  );    
+ 
+// Now register the taxonomy for Venues
+  register_taxonomy('year_of_participation',array('artists'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'year_of_participation' ),
+    // 'capabilities'      => array(
+    //     'assign_terms' => 'manage_options',
+    //     'edit_terms'   => 'god',
+    //     'manage_terms' => 'god',
+    // ),
+  )); }

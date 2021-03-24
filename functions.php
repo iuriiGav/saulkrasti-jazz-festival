@@ -87,10 +87,53 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 
+
+
+
+
+
+function custom_wpkses_post_tags( $tags, $context ) {
+
+	if ( 'post' === $context ) {
+		$tags['iframe'] = array(
+			'src'             => true,
+			'height'          => true,
+			'width'           => true,
+			'frameborder'     => true,
+			'allowfullscreen' => true,
+		);
+	}
+
+	return $tags;
+}
+
+add_filter( 'wp_kses_allowed_html', 'custom_wpkses_post_tags', 10, 2 );
+
+
+
+
+
+
+
+
+
+
 function wpza_replace_repeater_field( $where ) {
     $where = str_replace( "meta_key = 'years_in_which_this_artist_participated_$", "meta_key LIKE 'years_in_which_this_artist_participated_%", $where );
+	do_action( 'qm/debug', $where);
     return $where;
 }
 add_filter( 'posts_where', 'wpza_replace_repeater_field' );
 
-?>
+
+
+
+
+
+//add admin columns to custom post type
+
+// add_filter('manage_artists_posts_columns', 'my_extra_cake_columns');
+// function my_extra_cake_columns($columns) {
+//     $columns['slices'] = 'Slices';
+//     return $columns;
+// }

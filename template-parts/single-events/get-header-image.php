@@ -67,7 +67,7 @@ if (!empty($artists_photos_IDs) && count($artists_photos_IDs) !== 1) : ?>
 
     </div>
 
-<?php else : ?>
+<?php elseif(!empty(get_field('post_events_concert_image'))) : ?>
 <div class="single-artist__photo">
 
 <?php
@@ -77,6 +77,15 @@ ig_gav_get_image_depending_on_aspect_ratio($this_post_featured_image_ID) ?>
 
 </div>
 
+<?php else : ?>
+    <div class="single-artist__photo">
+
+<?php
+                $random_image_ID = ig_gav_random_image_ID();
+
+ig_gav_get_image_depending_on_aspect_ratio($random_image_ID) ?>
+
+</div>
 <?php endif; ?>
 
 

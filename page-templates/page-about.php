@@ -9,14 +9,14 @@ include get_template_directory() . '/inc/queries/current_venues_query.php';
 $venues = ig_saulkrasti_jazz_current_venues(-1);
 ?>
 
-<section class="hero full-screen-cover" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?> url(<?php ig_saulkrasti_jazz_image_from_field('options_about_festival_cover', 'options')
+<section class="full-screen-cover" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?> url(<?php ig_saulkrasti_jazz_image_from_field('options_about_festival_cover', 'options')
                                                                                                                     ?>)">
-    <h2 class="section-header "><?php esc_html_e(get_field('page_about_page_heading'), 'saulkrasti-jazz-festival') ?></h2>
+    <h2 class="section-header mt-5rem"><?php esc_html_e(get_field('page_about_page_heading'), 'saulkrasti-jazz-festival') ?></h2>
     <div class="page-about__wrapper">
 
 
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-12">
                 <div class="ig-card ig-card__100 ig-card__inner-padding">
                     <div class="workshop__camp-text ig-card__line-high">
                         <?php echo wp_kses_post(wpautop(get_field('page_about_about_festival_text'))) ?>
@@ -25,13 +25,6 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
                 </div>
             </div>
 
-            <div class="col-lg-4 d-flex align-items-center">
-
-                <!-- <div class="page-about__gallery-wrapper"> -->
-
-                <?php the_field('page_about_gallery') ?>
-                <!-- </div> -->
-            </div>
         </div>
 
     </div>
@@ -39,7 +32,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
 </section>
 
-<section class="page-about__venues mt-5rem" style="background-color: var(--color-dark)">
+<section class="page-about__venues" style="background-color: var(--color-dark)">
     <h4 class="section-header "><?php esc_html_e(get_field('page_about_venues_header'), 'saulkrasti-jazz-festival') ?></h4>
     <div class="page-about__venues-container">
         <div class="row">
@@ -102,7 +95,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
 <section class="page-about__gallery" style="background-color: var(--color-dark)">
     <div class="row ">
-        <div class="col-12 ig_w-80  pt-5rem">
+        <div class="col-12 ig_w-80">
             <div class="ig-card ig-card__80 ig-card__inner-padding">
                 <div class="workshop__camp-text ig-card__line-high">
                     <?php echo wp_kses_post(wpautop(get_field('page_about_about_festival_extra_text'))) ?>

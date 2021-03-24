@@ -201,7 +201,7 @@
     font-size: 1.25rem;
 
     & p:not(:last-child) {
-      margin-bottom: 2em !important;
+      margin-bottom: .5em !important;
     }
     & p a {
       transition: all 0.2s;
@@ -298,6 +298,7 @@
     &--flex {
       display: flex;
       flex-direction: column;
+    justify-content: space-between;
     }
 
   }

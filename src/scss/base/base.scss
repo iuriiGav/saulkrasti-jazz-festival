@@ -51,6 +51,8 @@ $bp-xxl: 1400px;
   }
   .videoWrapper {
     position: relative;
+    display: flex; // think if to leave it, maybe better to allow lazy load with pic instead of video
+    justify-content: center; // think if to leave it, maybe better to allow lazy load with pic instead of video
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
   }
