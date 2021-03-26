@@ -343,7 +343,18 @@ justify-content: space-between;
   &__venue {
 text-align: right;
   }
-
+  @media only screen and (max-width: $bp-lg) {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    
+  }
+  @media only screen and (max-width: $bp-sm) {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    
+  }
 
  }
 

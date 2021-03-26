@@ -114,4 +114,9 @@ font-size: 2.2rem;
     }
     .btnc-xs {
         font-size: 1rem;
+        @media only screen and (max-width: $bp-md) {
+            font-size: 1.4rem;
+                    
+                }
+                padding-bottom: .5em;
     }

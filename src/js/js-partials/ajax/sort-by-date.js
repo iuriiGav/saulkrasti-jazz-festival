@@ -20,7 +20,6 @@ export const sortByDateAjaxCall = () => {
           ".ajax-js-change-events-target"
         );
         $(".page-upcoming-concerts").css("min-height", currentContainerHeight);
-    
         $.ajax({
           url: wpAjax.ajaxUrl,
           data: {
