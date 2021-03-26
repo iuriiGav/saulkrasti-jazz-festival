@@ -1,5 +1,5 @@
 <div class="row">
-    <h2 class="section-header"><?php esc_html_e(get_field('participation_fee_header'), 'saulkrasti-jazz-festival') ?></h2>
+    <h2 class="section-header section-header--less-padding"><?php esc_html_e(get_field('participation_fee_header'), 'saulkrasti-jazz-festival') ?></h2>
     <div class="ig-card__line-high ig-card__just-content">
         <?php echo wp_kses_post(wpautop(get_field('participation_fee_text'))) ?>
     </div>

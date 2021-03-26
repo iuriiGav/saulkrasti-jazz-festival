@@ -3,7 +3,7 @@ $festival_from_foundation_till_now_years = ig_gav_get_dates_festival_foundation_
 $query_field = $args['field']
 
 ?>
-    <div class="col-md-2 order-2 order-sm-2 order-md-1 order-lg-1 order-xl-1">
+    <div class="col-12">
 
     <div class="side-links__wrapper side-links__wrapper--full">
         <ul class="side-links__list side-links__list--sticky-history side-links__list--full-height">

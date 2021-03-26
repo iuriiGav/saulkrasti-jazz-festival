@@ -9,19 +9,26 @@ $festival_from_foundation_till_now_years = ig_gav_get_dates_festival_foundation_
 
 <div class="target-div-for-modal-and-spinner-js"></div>
 
+<!-- Changing page history: section-artists.php and section-sidelinks.php; if
+want to return back to sidelinks, coppy and paste pages from draft folder
+
+copy paste teachers.scss from previous commit
+ig-ajax-history.php from prev commit
+-->
+
+
 <!-- <div class="history__available-years-list--separator">|</div> -->
 <section class="current-year-artists__history full-screen-cover" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_page_artists_cover_image', 'options')
                                                                                                                                                             ?>)">
-    <h2 class="section-header mt-5rem"><?php echo esc_html__(get_field('history_page_header'), 'saulkrasti-jazz-festival') . ' ' . '<span class="extra-year-info-js">' . $festival_from_foundation_till_now_years[0]  . '—'  . $festival_from_foundation_till_now_years[1] . '</span>'  ?></h2>
+    <h2 class="section-header section-header--less-pb mt-5rem ig_pb-0"><?php echo esc_html__(get_field('history_page_header'), 'saulkrasti-jazz-festival') ?></h2>
+    <h3 class="section-header section-header--less-padding ig_pt-0"><?php echo '<span class="extra-year-info-js">' . $festival_from_foundation_till_now_years[0]  . '—'  . $festival_from_foundation_till_now_years[1] . '</span>'  ?></h3>
 
     <div class="history__available-years-list-wrapper">
         <div class="history__available-years-list-and-toggle-group">
 
             <!-- sort-by-toggler__active -->
 
-            <a id="ig-sort-by-year" href="" class="sort-by-toggler history__sort-by-year-toggler">
-                <?php echo ig_gav_get_global_text('btn_sort_by_year') ?>
-            </a>
+         
             <ul class="history__available-years-list">
                 <?php
 
@@ -66,10 +73,7 @@ $festival_from_foundation_till_now_years = ig_gav_get_dates_festival_foundation_
 
 
 
-        <?php
-
-        $args = array('field' => 'history_all_time_stats','in_ajax' => false);
-        get_template_part('template-parts/page-history/section', 'sidelinks', $args); ?>
+      
 
 
 
@@ -95,7 +99,10 @@ $query_args = array(
 
         get_template_part('template-parts/page-history/section', 'artists', $query_args); ?>
 
+<?php
 
+$args = array('field' => 'history_all_time_stats','in_ajax' => false);
+get_template_part('template-parts/page-history/section', 'sidelinks', $args); ?>
 
 
     </div><!-- .history-wrapper -->

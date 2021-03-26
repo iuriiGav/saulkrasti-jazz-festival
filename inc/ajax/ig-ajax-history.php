@@ -10,9 +10,7 @@ $page_Id = url_to_postid($page_template_url);
 
 
 
-    $args = array('field' => 'history_concrete_years_statistic', 'in_ajax' => true, 'festival_query_year' => $festivalQueryYear, 'page_ID' => $page_Id );
-     
-    get_template_part('template-parts/page-history/section', 'sidelinks', $args);
+  
 
 
 
@@ -51,6 +49,11 @@ $args_artists = array(
 
 
     get_template_part('template-parts/page-history/section', 'artists', $args_artists);
+
+
+    $args = array('field' => 'history_concrete_years_statistic', 'in_ajax' => true, 'festival_query_year' => $festivalQueryYear, 'page_ID' => $page_Id );
+     
+    get_template_part('template-parts/page-history/section', 'sidelinks', $args);
 
 die();
 }

@@ -1,7 +1,7 @@
 <div class="row homepage-workshops__wrapper">
     <div class="col-md-5 homepage-workshops__see-through"></div>
     <div class="col-md-7 homepage-workshops__content">
-    <h2 class="section-header"><?php esc_html_e(get_field('homepage_header_workshops_header'), 'saulkrasti-jazz-festival') ?></h2>
+    <h2 class="section-header section-header--less-padding"><?php esc_html_e(get_field('homepage_header_workshops_header'), 'saulkrasti-jazz-festival') ?></h2>
 
         <div class="ig-card ig-card--text-content ig-card__inner-padding">
     <div class="ig-card__line-high">

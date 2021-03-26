@@ -11,7 +11,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
 <section class="full-screen-cover" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?> url(<?php ig_saulkrasti_jazz_image_from_field('options_about_festival_cover', 'options')
                                                                                                                     ?>)">
-    <h2 class="section-header mt-5rem"><?php esc_html_e(get_field('page_about_page_heading'), 'saulkrasti-jazz-festival') ?></h2>
+    <h2 class="section-header section-header--less-pb mt-5rem"><?php esc_html_e(get_field('page_about_page_heading'), 'saulkrasti-jazz-festival') ?></h2>
     <div class="page-about__wrapper">
 
 
@@ -33,7 +33,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 </section>
 
 <section class="page-about__venues" style="background-color: var(--color-dark)">
-    <h4 class="section-header "><?php esc_html_e(get_field('page_about_venues_header'), 'saulkrasti-jazz-festival') ?></h4>
+    <h4 class="section-header section-header--less-padding ig_pb-1em"><?php esc_html_e(get_field('page_about_venues_header'), 'saulkrasti-jazz-festival') ?></h4>
     <div class="page-about__venues-container">
         <div class="row">
 

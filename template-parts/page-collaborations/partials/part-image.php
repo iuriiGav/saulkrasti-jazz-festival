@@ -7,11 +7,9 @@ if(count($args['image_arr']) === 1) :
     ?>
 <?php elseif(count($args['image_arr']) === 0 && $args['video_link_when_no_pictures']): ?>
 
-<div class="videoWrapper">
 
 <?php echo $args['video_link_when_no_pictures']; ?>
 
-</div>
 
 
     <?php else : ?>

@@ -1,7 +1,7 @@
 <div class="section-with-side-links">
 
-<div class="side-links__wrapper">
-<ul class="side-links__list">
+<div class="side-links__wrapper side-links__wrapper--height">
+<ul class="side-links__list side-links__list--col">
 <?php
 
 if( have_rows('teachers_available_masterclass_instrument_options') ):
@@ -24,10 +24,10 @@ endif;
 </ul>
 </div>
 
-<h2 class="content-box__header section-header d-md-only"><?php esc_html_e(get_field('teachers_section_header'), 'saulkrasti-jazz-festival') ?></h2>
+<h2 class="content-box__header section-header section-header--less-padding d-md-only"><?php esc_html_e(get_field('teachers_section_header'), 'saulkrasti-jazz-festival') ?></h2>
 
 <div class="content-box">
-    <h2 class="content-box__header section-header md-none"><?php esc_html_e(get_field('teachers_section_header'), 'saulkrasti-jazz-festival') ?></h2>
+    <h2 class="content-box__header section-header section-header--less-padding md-none"><?php esc_html_e(get_field('teachers_section_header'), 'saulkrasti-jazz-festival') ?></h2>
 
     
     

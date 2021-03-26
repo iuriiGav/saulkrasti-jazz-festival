@@ -119,13 +119,29 @@ div ol li a {
   text-transform: uppercase;
   padding: 2em;
   text-align: center;
+  &--less-padding {
+    padding-top: 1em;
+    padding-bottom: .5em;
 }
+&--less-pb {
+  padding-bottom: .5em;
+}
+  }
+
 
 .sub-section-header {
   color: var(--color-white);
   text-transform: uppercase;
   padding: .5em;
   text-align: center;
+  letter-spacing: 2em;
+    @media only screen and (max-width: $bp-lg) {
+      letter-spacing: 1.5em;
+    }
+    @media only screen and (max-width: $bp-sm) {
+      letter-spacing: 1em;
+      padding-bottom: .5em;
+    }
 }
 
 .medium-title {

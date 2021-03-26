@@ -8,11 +8,13 @@ include get_template_directory() . '/inc/queries/main_stage_concerts_query.php';
 // $num_of_concerts_to_display = is_front_page() ? 6 : -1; // this worked when we allowed only  concerts to be displayed
 $num_of_concerts_to_display = -1;
 $all_upcoming_events = ig_saulkrasti_jazz_upcoming_events_query($num_of_concerts_to_display);
-$all_upcoming_events_count = $all_upcoming_events->found_posts;
+// $all_upcoming_events_count = $all_upcoming_events->found_posts;
 $main_stage_concerts = ig_saulkrasti_jazz_upcoming_events_main_stage_query(-1);
 $main_stage_concerts_count = $main_stage_concerts->found_posts;
-$more_concerts_to_show = $all_upcoming_events_count - $main_stage_concerts_count;
+// $more_concerts_to_show = $all_upcoming_events_count - $main_stage_concerts_count;
 $venues = ig_saulkrasti_jazz_current_venues(-1);
+$current_year = date("Y");
+$page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concerts');
 
 
 ?>
@@ -29,9 +31,10 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
     <div class="row">
         <div class="col-12">
             <?php if (is_front_page()) : ?>
-                <h2 class="section-header"><?php esc_html_e(get_field('homepage_header_upcoming_events'), 'saulkrasti-jazz-festival') ?></h2>
+                <h2 class="section-header section-header--less-padding "><?php esc_html_e(get_field('homepage_header_upcoming_events'), 'saulkrasti-jazz-festival') ?></h2>
             <?php else : ?>
-                <h2 class="section-header mt-5rem"><?php esc_html_e(get_field('concerts_page_header'), 'saulkrasti-jazz-festival') ?></h2>
+                <h2 class="section-header ig_pb-0 mt-5rem"><?php esc_html_e(get_field('concerts_page_header'), 'saulkrasti-jazz-festival') ?></h2>
+                <h2 class="section-header section-header--less-pb ig_pt-0"><?php echo $current_year ?></h2>
 
             <?php endif; ?>
             <div class="taxonomy-triggers-container">
@@ -56,7 +59,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
             </div><!-- .taxonomy-triggers-container -->
 
-            <div class="sort-by-venue sort-by-menu--on-screen">
+            <div class="sort-by-venue <?php echo is_front_page() ?  'sort-by-menu--on-screen' : 'sort-by-menu--off-screen'; ?>">
 
                 <div class="sort-by-options sort-by-options__venue">
                     <?php
@@ -216,12 +219,8 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
         <div class="plus-more-concerts-to-show-wrap js-hide-div-on-ajax">
 
 
-            <?php if ($more_concerts_to_show > 0) :
-                $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concerts');
-            ?>
-                <h4 class="more-concerts-text t-light">+ <?php echo $more_concerts_to_show, ' ', ig_gav_get_global_text('btn_text_more_concerts') ?> </h4>
+          
                 <button class="btnc btnc-smoke btnc-smoke--wide ml-3 btnc-l"><a href="<?php echo $page_concerts_url ?>"><?php echo ig_gav_get_global_text('btn_text_see_all') ?></a></button>
-            <?php endif; ?>
         </div>
     <?php endif; ?>
 </div><!-- .concert-cards-wrapper -->

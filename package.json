@@ -15,6 +15,7 @@
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
     "@babel/register": "^7.12.13",
+    "@types/jquery": "^3.5.5",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
@@ -40,6 +41,7 @@
   ],
   "dependencies": {
     "bootstrap": "^5.0.0-beta2",
+    "jquery": "^3.6.0",
     "lightbox2": "^2.11.3",
     "swiper": "^6.4.15"
   }

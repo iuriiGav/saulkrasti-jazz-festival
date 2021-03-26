@@ -6,7 +6,7 @@ get_header(); ?>
 
 <section class="current-year-artists full-screen-cover" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_page_artists_cover_image', 'options')
                                                                                                                                                     ?>)">
-    <h2 class="section-header mt-5rem"><?php esc_html_e(get_field('page_artists_header'), 'saulkrasti-jazz-festival') ?></h2>
+    <h2 class="section-header section-header--less-pb mt-5rem"><?php esc_html_e(get_field('page_artists_header'), 'saulkrasti-jazz-festival') ?></h2>
 
 
 

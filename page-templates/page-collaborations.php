@@ -8,7 +8,7 @@ get_header(); ?>
 <section class="collaborations-content full-screen-cover" style="background: linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.44) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_collaborations_cover_image', 'options')
                                                                                                                                                     ?>)">
 
-    <h2 class="section-header mt-5rem"><?php esc_html_e(get_field('collaboration_page_header'), 'saulkrasti-jazz-festival') ?></h2>
+    <h2 class="section-header section-header--less-pb mt-5rem"><?php esc_html_e(get_field('collaboration_page_header'), 'saulkrasti-jazz-festival') ?></h2>
 
 
 
@@ -90,7 +90,7 @@ get_header(); ?>
 
                         </div>
 
-                        <div class="collaborations__image col-md-5 about-us-small-gallery">
+                        <div class="collaborations__image ig_p-rel col-md-5 about-us-small-gallery">
 
                             <?php get_template_part('template-parts/page-collaborations/partials/part', 'image', $image_part_args);  ?>
 

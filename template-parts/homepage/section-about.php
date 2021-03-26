@@ -1,6 +1,6 @@
 <div class="row about-festival-wrapper">
     <div class="col-md-7">
-        <h2 class="section-header"><?php esc_html_e(get_field('homepage_header_about_us_header'), 'saulkrasti-jazz-festival') ?></h2>
+        <h2 class="section-header section-header--less-padding"><?php esc_html_e(get_field('homepage_header_about_us_header'), 'saulkrasti-jazz-festival') ?></h2>
         <div class="ig-card ig-card--text-content ig-card__inner-padding ">
             <div class="ig-card__line-high">
                 <?php echo wp_kses_post(wpautop(get_field('homepage_about_festival_short_text'))) ?>
