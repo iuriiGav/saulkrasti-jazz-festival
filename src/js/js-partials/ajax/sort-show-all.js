@@ -37,7 +37,7 @@ export const showAllUpcomingEventsAjaxCall = () => {
         $(".page-upcoming-concerts").css("min-height", currentContainerHeight);
         $.ajax({
           url: wpAjax.ajaxUrl,
-          data: { action: "filter", venueID: null },
+          data: { action: "filter", venueID: null, showAll : true },
           type: "POST",
           success: function (data) {
             animateAjax(

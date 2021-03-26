@@ -10,7 +10,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 ?>
 
 <section class="full-screen-cover" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?> url(<?php ig_saulkrasti_jazz_image_from_field('options_about_festival_cover', 'options')
-                                                                                                                    ?>)">
+                                                                                                                ?>)">
     <h2 class="section-header section-header--less-pb mt-5rem"><?php esc_html_e(get_field('page_about_page_heading'), 'saulkrasti-jazz-festival') ?></h2>
     <div class="page-about__wrapper">
 
@@ -42,9 +42,15 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
                     $image = get_field('post_venues_venue_image');
                     $venue_name = get_field('post_venues_venue_title') ? get_field('post_venues_venue_title') : get_field('post_venues_venue_name');
-            ?>
+                    $venue_title = get_field('post_venues_venue_title');
+                    $original_venue_name = get_field('post_venues_venue_name');
+                                 ?>
 
                     <div class="col-md-4">
+
+
+                    <a href="<?php the_permalink(); ?>">
+
                         <div class="card-artist ig_no-shadow card-artist--wide ig_mb-2em">
 
 
@@ -66,10 +72,11 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
                             </div>
                             <div class="card-artist__text card-artist__text--flex ">
-                                <a href="<?php echo esc_url(get_field('post_venues_venue_website_link')) ?>">
                                     <h3 class="text-center"><?php esc_html_e($venue_name, 'saulkrasti-jazz-festival') ?></h3>
-                                </a>
                                 <div class="single-artist__event-venue--address-lines ig_pt-1em">
+                                    <?php if ($venue_title && $venue_title !== $original_venue_name) : ?>
+                                        <p><?php esc_html_e($original_venue_name, 'saulkrasti-jazz-festival') ?></p>
+                                    <?php endif; ?>
                                     <p><?php esc_html_e(get_field('post_venues_address_line_1'), 'saulkrasti-jazz-festival') ?></p>
                                     <p><?php esc_html_e(get_field('post_venues_address_line_2'), 'saulkrasti-jazz-festival') ?></p>
                                     <p><?php esc_html_e(get_field('post_venues_postcode'), 'saulkrasti-jazz-festival') ?></p>
@@ -78,6 +85,8 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
                             </div>
 
                         </div>
+                        </a>
+
                     </div>
             <?php endwhile;
                 wp_reset_postdata();
@@ -106,9 +115,9 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
     </div>
 
     <div class="col-12">
-            <div class="page-about__big-gallery-container">
-              <?php  the_field('page_about_lower_gallery') ?>
-            </div>
+        <div class="page-about__big-gallery-container">
+            <?php the_field('page_about_lower_gallery') ?>
+        </div>
 
     </div>
 </section>
