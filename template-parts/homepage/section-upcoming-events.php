@@ -23,7 +23,9 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
 
 ?>
 
-<?php $festival_dates_array = ig_saulkrasti_jazz_get_dates_of_festival(ig_saulkrasti_jazz_festival_start_date(), ig_saulkrasti_jazz_festival_end_date(), 'd M y'); ?>
+<?php $festival_dates_array = ig_saulkrasti_jazz_get_dates_of_festival(ig_saulkrasti_jazz_festival_start_date(), ig_saulkrasti_jazz_festival_end_date(), 'd M y'); 
+
+?>
 
 <div class="target-div-for-modal-and-spinner-js"></div>
 <div class="concert-cards-wrapper">
@@ -113,7 +115,11 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                     $concert_date = ig_saulkrasti_jazz_split_date_to_arr('post_events_concert_date'); // name of the month also awailable but needs to be adjusted
                     $venue_name = get_field('post_venues_venue_name', get_field('post_events_venue'));
                     $is_free_concert = ig_saulkrasti_jazz_get_radio_value('post_events_is_it_a_free_concert');
+                    $concert_date_in_milisecs = get_field('post_events_concert_date', false, false);
+                    $day = date('D', strtotime($concert_date_in_milisecs));
+                    $concert_day_language_dependent = ig_get_day_of_the_week_depending_on_language($day);
                 ?>
+
 
 
                     <div class="col-xl-3 col-lg-4  upcoming-events__wrapp-for-single upcoming-events-js-ajax-container">
@@ -139,8 +145,13 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
 
                                 <div class="ig-card__date-venue-container">
                                     <div class="ig-card__date-time-container">
+                                    <div class="ig-card__date-and-day-container">
+                                    <div class="d-flex">
                                         <h6 class="ig-card__date"><?php echo $concert_date[0], '.', ' ', $concert_date[1] ?></h6>
                                         <h6 class="ig-card__time"><?php esc_html_e(get_field('post_events_concert_time'), 'saulkrasti-jazz-festival') ?></h6>
+                                    </div>
+                                        <h6 class="ig-card__day"><?php echo $concert_day_language_dependent ?></h6>
+                                    </div>
                                     </div>
                                     <h6 class="ig-card__venue-name"><?php esc_html_e($venue_name, 'saulkrasti-jazz-festival') ?></h6>
                                 </div>
