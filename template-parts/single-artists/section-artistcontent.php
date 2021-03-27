@@ -1,4 +1,4 @@
-<div class="single-artist__content <?php echo $args['in_ajax'] ? 'ig_mt-7rem' : null; ?> position-relative">
+<div class="single-artist__content <?php echo $args['in_ajax'] ? 'ig_mt-7rem   modal__content--on-screen--subtle ' : null; ?> position-relative">
 
 
 <?php if($args['in_ajax']) : ?>

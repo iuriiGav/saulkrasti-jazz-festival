@@ -15,7 +15,7 @@ if( have_rows('contact_us_team') ):
         ?>
 
 
-<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5">
+<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5 d-flex">
 
 <div class="card-artist card-artist--100">
 

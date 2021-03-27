@@ -1,6 +1,7 @@
 <?php wp_footer(); ?>
 
-<footer class="main-footer">
+<footer class="main-footer position-relative">
+
 
     <section class="footer-sponsors">
 
@@ -40,7 +41,7 @@
 
         <div class="row">
 
-            <div class="col-md-3 col-xs-6 quick-links__logo-addresses">
+            <div class="col-md-3 col-xs-6 quick-links__logo-addresses position-relative">
                 <div class="quick-links__logo">
                     <a class="navbar-brand d-flex flex-column text-font-secondary"  href="<?php echo get_home_url() ?>">
 
@@ -48,6 +49,13 @@
                     </a>
                 </div>
 
+                <div class="top-scrollerx--container">
+
+    <div class="top-scrollerx js-top-scrollerx svg-icons">
+        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M6.101 261.899L25.9 281.698c4.686 4.686 12.284 4.686 16.971 0L198 126.568V468c0 6.627 5.373 12 12 12h28c6.627 0 12-5.373 12-12V126.568l155.13 155.13c4.686 4.686 12.284 4.686 16.971 0l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L232.485 35.515c-4.686-4.686-12.284-4.686-16.971 0L6.101 244.929c-4.687 4.686-4.687 12.284 0 16.97z"></path></svg>
+    </div>
+    
+</div>
             </div><!-- .quick-links__logo-addresses -->
 
             <div class="col-md-6 md-none quick-links__nav-menu">
@@ -96,6 +104,8 @@
 
         <p class="copyright-text"><?php esc_html_e(get_field('options_copyright_text', 'options'), 'saulkrasti-jazz-festival') ?> <?php echo date("Y"), ' ', '|', ' ', esc_html_e(get_field('options_website_developed_by_text', 'options'), 'saulkrasti-jazz-festival') ?> <a href="<?php echo esc_url(get_field('options_developer_link', 'options')) ?>"><?php esc_html_e(get_field('options_developer_name', 'options'), 'saulkrasti-jazz-festival') ?></a></p>
     </section>
+
+
 </footer>
 
 

@@ -81,13 +81,13 @@
 
 
 
-             <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5 d-flex">
+             <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5 d-flex single-artist-card-target-for-hover">
 
                  <div class="card-artist card-artist--100">
 
 <?php $type_of_link_page = esc_html__(get_field('post_artists_artists_page_type'), 'saulkrasti-jazz-festival'); ?>
 
-                     <a class="artist-link-target-js-ajax" <?php echo $is_blank_page ? 'target="_blank"' : null ?> href="<?php echo $artist_card_link ?>" style="<?php echo $artist_card_link === null ? ' pointer-events: none;  cursor: default;' : null ?>" data-artist-id="<?php the_ID() ?>" 
+                     <a class="artist-link-target-js-ajax <?php echo $artist_card_link === null ? 'this-card-has-no-action-js' : null ?>" <?php echo $is_blank_page ? 'target="_blank"' : null ?> href="<?php echo $artist_card_link ?>" style="<?php echo $artist_card_link === null ? ' pointer-events: none;  cursor: default;' : null ?>" data-artist-id="<?php the_ID() ?>" 
                      data-type-of-link="<?php echo $type_of_link_page ? $type_of_link_page : 'no-data'?>">
 
                          <div class="card-artist__image">

@@ -37,10 +37,12 @@ if($(this).data("type-of-link") === 'full_bio') {
 
 
       $(document).on("click", ".modal__close", function (e) {
+       
         $(".single-artist-dynamic-container").fadeOut(200);
         setTimeout(() => {
           $(".single-artist-dynamic-container").remove();
           $(".modal").removeClass("modal__visible");
+
           $(".modal").addClass("modal__invisible");
         }, 200);
       });

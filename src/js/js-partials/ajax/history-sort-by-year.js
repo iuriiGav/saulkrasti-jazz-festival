@@ -46,7 +46,10 @@ export const sortHistoryByYear = () => {
               $(".ig_loading-spinner").fadeOut(function () {
                 $(".ig_loading-spinner").remove();
               });
-              
+             
+              console.log($('.history-wrapper__on-screen').html());
+
+
             }
           },
           error: function (error) {

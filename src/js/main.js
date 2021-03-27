@@ -44,4 +44,11 @@ jQuery(function ($) {
            && !obj.href.match(/^$/)
 };
 $('a:external').attr('target', '_blank');
+
+$('.top-scrollerx--container').on('click', function(e) {
+  e.preventDefault();
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+})
 });
+

@@ -50,8 +50,9 @@
     }
     &--on-screen {
       animation: popup .5s ease forwards;
-    //   position: relative;
-    //   transform: translateY(0);
+  &--subtle {
+    animation: popupSubtle .5s ease forwards;
+  }
     }
   }
   &__close {
@@ -76,6 +77,17 @@
   }
   70% {
     transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes popupSubtle {
+  0% {
+    transform: translateY(-10%);
+  }
+  70% {
+    transform: translateY(3%);
   }
   100% {
     transform: translateY(0);

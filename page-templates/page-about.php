@@ -49,9 +49,9 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
                     <div class="col-md-4">
 
 
-                    <a href="<?php the_permalink(); ?>">
+                    <a class="ig_height-100" href="<?php the_permalink(); ?>">
 
-                        <div class="card-artist ig_no-shadow card-artist--wide ig_mb-2em">
+                        <div class="card-artist ig_no-shadow card-artist--wide ig_height-100">
 
 
                             <div class="card-artist__extra-note-top">

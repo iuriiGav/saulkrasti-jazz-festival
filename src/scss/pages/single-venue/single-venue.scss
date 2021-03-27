@@ -1,0 +1,28 @@
+
+
+.single-venue {
+    &__container {
+        width: 80%;
+        margin: 0 auto;
+        min-height: 400px;
+    }
+    &__map {
+        height: 100%;
+        margin-bottom: 3em;
+    }
+    &__address {
+        color: var(--color-gray);
+        display: flex;
+justify-content: center;
+padding-bottom: 2em;
+letter-spacing: 3px;
+flex-wrap: wrap;
+    }
+    &__photo {
+        height: 100%;
+        // width: 100%;
+        min-height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
