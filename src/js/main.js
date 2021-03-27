@@ -8,6 +8,7 @@ import { sortByVenueAjaxCall } from "./js-partials/ajax/sort-by-venue";
 import { showAllUpcomingEventsAjaxCall } from "./js-partials/ajax/sort-show-all";
 import { sortByDateAjaxCall } from "./js-partials/ajax/sort-by-date";
 import { sortHistoryByYear } from "./js-partials/ajax/history-sort-by-year";
+import { showSingleArtist } from "./js-partials/ajax/show-single-artist";
 
 jQuery(function ($) {
   const BP_MEDIUM = 767;
@@ -18,7 +19,6 @@ jQuery(function ($) {
   modalPopupSetup();
 
 
-
   /////////////////////////////////AJAX FILTERS/////////////////////////
 
   toggleSortByOptions();
@@ -26,6 +26,7 @@ jQuery(function ($) {
   showAllUpcomingEventsAjaxCall();
   sortByDateAjaxCall();
   sortHistoryByYear();
+  showSingleArtist()
 
 
   if ($("p:has(iframe)")) {

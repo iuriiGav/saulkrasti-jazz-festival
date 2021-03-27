@@ -15,6 +15,17 @@
     display: none;
   }
 
+  &__invisible {
+
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
   &__content {
     transition: all 0.8s ease-in-out;
     z-index: 2001;

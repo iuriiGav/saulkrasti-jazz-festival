@@ -148,3 +148,16 @@ p:has(iframe) {
   display: flex;
   justify-content: center;
 }
+
+
+// ajax Styles
+
+
+.single-artist-dynamic-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1000;
+}

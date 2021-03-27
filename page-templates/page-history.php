@@ -15,7 +15,7 @@ want to return back to sidelinks, coppy and paste pages from draft folder
 copy paste teachers.scss from previous commit
 ig-ajax-history.php from prev commit
 -->
-
+<div class="modal modal__invisible modal-trigger-js__fresh"></div>
 
 <!-- <div class="history__available-years-list--separator">|</div> -->
 <section class="current-year-artists__history full-screen-cover" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_page_artists_cover_image', 'options')

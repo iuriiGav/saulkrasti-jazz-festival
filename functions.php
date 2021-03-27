@@ -61,6 +61,7 @@ require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/cus
 require get_template_directory() . '/inc/api-options.php';
 require_once('inc/ajax/ig-agax-call.php');
 require_once('inc/ajax/ig-ajax-history.php');
+require_once('inc/ajax/ig-ajax-single-artist.php');
 
 
 //Filter removes page template option from the dropdown menue on Page

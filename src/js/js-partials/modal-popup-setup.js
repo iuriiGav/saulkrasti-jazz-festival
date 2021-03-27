@@ -33,11 +33,11 @@ export const modalPopupSetup = () => {
       }
     
       if ($(".modal").length > 0) {
-        $(".modal").on("click", function () {
-          console.log("clicked");
-          if ($(".modal").hasClass("is-open")) {
-            $(".modal__close").triggerHandler("click");
-          }
-        });
+        // $(".modal").on("click", function () {
+        //   console.log("clicked");
+        //   if ($(".modal").hasClass("is-open")) {
+        //     $(".modal__close").triggerHandler("click");
+        //   }
+        // });
       } 
 }

@@ -1,6 +1,11 @@
-<div class="single-artist__content">
+<div class="single-artist__content <?php echo $args['in_ajax'] ? 'ig_mt-7rem' : null; ?> position-relative">
 
 
+<?php if($args['in_ajax']) : ?>
+    <div class="modal__close">&times;</div>
+
+
+<?php endif; ?>
     <?php if (have_rows('post_artists_additional_images') || get_field('post_artists_artists_photo')) : ?>
         <div class="single-artist__photo">
 
@@ -22,6 +27,7 @@
                 <?php
                 if ($img_width_single >= $img_height_single) :
                 ?>
+
                     <img class="" src="<?php echo esc_url(wp_get_attachment_image_src(get_field('post_artists_artists_photo'), 'ig-medium')[0]) ?>" alt="<?php esc_html_e(get_post_meta(get_field('post_artists_artists_photo'), '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
 
                 <?php
@@ -42,6 +48,11 @@
 
         <div class="single-artist__bio">
 
+<?php if($args['in_ajax']) : ?>
+
+<h3 class="section-header ig_tc-dark ig_p-0"><?php esc_html_e(get_field('post_artists_artist_name', $args['artist_ID']), 'saulkrasti-jazz-festival') ?></h3>
+
+<?php endif; ?>
             <div class="single-artist__line-up">
 
                 <?php
