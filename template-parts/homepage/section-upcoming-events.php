@@ -17,6 +17,7 @@ $current_year = date("Y");
 $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concerts');
 
 
+
 ?>
 
 <?php

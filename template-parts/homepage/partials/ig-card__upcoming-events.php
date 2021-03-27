@@ -7,13 +7,14 @@ $concert_date_in_milisecs = get_field('post_events_concert_date', false, false);
 $day = date('D', strtotime($concert_date_in_milisecs));
 $concert_day_language_dependent = ig_get_day_of_the_week_depending_on_language($day); 
 $in_show_all_ajax = $args['show_all'];
+$current_event_ID = get_the_ID();
 
 ?>
 
 
-<div class="ig-card <?php echo $in_show_all_ajax ?  'ig-card__80' : 'ig-card__100'  ?>">
+<div class="ig-card <?php echo $in_show_all_ajax ?  'ig-card__80' : 'ig-card__100'; ?> ">
 
-    <div class="ig-card__img">
+    <div class="ig-card__img  ">
 
         <?php if (get_field('post_events_concert_image')) : ?>
             <img src="<?php ig_saulkrasti_jazz_image_from_field_custom_size('post_events_concert_image', 'ig-square') ?>" alt="" class="img-fluid">
@@ -85,9 +86,8 @@ $in_show_all_ajax = $args['show_all'];
         </div>
 
 
-
         <div class="ig-card__buttons">
-            <a href="<?php the_permalink() ?>" class="btnc btnc-underlined mb-2"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?></a>
+            <a href="<?php the_permalink() ?>" data-event-id="<?php echo $current_event_ID; ?>" class="btnc btnc-underlined mb-2"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?></a>
 
             <?php if ($is_free_concert === 'true') : ?>
                 <button class="btnc btnc-brand btnc-sm btnc-free-concert" disabled> <?php echo ig_gav_get_global_text('btn_text_free_entry') ?></button>

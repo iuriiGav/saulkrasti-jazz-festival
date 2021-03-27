@@ -28,7 +28,7 @@
                 else :
                 ?>
 
-                    <img class="ig_w-60" src="<?php echo esc_url(wp_get_attachment_image_src(get_field('post_artists_artists_photo'), 'ig-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta(get_field('post_artists_artists_photo'), '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
+                    <img class="ig_w-40" src="<?php echo esc_url(wp_get_attachment_image_src(get_field('post_artists_artists_photo'), 'ig-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta(get_field('post_artists_artists_photo'), '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
             <?php endif;
             endif; ?>
 

@@ -60,12 +60,13 @@ if (!empty($artists_photos_IDs) && count($artists_photos_IDs) !== 1) : ?>
 
             <!-- If we need scrollbar -->
         </div>
+        <?php get_template_part('template-parts/main-sidebar/main', 'sidebar') ?>
 
 
 
 
 
-    </div>
+    </div><!-- .single-artist__photo -->
 
 <?php elseif(!empty(get_field('post_events_concert_image'))) : ?>
 <div class="single-artist__photo">
@@ -74,6 +75,9 @@ if (!empty($artists_photos_IDs) && count($artists_photos_IDs) !== 1) : ?>
                 $this_post_featured_image_ID = get_field('post_events_concert_image');
 
 ig_gav_get_image_depending_on_aspect_ratio($this_post_featured_image_ID) ?>
+
+<?php get_template_part('template-parts/main-sidebar/main', 'sidebar') ?>
+
 
 </div>
 
@@ -84,6 +88,9 @@ ig_gav_get_image_depending_on_aspect_ratio($this_post_featured_image_ID) ?>
                 $random_image_ID = ig_gav_random_image_ID();
 
 ig_gav_get_image_depending_on_aspect_ratio($random_image_ID) ?>
+
+<?php get_template_part('template-parts/main-sidebar/main', 'sidebar') ?>
+
 
 </div>
 <?php endif; ?>

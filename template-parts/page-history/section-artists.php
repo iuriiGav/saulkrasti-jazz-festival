@@ -74,7 +74,7 @@ endif;
                         <div class="card-artist card-artist--100">
 
 
-                        <a <?php echo $is_blank_page ? 'target="_blank"' : null ?>  href="<?php echo $artist_card_link ?>" style="<?php echo $artist_card_link === null ? ' pointer-events: none;  cursor: default;' : null ?>">
+                        <a <?php echo $is_blank_page ? 'target="_blank"' : null ?>  href="<?php echo $artist_card_link ?>" style="<?php echo $artist_card_link === null ? ' pointer-events: none;  cursor: default;' : null ?>" data-artist-id="<?php the_ID()?>">
 
                             <div class="card-artist__image">
                                 <img src="<?php echo esc_url(wp_get_attachment_image_src($artist_photo, 'ig-square')[0]) ?>" alt="<?php esc_html_e(get_post_meta($photo, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">

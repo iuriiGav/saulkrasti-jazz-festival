@@ -6,9 +6,18 @@
     position: sticky;
     top: 5rem;
     left: 0;
+    background-color: var(--color-dark)
   }
 &__current-artist-concert-header {
     padding: 2em .5em;
     text-align: center;
 }  
+}
+
+.more-upcoming-concerts__wrapper {
+  display: flex;
+  justify-content: center;
+}
+.more-upcoming-concerts__wrapper .more-upcoming-concerts__container div div img  {
+width: 100%;
 }

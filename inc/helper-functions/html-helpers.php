@@ -140,7 +140,7 @@ function ig_gav_get_image_depending_on_aspect_ratio($photoID) {
 
     <?php
     else :
-  echo      '<img class="ig_w-60" src="' . esc_url(wp_get_attachment_image_src($photoID, 'ig-portrait')[0]) . '" alt="' . esc_html__(get_post_meta($photoID, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') . '">';
+  echo      '<img class="ig_w-40" src="' . esc_url(wp_get_attachment_image_src($photoID, 'ig-portrait')[0]) . '" alt="' . esc_html__(get_post_meta($photoID, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') . '">';
     ?>
 
     <?php endif;

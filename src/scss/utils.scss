@@ -82,11 +82,32 @@
 }
 
 .ig_w-60 {
+  width: 60%;
+  margin: 0 auto;
+  &--r {
+      @media only screen and (max-width: $bp-md) {
+        width: 90%;
+      }
+  }
+}
+.ig_w-40 {
   width: 40% !important;
+}
+
+.ig_w-80 {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .ig_w-100 {
   width: 100% !important;
+}
+
+.ig_md-w-60 {
+    @media only screen and (max-width: $bp-md) {
+      width: 60%;
+      margin: 0 auto;
+    }
 }
 
 .bgc-dark {
@@ -204,4 +225,28 @@
 
 .ig_d-flex {
   display: flex;
+}
+
+.ig_mt-3rem {
+  margin-top: 3rem;
+}
+
+.ig_mt-7rem {
+  margin-top: 7rem;
+}
+
+.ig_align-self-center {
+  align-self: center;
+}
+
+.ig_tc-brand {
+  color: var(--color-brand);
+}
+
+.ig_p-2em {
+  padding: 2em;
+}
+
+.ig_pb-5rem {
+  padding-bottom: 5rem;
 }

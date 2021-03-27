@@ -1,79 +1,14 @@
-<div class="main-sidebar__content">
+<div class="main-sidebar__content <?php echo $args['event_of_the_current_shown_artist_ID'] ? ' ig_pb-5rem' : null?>">
 
 
     <?php
     require get_template_directory() . '/inc/queries/upcoming_event_by_date_query.php';
-    $concerts = ig_saulkrasti_jazz_upcoming_events_query(-1);
-
-
     $this_artist_ID = get_the_ID();
     $this_artist_name = esc_html__(get_field('post_artists_artist_name'));
-    $event_of_the_current_shown_artist_date = null;
-    $event_of_the_current_shown_artist_ID = null;
+    $event_of_the_current_shown_artist_date = $args['concert_date_in_milisecs'];
+    $event_of_the_current_shown_artist_ID = $args['event_of_the_current_shown_artist_ID'];
 
-
-    if ($concerts->have_posts()) : while ($concerts->have_posts()) : $concerts->the_post();
-            $artists = get_field('post_events_artists');
-
-
-
-
-
-            if (is_array($artists) && in_array($this_artist_ID, $artists)) :
-                $concert_venue_ID = get_field('post_events_venue')->ID;
-                $date_arr = ig_saulkrasti_jazz_split_date_to_arr(esc_html__('post_events_concert_date', 'saulkrasti-jazz-festival'));
-                $event_of_the_current_shown_artist_date = get_field('post_events_concert_date', false, false);
-                $event_of_the_current_shown_artist_ID = get_the_ID();
-    ?>
-
-                <h4 class="main-sidebar__current-artist-concert-header t-light">
-                    <?php echo $this_artist_name . ' ' . ig_gav_get_global_text('global_listen_to_artist_on') ?>
-
-                </h4>
-
-
-
-
-
-
-
-            <?php
-
-                require 'subparts/partial-sidebar-card.php';
-
-
-
-
-
-
-
-
-            endif;
-            ?>
-
-
-
-
-
-
-
-    <?php endwhile;
-        wp_reset_postdata();
-    endif; ?>
-
-
-
-
-    <h4 class="main-sidebar__current-artist-concert-header t-light">
-        <?php echo ig_gav_get_global_text('global_more_upcoming_concerts') ?>
-
-    </h4>
-
-
-
-    <?php
-
-    //this piece of code changes the behaviour depending if we are in 
+     //this piece of code changes the behaviour depending if we are in 
     //single-concert or single-artist
     $currently_shown_artists_concert_timestamp = null;
     if ($event_of_the_current_shown_artist_date) :
@@ -88,14 +23,34 @@
 
     $more_concerts_on_this_day =  ig_saulkrasti_jazz_upcoming_events_query_by_date($date);
 
-
-
     $currently_displayed_concert_ID = get_the_ID();
+
+
+    if($more_concerts_on_this_day -> have_posts()) :
+   ?>
+
+
+
+    <h4 class="text-center p-3 t-light">
+        <?php echo ig_gav_get_global_text('global_more_upcoming_concerts') ?>
+
+    </h4>
+
+<?php endif; ?>
+
+    <?php
+  
+   
+
+
+
     if ($more_concerts_on_this_day->have_posts()) : while ($more_concerts_on_this_day->have_posts()) : $more_concerts_on_this_day->the_post();
 
             $concert_venue_ID = get_field('post_events_venue')->ID;
             $date_arr = ig_saulkrasti_jazz_split_date_to_arr(esc_html__('post_events_concert_date', 'saulkrasti-jazz-festival'));
-
+            $concert_date_in_milisecs = get_field('post_events_concert_date', false, false);
+            $day = date('D', strtotime($concert_date_in_milisecs));
+            $concert_day = ig_get_day_of_the_week_depending_on_language($day);
             $id_to_check = null;
 
             if ($event_of_the_current_shown_artist_date) :
@@ -128,18 +83,23 @@
                     <div class="sidebar-card__content">
 
                             <div class="sidebar-card__date-time">
-                                <h5><?php echo $date_arr[0], ' ', $date_arr[1] ?></h5>
+                                <div>
+                                    <h5><?php echo $date_arr[0], ' ', $date_arr[1] ?></h5>
+                                    <h6 class="ig_tc-rare"><?php echo $concert_day ?></h6>
+                                </div>
                                 <h5><?php esc_html_e(get_field('post_events_concert_time'), 'saulkrasti-jazz-festival') ?></h5>
                             </div>
                             <div class="sidebar-card__venue ig_pb-1em">
 
                                 <?php if (get_field('post_venues_venue_title', $concert_venue_ID)) : ?>
-
+<a href="<?php the_permalink($concert_venue_ID)?>">
                                     <?php esc_html_e(get_field('post_venues_venue_title', $concert_venue_ID), 'saulkrasti-jazz-festival') ?>
-
+                                    </a>
                                 <?php else : ?>
+                                    <a href="<?php the_permalink($concert_venue_ID)?>">
 
                                     <?php esc_html_e(get_field('post_venues_venue_name', $concert_venue_ID), 'saulkrasti-jazz-festival') ?>
+                                    </a>
 
                                 <?php endif; ?>
 

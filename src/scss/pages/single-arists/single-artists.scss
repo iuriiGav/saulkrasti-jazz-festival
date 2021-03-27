@@ -1,9 +1,33 @@
+.single-artist-concert-details-wrapper {
+ 
+ 
+}
+
+.single-artist__current-concert-date-container {
+display: flex;
+background-color: var(--color-white);
+padding: 1em;
+
+margin: 0 auto;
+width: 60%;
+justify-content: space-between;
+@media only screen and (max-width: $bp-xl) {
+  width: 90%;
+}
+}
+
 .single-artist {
   &__wrapper {
     width: 80%;
     margin: 0 auto;
     @media only screen and (max-width: $bp-xl) {
       width: 90%;
+    }
+    &--60 {
+      width: 60%;
+      @media only screen and (max-width: $bp-xl) {
+        width: 90%;
+      }
     }
   }
   &__content {
@@ -12,7 +36,7 @@
     width: 100%;
     line-height: 2.3rem;
     font-size: 1.1rem;
-    margin-bottom: 5rem;
+    // margin-bottom: 5rem;
   }
   &__photo {
     background-color: var(--color-dark);
@@ -43,27 +67,24 @@
   &__links-container {
     margin: 2em 0;
   }
-  &__link  {
+  &__link {
     text-align: right;
   }
 
   // from events styling
 
   &__event-date-time-venue {
-    
     display: flex;
     justify-content: space-between;
-    margin-bottom:2em;
+    margin-bottom: 2em;
   }
-  &__event-venue  {
-
-      text-align: right;
-  & --address-lines {
-    line-height: 1.4em;
-    opacity: .7;
-      }
+  &__event-venue {
+    text-align: right;
+    &--address-lines {
+      line-height: 1.4em !important;
+      opacity: 0.7;
+    }
   }
- 
 
   &__artist-or-lineup {
     background-color: var(--color-dark);
@@ -73,33 +94,30 @@
       width: 80%;
       margin: 0 auto;
       align-items: flex-start;
-     &:not(:last-child) {
-      margin-bottom: 2em;
-     }
+      &:not(:last-child) {
+        margin-bottom: 2em;
+      }
 
-       @media only screen and (max-width: $bp-md) {
-         width: 100%;
-         flex-direction: column;
-       }
-    
-     
+      @media only screen and (max-width: $bp-md) {
+        width: 100%;
+        flex-direction: column;
+      }
     }
 
     &--single-time {
       color: var(--color-white);
-            }
+    }
     &--artist-container {
       margin-left: 5em;
       & h5 {
         color: var(--color-rare);
       }
       @media only screen and (max-width: $bp-md) {
-       margin-left: 0;;
+        margin-left: 0;
       }
     }
     &--single-artist {
       color: var(--color-brand);
-    
     }
   }
 
@@ -109,24 +127,24 @@
     justify-content: space-between;
     align-items: center;
     @media only screen and (max-width: $bp-md) {
-     flex-direction: column;
-     justify-content: flex-start;
-     align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
     &--single-btn {
       @media only screen and (max-width: $bp-md) {
         margin-bottom: 1em;
-       }
+      }
     }
   }
 }
 h2.single-artist__artist-or-lineup--single-artist {
-    @media only screen and (max-width: $bp-md) {
-      font-size: 2rem;
-    }
+  @media only screen and (max-width: $bp-md) {
+    font-size: 2rem;
+  }
 }
 
 p:has(iframe) {
   display: flex;
   justify-content: center;
-} 
+}
