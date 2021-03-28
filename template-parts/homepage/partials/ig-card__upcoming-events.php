@@ -1,7 +1,8 @@
 <?php
 $day_of_the_week = date("w", get_field('post_events_concert_date'));
 $concert_date = ig_saulkrasti_jazz_split_date_to_arr('post_events_concert_date'); // name of the month also awailable but needs to be adjusted
-$venue_name = get_field('post_venues_venue_name', get_field('post_events_venue'));
+$venue_ID = get_field('post_events_venue');
+$venue_name = get_field('post_venues_venue_title', $venue_ID) ? get_field('post_venues_venue_title', $venue_ID) :  get_field('post_venues_venue_name', $venue_ID);
 $is_free_concert = ig_saulkrasti_jazz_get_radio_value('post_events_is_it_a_free_concert');
 $concert_date_in_milisecs = get_field('post_events_concert_date', false, false);
 $day = date('D', strtotime($concert_date_in_milisecs));
@@ -41,7 +42,9 @@ $current_event_ID = get_the_ID();
                     <h6 class="ig-card__day"><?php echo $concert_day_language_dependent ?></h6>
                 </div>
             </div>
+            <a target="_blank" href="<?php the_permalink($venue_ID)?>">
             <h6 class="ig-card__venue-name"><?php esc_html_e($venue_name, 'saulkrasti-jazz-festival') ?></h6>
+            </a>
         </div>
         <div class="ig-card__artists">
 

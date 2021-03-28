@@ -22,7 +22,7 @@ $show_current_events_section = get_field_object('options_show_upcoming_events_se
 
 
 
-<section class="homepage-about-festival full-screen-cover full-screen-cover__static" style="background-color: var(--color-dark);">>
+<section class="homepage-about-festival full-screen-cover full-screen-cover__static <?php echo $show_current_events_section ? 'ig_pt-5rem' : null; ?>" style="background-color: var(--color-dark);">>
 <?php get_template_part('template-parts/homepage/section', 'about'); ?>
 
 </section>

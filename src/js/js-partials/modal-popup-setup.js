@@ -30,6 +30,8 @@ export const modalPopupSetup = () => {
             $("html").removeClass("no-overflow");
           }, 500);
         });
+
+     
       }
     
       if ($(".modal").length > 0) {

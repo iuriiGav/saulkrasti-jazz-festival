@@ -46,7 +46,15 @@ if($(this).data("type-of-link") === 'full_bio') {
           $(".modal").addClass("modal__invisible");
         }, 200);
       });
+      $(document).on('click', '.btnc-go-back', function() {
+        $(".single-artist-dynamic-container").fadeOut(200);
+        setTimeout(() => {
+          $(".single-artist-dynamic-container").remove();
+          $(".modal").removeClass("modal__visible");
 
+          $(".modal").addClass("modal__invisible");
+        }, 200);
+      })
       // modal modal-drummers-league-js is-open
 
       const queriedArtistID = $(this).data("artist-id");

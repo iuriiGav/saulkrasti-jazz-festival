@@ -61,7 +61,7 @@ if($img_width >= $img_height) :
 <?php 
 else :
 ?>
-<img class="img-fluid content-card__photo"  src="<?php echo esc_url(wp_get_attachment_image_src($teacher_photo, 'ig-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta($teacher_photo, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
+<img class="img-fluid content-card__photo"  src="<?php echo esc_url(wp_get_attachment_image_src($teacher_photo, 'ig-featured-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta($teacher_photo, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
 
 <?php endif; ?>
 

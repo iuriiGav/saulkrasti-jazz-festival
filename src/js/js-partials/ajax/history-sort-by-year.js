@@ -35,9 +35,12 @@ export const sortHistoryByYear = () => {
           data: { action: "getHistory", festivalQueryYear },
           type: "POST",
           success: function (data) {
-            if ($(".history-wrapper").html() !== data) {
+            if($('.history-wrapper').length > 0) {
+              $('.history-wrapper').remove();
+            }
+            if ($(".history-by-year-js-ajax-container").html() !== data) {
               animateAjax(
-                ".history-wrapper",
+                ".history-by-year-js-ajax-container",
                 "history-wrapper__on-screen",
                 "history-wrapper__off-screen",
                 data,

@@ -27,7 +27,7 @@
 
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'ig-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
+                            <img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'ig-featured-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
                         </div>
                 <?php endwhile;
                 endif; ?>

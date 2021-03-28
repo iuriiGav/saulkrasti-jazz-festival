@@ -34,7 +34,7 @@
                 else :
                 ?>
 
-                    <img class="ig_w-40" src="<?php echo esc_url(wp_get_attachment_image_src(get_field('post_artists_artists_photo'), 'ig-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta(get_field('post_artists_artists_photo'), '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
+                    <img class="ig_w-40" src="<?php echo esc_url(wp_get_attachment_image_src(get_field('post_artists_artists_photo'), 'ig-featured-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta(get_field('post_artists_artists_photo'), '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
             <?php endif;
             endif; ?>
 
@@ -105,7 +105,7 @@
                             <a class="btnc btnc-underlined" href="<?php echo esc_url($url) ?>" target="_blank"><?php esc_html_e($website_homepage[2], 'saulkrasti-jazz-festival')  ?></a>
                         </div>
 
-
+                    
                 <?php
                     endwhile;
 
@@ -113,7 +113,9 @@
                 endif;
 
                 ?>
-
+    <?php if($args['in_ajax']) : ?>
+<button class="btnc btnc-lg btnc-brand btnc-go-back"> <span class="ig_arrow-left">&#10558;</span><?php echo ig_gav_get_global_text('btn_text_go_back')?></button>
+                        <?php endif; ?>
             </div>
 
 

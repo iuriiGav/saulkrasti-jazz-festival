@@ -66,7 +66,9 @@ ig-ajax-history.php from prev commit
 
 
 
-
+<div class="history-by-year-js-ajax-container">
+    
+</div>
 
 
     <div class="row history-wrapper">

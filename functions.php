@@ -32,7 +32,13 @@ function ig_saulkrasti_jazz_setup()
     add_image_size('ig-blog', 350, 230, true);
     add_image_size('ig-medium', 620, 430, true);
     add_image_size('ig-mediumCover', 1250, 834, true);
-    add_image_size('ig-portrait', 400, 533, true);
+    add_image_size('ig-featured-portrait', 400, 533, true);
+
+    //new image sizes 
+    add_image_size('ig-bg-img', 1920, 1080, true);
+    add_image_size('ig-featured-portrait', 900, 1200, true);
+    add_image_size('ig-featured-landscape', 1200, 900, true);
+    add_image_size('ig-thumb', 150, 150, true);
 
     add_theme_support('post-thumbnails');
     add_theme_support( 'title-tag' );
@@ -55,6 +61,7 @@ register_nav_menu('footer-menu', esc_html__('Footer menu'));
 require  get_template_directory() . '/inc/custom-post-types/custom-post-artists.php';
 require  get_template_directory() . '/inc/custom-post-types/custom-post-events.php';
 require  get_template_directory() . '/inc/custom-post-types/custom-post-venues.php';
+require  get_template_directory() . '/inc/custom-post-types/custom-post-type-gallery.php';
 require get_template_directory() . '/inc/acf_functions/add_acf_options_page.php';
 require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/custom-taxonomy-venues.php';
 require get_template_directory() . '/inc/custom-post-types/custom-taxonomies/custom-taxonomy-artists.php';
@@ -138,3 +145,19 @@ add_filter( 'posts_where', 'wpza_replace_repeater_field' );
 //     $columns['slices'] = 'Slices';
 //     return $columns;
 // }
+
+add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
+
+add_filter( 'intermediate_image_sizes', 'remove_default_img_sizes', 10, 1);
+
+function remove_default_img_sizes( $sizes ) {
+  $targets = ['medium', 'medium_large', 'large', '1536x1536', '2048x2048'];
+
+  foreach($sizes as $size_index=>$size) {
+    if(in_array($size, $targets)) {
+      unset($sizes[$size_index]);
+    }
+  }
+
+  return $sizes;
+}

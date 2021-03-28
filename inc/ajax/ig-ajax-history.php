@@ -46,14 +46,66 @@ $args_artists = array(
     'in_ajax' => true
     
 );
-
-
+?>
+<div class="row history-wrapper">
+    <?
     get_template_part('template-parts/page-history/section', 'artists', $args_artists);
 
 
     $args = array('field' => 'history_concrete_years_statistic', 'in_ajax' => true, 'festival_query_year' => $festivalQueryYear, 'page_ID' => $page_Id );
      
     get_template_part('template-parts/page-history/section', 'sidelinks', $args);
+    
+   ?>
+</div>
+   <?php
+    $args = array(
+        'post_type'      => 'gallery',
+        'posts_per_page' => -1,
+        'meta_query' => array(
+            array(
+                'key' => 'post_gallery_gallery_year',
+                'value' => $festivalQueryYear,
+                'compare' => 'LIKE'
+                )
+            ),
+        'meta_key'       => 'post_gallery_gallery_year',
+        'orderby'        => 'meta_value_num',
+        'order'          => 'DESC',
+     
+    );
+    
+    $gallery= new WP_Query($args); ?>
+    
+<div class="">
+
+
+<?php
+
+
+//// implement this code:::
+// if($gallery->have_posts()) : while($gallery->have_posts()): $gallery->the_post();
+
+
+
+// the_field('gallery_shortcode');
+
+
+
+//  endwhile; wp_reset_postdata(); endif; 
+ 
+ ?>
+
+</div>
+<?php
+
+
+
+
+
+
+
+
 
 die();
 }
