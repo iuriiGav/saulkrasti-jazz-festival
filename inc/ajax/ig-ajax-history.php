@@ -84,15 +84,15 @@ $args_artists = array(
 
 
 //// implement this code:::
-// if($gallery->have_posts()) : while($gallery->have_posts()): $gallery->the_post();
+if($gallery->have_posts()) : while($gallery->have_posts()): $gallery->the_post();
+
+$shortcode = get_field('gallery_shortcode');
+
+echo do_shortcode($shortcode);
 
 
 
-// the_field('gallery_shortcode');
-
-
-
-//  endwhile; wp_reset_postdata(); endif; 
+ endwhile; wp_reset_postdata(); endif; 
  
  ?>
 

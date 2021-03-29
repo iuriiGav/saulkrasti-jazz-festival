@@ -161,3 +161,22 @@ function remove_default_img_sizes( $sizes ) {
 
   return $sizes;
 }
+
+
+//  tested this for shortcode but didnt work so far
+// function shortcode_test() {
+//   if ( !empty($_REQUEST['shortcode']) ) {
+//     // Try and sanitize your shortcode to prevent possible exploits. Users typically can't call shortcodes directly.
+//     $shortcode_name = esc_attr($_REQUEST['shortcode']);
+
+//     // Wrap the shortcode in tags. You might also want to add arguments here.
+//     $full_shortcode = sprintf('[%s]', $shortcode_name);
+
+//     // Perform the shortcode
+//     echo do_shortcode( $full_shortcode );
+
+//     // Stop the script before WordPress tries to display a template file.
+//     exit;
+//   }
+// }
+// add_action('init', 'shortcode_test');
