@@ -2,7 +2,31 @@ import * as $ from "jquery";
 
 
 
+const swiperFunc = () => {
+  console.log('swiperFunc')
+  return new Swiper(".swiper-container", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    slidesPerView: "auto",
 
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
+}
 
 
 
@@ -64,15 +88,24 @@ if($(this).data("type-of-link") === 'full_bio') {
         data: { action: "getSingleArtist", queriedArtistID: queriedArtistID },
         type: "POST",
         success: function (data) {
+         
           $(".modal").html(data);
           $(".ig_loading-spinner").fadeOut(function () {
             $(".ig_loading-spinner").remove();
           });
+
+                  
+console.log('hello');
+console.log($('.swiper-container'))
+       const swiper =  swiperFunc();
+         
         },
         error: function (error) {
           console.warn(error);
         },
       });
+
+    
     } else if ($(this).data("type-of-link") === 'no_page') {
         e.preventDefault();
     } else if( $(this).data("type-of-link") === 'no-data' ){  
@@ -122,6 +155,11 @@ if($(this).data("type-of-link") === 'full_bio') {
             $(".ig_loading-spinner").fadeOut(function () {
               $(".ig_loading-spinner").remove();
             });
+
+console.log('hello');
+            console.log($('.swiper-container'))
+       const swiper =  swiperFunc();
+
           },
           error: function (error) {
             console.warn(error);
@@ -138,11 +176,6 @@ if($(this).data("type-of-link") === 'full_bio') {
     } else {
 
     }
-
-
-
-
-
 
 
 

@@ -14,7 +14,10 @@
        background-color: var(--color-brand);
        color: var(--color-white);
     }
-
+&__container {
+    
+    margin: 2em auto;
+}
     &__image {
         width: 100%;
     }

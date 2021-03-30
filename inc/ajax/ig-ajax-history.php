@@ -77,22 +77,22 @@ $args_artists = array(
     
     $gallery= new WP_Query($args); ?>
     
-<div class="">
+<div class="row">
 
 
+ 
 <?php
 
-
 //// implement this code:::
-if($gallery->have_posts()) : while($gallery->have_posts()): $gallery->the_post();
+// if($gallery->have_posts()) : while($gallery->have_posts()): $gallery->the_post();
 
-$shortcode = get_field('gallery_shortcode');
+// $shortcode = get_field('gallery_shortcode');
 
-echo do_shortcode($shortcode);
+// echo do_shortcode($shortcode);
 
 
 
- endwhile; wp_reset_postdata(); endif; 
+//  endwhile; wp_reset_postdata(); endif; 
  
  ?>
 
