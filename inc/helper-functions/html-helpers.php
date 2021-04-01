@@ -8,7 +8,7 @@ function ig_saulkrasti_jazz_image_from_field_custom_size($img_field, $size, $pag
 
 }
 function ig_saulkrasti_jazz_linear_gradient_dark() {
-    echo 'linear-gradient(180deg, rgba(19, 19, 19, 0.9) 0%, rgba(19, 19, 19, 0.9) 100%),';
+    echo 'linear-gradient(180deg, rgba(19, 19, 19, 0.9) 0%, rgba(19, 19, 19, 0.9) 80%),';
 
 }
 

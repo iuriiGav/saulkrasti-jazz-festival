@@ -47,6 +47,14 @@ border: none;
         padding: .5em 1.5em;
         color: var(--color-gray-light);
     }
+
+    &--30 {
+        width: 30%;
+        @media only screen and (max-width: $bp-md) {
+          width: 80%;
+          margin: 0 auto;
+        }
+    }
 }
 
 

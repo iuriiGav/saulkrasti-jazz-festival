@@ -41,7 +41,7 @@
 
 .md-none {
   @media only screen and (max-width: $bp-md) {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -252,7 +252,9 @@
 .ig_p-2em {
   padding: 2em;
 }
-
+.ig_m-2em {
+  margin: 2em;
+}
 .ig_pb-5rem {
   padding-bottom: 5rem;
 }

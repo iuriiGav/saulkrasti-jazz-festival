@@ -7,8 +7,21 @@
 
 .current-festival-dates {
   position: absolute;
-  top: 10%;
-  left: 14%;
+  bottom: 8rem;
+  right: 5rem;
+  padding: .4em .8em;
+  background-color: rgba(204, 121, 97, .62);
+  border-radius: 13px;
+  display: inline-block;
+  text-align: center;
+
+  @media only screen and (max-width: $bp-md) {
+    bottom: 15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .logo-with-year {

@@ -40,6 +40,9 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                 <h2 class="section-header section-header--less-pb ig_pt-0"><?php echo $current_year ?></h2>
 
             <?php endif; ?>
+
+            <div class="taxonomy-triggers-container--wrapper">
+<div class="tax-wrapper">
             <div class="taxonomy-triggers-container">
                 <?php if (is_front_page()) : ?>
 
@@ -61,6 +64,7 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                 </a>
 
             </div><!-- .taxonomy-triggers-container -->
+
 
             <div class="sort-by-venue <?php echo is_front_page() ?  'sort-by-menu--on-screen' : 'sort-by-menu--off-screen'; ?>">
 
@@ -100,8 +104,14 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                     <?php endforeach; ?>
                 </div>
             </div>
+            </div>
+
+<button class="btnc btnc-xl btnc-brand-square upcoming-concerts-relative-btn md-none"><?php echo ig_gav_get_global_text('btn_text_get_ticket_for_a_week') ?></button>
+
+            </div>
 
             <hr class="light-hr">
+            <button class="btnc btnc-xl btnc-brand-square upcoming-concerts-relative-btn d-md-only"><?php echo ig_gav_get_global_text('btn_text_get_ticket_for_a_week') ?></button>
 
 
             <div class="row upcoming-events__wrapper ajax-js-change-events-target">
@@ -150,7 +160,7 @@ if($args['page_concerts'] ) :
 
 
           
-                <button class="btnc btnc-smoke btnc-smoke--wide ml-3 btnc-l"><a href="<?php echo $page_concerts_url ?>"><?php echo ig_gav_get_global_text('btn_text_see_all') ?></a></button>
+                <button class="btnc btnc-brand-square"><a href="<?php echo $page_concerts_url ?>"><?php echo ig_gav_get_global_text('btn_text_see_all') ?></a></button>
         </div>
     <?php endif; ?>
 </div><!-- .concert-cards-wrapper -->

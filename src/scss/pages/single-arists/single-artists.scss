@@ -40,10 +40,10 @@ justify-content: space-between;
   }
   &__photo {
     background-color: var(--color-dark);
-    padding: 5rem 0;
+    // padding: 5rem 0;
 
     & img {
-      width: 70%;
+      width: 80%;
       margin: 0 auto;
       // box-shadow: 0 2rem 4rem rgba(4, 7, 16, 0.2);
     }

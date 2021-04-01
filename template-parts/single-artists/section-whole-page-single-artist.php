@@ -71,7 +71,7 @@ if ($concerts->have_posts()) : while ($concerts->have_posts()) : $concerts->the_
                     <div class="sidebar-card__venue">
 
                         <div class="sidebar-card__read-more">
-                            <a href="<?php the_permalink() ?>" class="btnc btnc-underlined btnc-xl"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?></a>
+                            <a href="<?php the_permalink() ?>" class="btnc btnc-underlined btnc-xl"><?php echo ig_gav_get_global_text('btn_text_about_concert') ?></a>
                         </div>
 
                         <?php if (get_field('post_events_link_to_ticket_sale') && get_field('post_events_is_it_a_free_concert') !== 'true') : ?>

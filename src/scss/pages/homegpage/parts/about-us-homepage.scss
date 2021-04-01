@@ -12,5 +12,8 @@
         @media only screen and (max-width: $bp-md) {
             flex-direction: column;
         }
+        &__workshop-sections  {
+            padding-left: 6em;
+        }
 }
 

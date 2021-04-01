@@ -64,6 +64,7 @@
     padding: 2rem;
     transition: all 0.2s;
     cursor: pointer;
+    z-index: 1000;
     display: inline-block;
     &:hover {
       transform: scale(1.2);

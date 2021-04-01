@@ -7,7 +7,9 @@ $show_current_events_section = get_field_object('options_show_upcoming_events_se
 ?>
 
     <main class="homepage">
-        <section class="hero full-screen-cover" style="background-image: url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_hero_image_cover', 'options')
+    <!--OPTION 1: linear-gradient(180deg, rgba(96, 119, 205, 0.06) 0%, rgba(96, 119, 205, 0.48) 100%), -->
+    <!--OPTION 2: linear-gradient(180deg, rgba(18, 17, 19, 0.2) 0%, rgba(0, 0, 0, 0.62) 100%), -->
+        <section class="hero full-screen-cover" style="background:  linear-gradient(180deg, rgba(18, 17, 19, 0.2) 0%, rgba(0, 0, 0, 0.62) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_hero_image_cover', 'options')
                                                                                 ?>)">
 
             <?php get_template_part('template-parts/homepage/section', 'hero'); ?>
@@ -15,20 +17,22 @@ $show_current_events_section = get_field_object('options_show_upcoming_events_se
         </section>
 
 <?php if($show_current_events_section === 'true') : ?>
-        <section class="homepage-upcoming-concerts full-screen-cover" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?>  url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_upcoming_concerts_cover', 'options') ?>)">
+        <section class="homepage-upcoming-concerts full-screen-cover" style="background-color: var(--color-dark)">
         <?php get_template_part('template-parts/homepage/section', 'upcoming-events'); ?>
         </section><!-- .homepage-upcoming-concerts  -->
 <?php endif; ?>
 
 
 
-<section class="homepage-about-festival full-screen-cover full-screen-cover__static <?php echo $show_current_events_section ? 'ig_pt-5rem' : null; ?>" style="background-color: var(--color-dark);">>
+<!-- <section class="homepage-about-festival full-screen-cover <?php echo $show_current_events_section ? 'ig_pt-5rem' : null; ?>" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?>  url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_upcoming_concerts_cover', 'options')
+                                                                                ?>)">
+
+</section> -->
+
+<section id="test" class="homepage-workshops full-screen-cover" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?>  url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_upcoming_concerts_cover', 'options')
+                                                                                ?>)">>
 <?php get_template_part('template-parts/homepage/section', 'about'); ?>
 
-</section>
-
-<section id="test" class="homepage-workshops full-screen-cover" style="background-image: url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_workshops_cover', 'options')
-                                                                                ?>)">>
 <?php get_template_part('template-parts/homepage/section', 'workshops'); ?>
 
 </section>

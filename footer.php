@@ -17,12 +17,12 @@
 
                 // Loop through rows.
                 while (have_rows('options_festival_sponsors', 'options')) : the_row(); ?>
-                    <div class="sponsor-logo-wrap <?php echo get_sub_field('main_partner') === 'true' ? 'main-partner' : null ?>">
                         <a target="_blank" href="<?php echo  esc_url(get_sub_field('link')) ?>" class="sponsor-logo__link">
-                            <img src="<?php echo esc_url(wp_get_attachment_image_src(get_sub_field('logo'), 'full')[0]) ?>" alt="" class="sponsor-logo__img">
+                    <div class="sponsor-logo-wrap <?php echo get_sub_field('main_partner') === 'true' ? 'main-partner' : null ?>">
+                            <img src="<?php echo esc_url(wp_get_attachment_image_src(get_sub_field('logo'), 'full')[0]) ?>" alt="" class="sponsor-logo__link--img">
 
-                        </a>
-                    </div>
+                        </div>
+                    </a>
 
 
             <?php
@@ -83,12 +83,13 @@
     get_template_part('template-parts/contact-and-bank/section', 'address'); ?>
                       
                     <p class="quick-links__address-line "><a class="t-brand" href="mailto: <?php esc_html_e(get_field('options_festival_email', 'options'), 'saulkrasti-jazz-festival') ?>"><?php esc_html_e(get_field('options_festival_email', 'options'), 'saulkrasti-jazz-festival') ?></a> </p>
+                    <p><a href="tel:<?php echo  ig_gav_get_global_text('global_phone_number') ?>"><?php echo ig_gav_get_global_text('global_phone_number')?></a></p>
                     <br>
+
                     </div>
 
 <div class="quick-links__bank">
 
-<?php get_template_part('template-parts/contact-and-bank/section', 'bank'); ?>
 
 </div>
 </div>

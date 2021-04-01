@@ -77,22 +77,22 @@ $args_artists = array(
     
     $gallery= new WP_Query($args); ?>
     
-<div class="row">
+<div class="row see-gallery-wrapper-in-ajax-history">
 
 
  
 <?php
 
-//// implement this code:::
-// if($gallery->have_posts()) : while($gallery->have_posts()): $gallery->the_post();
+if($gallery->have_posts()) : while($gallery->have_posts()): $gallery->the_post();
 
-// $shortcode = get_field('gallery_shortcode');
+if(get_field('gallery_main_gallery') === 'true') :
+?>
 
-// echo do_shortcode($shortcode);
+<button class="btnc btnc-brand-square btnc--30 ig_m-2em btnc-xl"><a target="_blank" href="<?php the_permalink(); ?>"><?php echo ig_gav_get_global_text('btn_text_see_gallery') ?></a></button>
 
+<?php
 
-
-//  endwhile; wp_reset_postdata(); endif; 
+endif; endwhile; wp_reset_postdata(); endif; 
  
  ?>
 

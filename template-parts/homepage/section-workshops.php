@@ -1,5 +1,29 @@
-<div class="row homepage-workshops__wrapper">
-    <div class="col-md-5 homepage-workshops__see-through"></div>
+<div class="row homepage-workshops__wrapper ">
+    <div class="col-md-5 homepage-workshops__see-through about-us-small-gallery__workshop-sections d-flex md-none">
+
+    <div class="swiper-container  swiper-container__mobile-horizonal swiper-container__workshop-section">
+            <div class="swiper-wrapper">
+
+
+                <?php if (have_rows('homepage_about_workshops_short_gallery')) : while (have_rows('homepage_about_workshops_short_gallery')) : the_row();
+                        $image = get_sub_field('image');
+                ?>
+
+
+                        <div class="swiper-slide">
+                            <img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'ig-featured-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
+                        </div>
+                <?php endwhile;
+                endif; ?>
+
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+
+    </div>
     <div class="col-md-7 homepage-workshops__content">
     <h2 class="section-header section-header--less-padding"><?php esc_html_e(get_field('homepage_header_workshops_header'), 'saulkrasti-jazz-festival') ?></h2>
 

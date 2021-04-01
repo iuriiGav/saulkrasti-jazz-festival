@@ -16,7 +16,6 @@
     <div class="col-md-5 about-us-small-gallery">
         <!-- Slider main container -->
         <div class="swiper-container swiper-container__mobile-horizonal">
-            <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
 
 
@@ -25,7 +24,6 @@
                 ?>
 
 
-                        <!-- Slides -->
                         <div class="swiper-slide">
                             <img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'ig-featured-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
                         </div>
@@ -34,11 +32,9 @@
 
             </div>
 
-            <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
 
-            <!-- If we need scrollbar -->
         </div>
 
         <div class="ig-card ig-card--empty-card-tail-after-text-content d-md-only"></div> 

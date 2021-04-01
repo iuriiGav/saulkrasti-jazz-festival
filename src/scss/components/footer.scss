@@ -11,19 +11,7 @@
   padding-top: 2em;
 }
 
-.sponsor-logo-wrap {
-  background-color: var(--color-white);
-  border-radius: 3px;
-  width: 150px;
-  padding: 0.3em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1em;
-  @media only screen and (max-width: $bp-md) {
-    width: 100px;
-  }
-}
+
 
 .main-partner {
   width: 180px;
@@ -89,6 +77,22 @@
   padding-bottom: 2em;
 }
 
-.sponsor-logo__link img {
+
+.sponsor-logo__link {
+  background-color: var(--color-white);
+  border-radius: 3px;
+  width: 150px;
+  padding: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  @media only screen and (max-width: $bp-md) {
+    width: 100px;
+  }
+}
+
+0
+.sponsor-logo__link--img {
   min-height: 100% !important;
 }
