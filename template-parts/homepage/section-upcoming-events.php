@@ -17,16 +17,16 @@ $current_year = date("Y");
 $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concerts');
 
 
-
 ?>
 
-<?php
 
-?>
 
 <?php $festival_dates_array = ig_saulkrasti_jazz_get_dates_of_festival(ig_saulkrasti_jazz_festival_start_date(), ig_saulkrasti_jazz_festival_end_date(), 'd M y'); 
 
 ?>
+
+
+
 
 <div class="target-div-for-modal-and-spinner-js"></div>
 <div class="concert-cards-wrapper">
@@ -40,7 +40,9 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                 <h2 class="section-header section-header--less-pb ig_pt-0"><?php echo $current_year ?></h2>
 
             <?php endif; ?>
-
+            <?php
+// echo get_field('options_mailchimp_form_shortcode', 'options');
+?>
             <div class="taxonomy-triggers-container--wrapper">
 <div class="tax-wrapper">
             <div class="taxonomy-triggers-container">
@@ -70,7 +72,7 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
 
                 <div class="sort-by-options sort-by-options__venue">
                     <?php
-
+ 
                     while ($venues->have_posts()) : $venues->the_post();
                         $main_stage_in_position++;
                         $venue_name;
@@ -85,6 +87,7 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
 
                         <?php if (is_front_page()) : ?>
                             <h5 class="sort-by-options"> <a href="" class="sort-by-options__link sort-by-venue-js-ajax <?php echo $main_stage_in_position === 1 ?  'sort-by-options__link--active' : null; ?>" data-venue-id="<?php echo get_the_ID(); ?>"><?php echo  $venue_name ?></a></h5>
+                     
                         <?php else : ?>
                             <h5 class="sort-by-options"> <a href="" class="sort-by-options__link sort-by-venue-js-ajax" data-venue-id="<?php echo get_the_ID(); ?>"><?php echo  $venue_name ?></a></h5>
 
@@ -105,9 +108,9 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                 </div>
             </div>
             </div>
-
-<button class="btnc btnc-xl btnc-brand-square upcoming-concerts-relative-btn md-none"><?php echo ig_gav_get_global_text('btn_text_get_ticket_for_a_week') ?></button>
-
+<?php if(get_field('options_link_to_week_pass_ticket_sail', 'options') ) : ?>
+<button class="btnc btnc-xl btnc-brand-square upcoming-concerts-relative-btn md-none"><a target="_blank" href="<?php echo esc_url(get_field('options_link_to_week_pass_ticket_sail', 'options'))?>"> <?php echo ig_gav_get_global_text('btn_text_get_ticket_for_a_week') ?> </a></button>
+<?php endif; ?>
             </div>
 
             <hr class="light-hr">
@@ -136,6 +139,7 @@ if($args['page_concerts'] ) :
 
 
 <?php else : ?>
+
     <div class="col-xl-3 col-lg-4  upcoming-events__wrapp-for-single upcoming-events-js-ajax-container">
 
 <?php get_template_part('template-parts/homepage/partials/ig-card__upcoming-events'); ?>
@@ -143,7 +147,7 @@ if($args['page_concerts'] ) :
 </div>
 <?php endif; ?>
 
-                
+
 
                 <?php endwhile;
                 wp_reset_postdata(); ?>

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once 'inc/helper-functions/html-helpers.php';
 require_once 'inc/scripts.php';
 function ig_saulkrasti_jazz_scripts()
@@ -28,16 +29,15 @@ function ig_saulkrasti_jazz_setup()
 {
 
 
-    add_image_size('ig-square', 350, 350, true);
-    add_image_size('ig-blog', 350, 230, true);
-    add_image_size('ig-medium', 620, 430, true);
-    add_image_size('ig-mediumCover', 1250, 834, true);
-    add_image_size('ig-featured-portrait', 400, 533, true);
+
+
 
     //new image sizes 
     add_image_size('ig-bg-img', 1920, 1080, true);
     add_image_size('ig-featured-portrait', 900, 1200, true);
     add_image_size('ig-featured-landscape', 1200, 900, true);
+    add_image_size('ig-medium', 620, 430, true);
+    add_image_size('ig-square', 350, 350, true);
     add_image_size('ig-thumb', 150, 150, true);
 
     add_theme_support('post-thumbnails');
@@ -122,22 +122,6 @@ add_filter( 'wp_kses_allowed_html', 'custom_wpkses_post_tags', 10, 2 );
 
 
 
-
-
-
-
-function wpza_replace_repeater_field( $where ) {
-    $where = str_replace( "meta_key = 'years_in_which_this_artist_participated_$", "meta_key LIKE 'years_in_which_this_artist_participated_%", $where );
-	do_action( 'qm/debug', $where);
-    return $where;
-}
-add_filter( 'posts_where', 'wpza_replace_repeater_field' );
-
-
-
-
-
-
 //add admin columns to custom post type
 
 // add_filter('manage_artists_posts_columns', 'my_extra_cake_columns');
@@ -180,3 +164,22 @@ function remove_default_img_sizes( $sizes ) {
 //   }
 // }
 // add_action('init', 'shortcode_test');
+
+add_action( 'admin_menu', 'ig_gav_remove_admin_menus' );
+function ig_gav_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
+
+function ig_gav_admin_bar_render() {
+  global $wp_admin_bar;
+  $wp_admin_bar->remove_menu('comments');
+}
+add_action( 'wp_before_admin_bar_render', 'ig_gav_admin_bar_render' );
+
+function wpza_replace_repeater_field( $where ) {
+    $where = str_replace( "meta_key = 'years_in_which_this_artist_participated_$", "meta_key LIKE 'years_in_which_this_artist_participated_%", $where );
+	do_action( 'qm/debug', $where);
+    return $where;
+}
+add_filter( 'posts_where', 'wpza_replace_repeater_field' ); 
+ob_end_clean()?>

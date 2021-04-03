@@ -73,12 +73,19 @@ body, html {
   .preview-lazyload {
     position: initial !important;
   }
-  .videoWrapper {
-    
+
+  a {
+    transition: all 0.2s ease-in-out;
   }
-  .videoWrapper div iframe {
+  a:hover {
+    transform: scale(1.02);
+  }
+  // .videoWrapper {
+    
+  // }
+  // .videoWrapper div iframe {
    
     
-  }
+  // }
 
  

@@ -1,0 +1,1 @@
+<div class="footer-social-icons__facebook"><a href="<?php echo esc_url(get_field('options_social_links_facebook', 'options'))?>"><img src="<?php echo get_template_directory_uri() . '/images/social/f_logo_RGB-Grey_58.png'?>" alt="link to facebook page"></a></div>

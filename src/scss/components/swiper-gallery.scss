@@ -29,9 +29,18 @@
     max-width: 100%;
     align-self: center;
   }
+
+  &--80 .swiper-button-prev {
+    margin-left: 10%;
+      }
+      &--80 .swiper-button-next {
+    margin-right: 10%;
+      }
 }
 .swiper-wrapper {
   height: auto !important;
+
+
 }
 
 .swiper-slide {
@@ -41,11 +50,18 @@
   justify-content: center;
   align-items: center;
   height: auto !important;
+
+ 
  
 }
 
 .swiper-slide img {
   width: 100%;
+}
+
+.swiper-slide--80 img {
+  width: 80%;
+ 
 }
 
 .swiper-container-horizontal
@@ -89,4 +105,9 @@
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   opacity: 1;
+}
+
+
+.homepage-height-limit-swiper-gallery {
+  max-height: 720px;
 }

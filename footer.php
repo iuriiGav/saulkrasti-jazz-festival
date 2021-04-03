@@ -92,6 +92,12 @@
 
 
 </div>
+
+<div class="footer-social-icons">
+    <?php get_template_part('template-parts/social-links/social', 'facebook'); ?>
+    <?php get_template_part('template-parts/social-links/social', 'youtube'); ?>
+
+</div>
 </div>
 
                

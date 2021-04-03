@@ -1,0 +1,1 @@
+<div class="footer-social-icons__youtube"><a href="<?php echo esc_url(get_field('options_social_links_youtube', 'options'))?>"><img src="<?php echo get_template_directory_uri() . '/images/social/youtube_social_circle_dark.png'?>" alt="link to youtube channel"></a></div>

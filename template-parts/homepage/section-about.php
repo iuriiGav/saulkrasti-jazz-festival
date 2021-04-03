@@ -15,7 +15,7 @@
     </div>
     <div class="col-md-5 about-us-small-gallery">
         <!-- Slider main container -->
-        <div class="swiper-container swiper-container__mobile-horizonal">
+        <div class="swiper-container swiper-container__mobile-horizonal swiper-container--80">
             <div class="swiper-wrapper">
 
 
@@ -24,7 +24,7 @@
                 ?>
 
 
-                        <div class="swiper-slide">
+                        <div class="swiper-slide swiper-slide--80">
                             <img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'ig-featured-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
                         </div>
                 <?php endwhile;

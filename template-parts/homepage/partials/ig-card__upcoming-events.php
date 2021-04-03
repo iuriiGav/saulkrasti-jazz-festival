@@ -29,6 +29,7 @@ $current_event_ID = get_the_ID();
 
 
         <?php endif; ?>
+
     </div>
     <div class="ig-card__content">
 

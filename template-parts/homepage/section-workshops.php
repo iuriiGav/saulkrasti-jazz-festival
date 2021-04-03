@@ -1,7 +1,7 @@
 <div class="row homepage-workshops__wrapper ">
     <div class="col-md-5 homepage-workshops__see-through about-us-small-gallery__workshop-sections d-flex md-none">
 
-    <div class="swiper-container  swiper-container__mobile-horizonal swiper-container__workshop-section">
+    <div class="swiper-container  swiper-container__mobile-horizonal swiper-container__workshop-section swiper-container--80">
             <div class="swiper-wrapper">
 
 
@@ -10,7 +10,7 @@
                 ?>
 
 
-                        <div class="swiper-slide">
+                        <div class="swiper-slide swiper-slide--80">
                             <img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'ig-featured-portrait')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
                         </div>
                 <?php endwhile;

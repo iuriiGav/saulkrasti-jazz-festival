@@ -3,7 +3,7 @@
     // Optional parameters
     direction: "horizontal",
     loop: true,
-    slidesPerView: "auto",
+    // slidesPerView: "auto",
 
     // If we need pagination
     pagination: {

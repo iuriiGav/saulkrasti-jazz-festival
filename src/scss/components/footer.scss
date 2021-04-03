@@ -92,7 +92,22 @@
   }
 }
 
-0
 .sponsor-logo__link--img {
   min-height: 100% !important;
+}
+
+.footer-social-icons {
+  display: flex;
+  justify-content: flex-start;
+  &__facebook, &__youtube {
+    max-width: 50px;
+    padding-right: 1em;
+    transition: all 0.2s ease-in-out;
+
+  }
+
+  & div:hover {
+    transform: scale(1.2);
+  }
+ 
 }
