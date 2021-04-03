@@ -141,6 +141,9 @@
     &:hover {
       transform: scale(1.02);
     }
+    &:active {
+      @include active-link-reaction();
+    }
   }
   &__item-group {
     padding: 1em 0;

@@ -55,6 +55,10 @@
   // text-decoration: underline;
 }
 
+.menu-item:active {
+  // @include active-link-reaction();
+}
+
 // Polylang flag styling
 .pll-parent-menu-item {
   display: flex;
@@ -146,4 +150,32 @@ a.dropdown-item:hover {
 .lang-item a {
 display: flex;
 justify-content: center;
+}
+
+.waze-start-navigation-icon {
+
+  &__container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+&--justify-start {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+  }
+
+  &__link-image img{
+    transition: all 0.2s ease-in-out;
+    width: 75px;
+    padding: .6em;
+    &:hover {
+    transform: scale(1.1);
+    }
+
+    
+  }
+  &__link-text{
+color: var(--color-white);
+  }
 }

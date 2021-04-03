@@ -29,7 +29,9 @@ endif;
 <div class="content-box">
     <h2 class="content-box__header section-header section-header--less-padding md-none"><?php esc_html_e(get_field('teachers_section_header'), 'saulkrasti-jazz-festival') ?></h2>
 
-    
+    <?php if(get_field('options_masterclasses_happening', 'options') === 'false') : ?>
+<?php get_template_part('template-parts/workshops/warning') ?>
+        <?php endif; ?>
     
 <?php
 

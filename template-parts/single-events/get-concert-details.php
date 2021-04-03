@@ -5,6 +5,8 @@
 
             <h4><?php echo $date_arr[0], ' ', $date_arr[1], ',', ' ', $concert_time ?></h4>
             <h3 class="ig_tc-rare"> <?php echo $concert_day ?> </h3>
+          
+           
         </div>
 
         <div class="single-artist__event-venue">
@@ -124,7 +126,7 @@ elseif(get_field('post_events_concert_title')) :   ?>
 
         ?>
         <?php if (!empty(get_field('post_events_link_to_ticket_sale'))) : ?>
-            <div class="btnc btnc-brand btnc-lg single-artist__get_event_ticket--single-btn"><a href="<?php echo esc_url(get_field('post_events_link_to_ticket_sale')) ?>"><?php echo ig_gav_get_global_text('btn_text_get_ticket') ?></a></div>
+            <div class="btnc btnc-dark btnc-dark__plus-p btnc-lg single-artist__get_event_ticket--single-btn"><a href="<?php echo esc_url(get_field('post_events_link_to_ticket_sale')) ?>"><?php echo ig_gav_get_global_text('btn_text_get_ticket') ?></a></div>
 
 
             <?php if(get_field('options_link_to_week_pass_ticket_sail', 'options')) : ?>

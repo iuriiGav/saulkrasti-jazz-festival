@@ -237,6 +237,9 @@
       &:hover {
         transform: scale(1.02);
       }
+      &:active {
+        @include active-link-reaction();
+      }
     }
 
    
@@ -437,4 +440,16 @@ padding: 2em;
 
 
 }
+ }
+
+ ol li a {
+   display: inline-block;
+   &:hover {
+color: var(--color-brand);
+transform: scale(1.02);
+   }
+   &:active {
+     transition: none;
+    @include active-link-reaction();
+   }
  }

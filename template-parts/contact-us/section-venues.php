@@ -57,7 +57,7 @@ endif; endwhile; wp_reset_postdata(); endif;
 
 <div class="row d-flex justify-content-center">
 
-<h4 class="section-header section-header--less-padding"><?php esc_html_e(get_field('contact_us_other_venues_header'), 'saulkrasti-jazz-festival') ?></h4>
+<h4 class="section-header section-header--less-padding p-0"><?php esc_html_e(get_field('contact_us_other_venues_header'), 'saulkrasti-jazz-festival') ?></h4>
 
 <?php foreach($other_venues_IDs as $venueID) : 
     $venue_title = get_field('post_venues_venue_title', $venueID);
@@ -65,11 +65,10 @@ endif; endwhile; wp_reset_postdata(); endif;
     
     ?>
 
-<button class="btnc btnc-dark btnc--30 ig_m-2em btnc-md"><a target="_blank" href="<?php echo get_the_permalink($venueID); ?>"> <?php echo $venue_title ? esc_html__($venue_title, 'saulkrasti-jazz-festival') : esc_html__($venue_name, 'saulkrasti-jazz-festival') ?> </a></button>
+<button class="btnc btnc-brand-square btnc--30 buttons-in-contacts-more-venues btnc-md"><a target="_blank" href="<?php echo get_the_permalink($venueID); ?>"> <?php echo $venue_title ? esc_html__($venue_title, 'saulkrasti-jazz-festival') : esc_html__($venue_name, 'saulkrasti-jazz-festival') ?> </a></button>
 <?php endforeach; ?>
 </div>
 
 <?php endif; ?>
 
-<!--  -->
 

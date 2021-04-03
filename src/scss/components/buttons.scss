@@ -33,7 +33,9 @@ border: none;
         &:hover {
             color: var(--color-white);
         }
-        
+        &__plus-p {
+            padding: .5em;
+        }
         
     }
     &-brand {
@@ -135,4 +137,8 @@ font-size: 2.2rem;
                     
                 }
                 padding-bottom: .5em;
+    }
+
+    .buttons-in-contacts-more-venues {
+        margin: 1em;
     }

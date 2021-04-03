@@ -61,7 +61,7 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                 <a id="ig-sort-by-date" href="" class="sort-by-toggler">
                     <?php echo ig_gav_get_global_text('btn_text_sort_by_date') ?>
                 </a>
-                <a id="ig-sort-show-all" href="" class="sort-by-toggler <?php echo $args['page_concerts'] ? 'ig_gav-invisible' : null ?>  show-all-concerts-js-ajax">
+                <a id="ig-sort-show-all" href="" class="sort-by-toggler <?php echo $args['page_concerts'] ? 'sort-by-toggler__active' : null ?>  show-all-concerts-js-ajax">
                     <?php echo ig_gav_get_global_text('btn_text_sort_show_all') ?>
                 </a>
 

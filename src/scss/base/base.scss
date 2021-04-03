@@ -5,7 +5,9 @@ $bp-md: 767px;
 $bp-lg: 992px;
 $bp-xl: 1200px;
 $bp-xxl: 1400px;
-
+@mixin active-link-reaction () {
+  transform: translateY(2px) !important;
+ }
 html, body {
   background-color: var(--color-dark)
 }
@@ -80,6 +82,10 @@ body, html {
   a:hover {
     transform: scale(1.02);
   }
+  a:active {
+    @include active-link-reaction();
+  }
+
   // .videoWrapper {
     
   // }
@@ -88,4 +94,3 @@ body, html {
     
   // }
 
- 

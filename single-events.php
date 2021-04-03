@@ -18,6 +18,7 @@
         $day = date('D', strtotime($concert_date_in_milisecs));
         $concert_day = ig_get_day_of_the_week_depending_on_language($day);
 
+
 ?>
 
         <section class=" full-screen-cover" style="background: linear-gradient(180deg, #070707 0%, rgba(53, 53, 53, 0) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_single_event_cover', 'options')

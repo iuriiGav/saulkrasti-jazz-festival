@@ -3,7 +3,8 @@ require_once 'inc/helper-functions/html-helpers.php';
 $show_current_events_section = get_field_object('options_show_upcoming_events_section', 'options')['value'];
 ?>
 <?php while (have_posts()) : the_post();
-    $headliner_hero = get_field('homepage_hero_headliners_images')
+    $headliner_hero = get_field('homepage_hero_headliners_images');
+    $optional_padding_top = $show_current_events_section  === 'false' ? 'ig_pt-5rem' : null;
 ?>
 
     <main class="homepage">
@@ -23,19 +24,38 @@ $show_current_events_section = get_field_object('options_show_upcoming_events_se
 <?php endif; ?>
 
 
+<?php if($show_current_events_section === 'true') : ?>
 
-<!-- <section class="homepage-about-festival full-screen-cover <?php echo $show_current_events_section ? 'ig_pt-5rem' : null; ?>" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?>  url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_upcoming_concerts_cover', 'options')
-                                                                                ?>)">
 
-</section> -->
-
-<section id="test" class="homepage-workshops full-screen-cover" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?>  url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_second_cover', 'options')
+<section class="homepage-workshops full-screen-cover <?php echo $optional_padding_top?>" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?>  url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_second_cover', 'options')
                                                                                 ?>)">>
+                                                                                
 <?php get_template_part('template-parts/homepage/section', 'about'); ?>
+<?php get_template_part('template-parts/homepage/section', 'workshops'); ?>
 
+
+</section>
+
+<?php else: ?>
+
+
+
+    <section class="homepage-workshops full-screen-cover <?php echo $optional_padding_top?>" style="background-color: var(--color-dark)">>
+
+    <?php get_template_part('template-parts/homepage/section', 'about'); ?>
+
+    </section>
+
+    <section class="homepage-workshops full-screen-cover <?php echo $optional_padding_top?>" style="background: <?php ig_saulkrasti_jazz_linear_gradient_dark() ?>  url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_second_cover', 'options')
+                                                                                ?>)">>
 <?php get_template_part('template-parts/homepage/section', 'workshops'); ?>
 
 </section>
+
+<?php endif; ?>
+
+
+
     </main>
 <?php endwhile; ?>
 <?php get_footer(); ?>

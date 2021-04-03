@@ -1,5 +1,8 @@
 <div class="row">
     <h2 class="section-header section-header--less-padding"><?php esc_html_e(get_field('participation_fee_header'), 'saulkrasti-jazz-festival') ?></h2>
+    <?php if(get_field('options_masterclasses_happening', 'options') === 'false') : ?>
+<?php get_template_part('template-parts/workshops/warning') ?>
+        <?php endif; ?>
     <div class="ig-card__line-high ig-card__just-content">
         <?php echo wp_kses_post(wpautop(get_field('participation_fee_text'))) ?>
     </div>

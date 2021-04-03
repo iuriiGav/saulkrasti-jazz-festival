@@ -72,6 +72,9 @@
                 ));
                 ?>
 
+
+
+
             </div>
 
             <div class="col-md-3 col-xs-6 quick-links__address-bank-details">
@@ -80,7 +83,7 @@
 
     <?php 
     
-    get_template_part('template-parts/contact-and-bank/section', 'address'); ?>
+    get_template_part('template-parts/contact-and-bank/section', 'address', array('in_footer' => 'true')); ?>
                       
                     <p class="quick-links__address-line "><a class="t-brand" href="mailto: <?php esc_html_e(get_field('options_festival_email', 'options'), 'saulkrasti-jazz-festival') ?>"><?php esc_html_e(get_field('options_festival_email', 'options'), 'saulkrasti-jazz-festival') ?></a> </p>
                     <p><a href="tel:<?php echo  ig_gav_get_global_text('global_phone_number') ?>"><?php echo ig_gav_get_global_text('global_phone_number')?></a></p>
@@ -88,10 +91,7 @@
 
                     </div>
 
-<div class="quick-links__bank">
 
-
-</div>
 
 <div class="footer-social-icons">
     <?php get_template_part('template-parts/social-links/social', 'facebook'); ?>
