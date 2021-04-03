@@ -48,6 +48,12 @@ border: none;
         border-radius: 2px;
         padding: .5em 1.5em;
         color: var(--color-gray-light);
+        &--subscribe {
+            padding: .1em .5em;
+            color: var(--color-white);
+            border-top-right-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+        }
     }
 
     &--30 {

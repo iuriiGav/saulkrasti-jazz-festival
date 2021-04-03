@@ -70,8 +70,9 @@
                     'depth' => 2,
                     'walker' => new bootstrap_5_wp_nav_menu_walker()
                 ));
-                ?>
 
+get_template_part('template-parts/social-links/mailchimp-contact-form-small');
+?>
 
 
 
@@ -108,7 +109,11 @@
     </section>
 
     <section class="footer-copyrights">
-
+<div class="d-md-only ig_mt-n2em">
+<?php
+get_template_part('template-parts/social-links/mailchimp-contact-form-small');
+?>
+</div>
         <p class="copyright-text"><?php esc_html_e(get_field('options_copyright_text', 'options'), 'saulkrasti-jazz-festival') ?> <?php echo date("Y"), ' ', '|', ' ', esc_html_e(get_field('options_website_developed_by_text', 'options'), 'saulkrasti-jazz-festival') ?> <a href="<?php echo esc_url(get_field('options_developer_link', 'options')) ?>"><?php esc_html_e(get_field('options_developer_name', 'options'), 'saulkrasti-jazz-festival') ?></a></p>
     </section>
 

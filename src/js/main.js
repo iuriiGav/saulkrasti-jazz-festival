@@ -50,5 +50,11 @@ $('.top-scrollerx--container').on('click', function(e) {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 })
+
+if($(".js-disabled-link")) {
+  console.log('here')
+  $(".js-disabled-link").css('pointer-events', 'none');
+}
+
 });
 
