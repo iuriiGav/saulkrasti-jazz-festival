@@ -5,8 +5,18 @@
 
 .message-masterclasses-not-happening {
     text-align: center;
-    color: #F58345;
+    color:var(--color-rare);
     padding-bottom:.5em;
     display: flex;
     flex-direction: column;
+    & p a {
+        display: inline-block;
+        color: var(--color-brand);
+        &:hover {
+            transform: scale(1.02);
+        }
+        &:active {
+            transform: translateY(2px);
+        }
+    }
 }

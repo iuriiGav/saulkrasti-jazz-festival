@@ -53,6 +53,9 @@ border: none;
             color: var(--color-white);
             border-top-right-radius: 0.25rem;
             border-bottom-right-radius: 0.25rem;
+            &--mt {
+                margin-top: 1em;
+            }
         }
     }
 
