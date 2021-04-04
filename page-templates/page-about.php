@@ -46,12 +46,12 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
                     $original_venue_name = get_field('post_venues_venue_name');
                                  ?>
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 ig_mb-2em">
 
 
-                    <a class="ig_height-100" href="<?php the_permalink(); ?>">
+                    <a class="ig_height-100 " href="<?php the_permalink(); ?>">
 
-                        <div class="card-artist ig_no-shadow card-artist--wide ig_height-100">
+                        <div class="card-artist ig_no-shadow card-artist--wide ig_height-100 ">
 
 
                             <div class="card-artist__extra-note-top">

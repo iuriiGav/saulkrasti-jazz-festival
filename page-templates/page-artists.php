@@ -57,7 +57,7 @@ get_header(); ?>
         ?>
 
             <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5  d-flex">
-                <a href="<?php the_permalink() ?>" class="d-flex">
+                <a href="<?php the_permalink() ?>" class="d-flex mx-auto">
                     <div class="card-artist card-artist--100">
 
                         <div class="card-artist__image">

@@ -10,6 +10,12 @@ export const sliderWorkshopSectionTeachers = () => {
     $(`#instrument-1`).addClass("side-links__item--active");
     $(`.instrument-1`).addClass("content-card__visible--teachers");
 
+    if ($(window).width() <= BP_MEDIUM) {
+      const currentBoxHeight = $(".content-card__visible--teachers").outerHeight();
+      $('.content-box').css('height', currentBoxHeight + 150);
+      // $(`.main-footer`).css("margin-top", `${currentBoxHeight + 30}px`);
+    }
+
     $(window).on("resize", function () {
       if ($(".workshop__teachers").length > 0) {
         if ($(window).width() <= BP_MEDIUM) {
@@ -52,7 +58,7 @@ export const sliderWorkshopSectionTeachers = () => {
       if ($(window).width() <= BP_MEDIUM) {
         changeHeightOfEllementOnChangeOfCardTarget.css(
           "padding-bottom",
-          nextDivHeight + 150
+          nextDivHeight
         );
       } else {
         changeHeightOfEllementOnChangeOfCardTarget.css(
