@@ -239,10 +239,19 @@
     visibility: visible;
     opacity: 1;
     transform: translateX(-50%);
+    @media only screen and (max-width: $bp-md) {
+      position: initial;
+      transform: none;
+    }
+    
     &--teachers {
       visibility: visible;
       opacity: 1;
       transform: translateX(-50%);
+      @media only screen and (max-width: $bp-md) {
+        position: initial;
+        transform: none;
+      }
     }
   }
 

@@ -38,13 +38,15 @@ ig-ajax-history.php from prev commit
 
                         $year = get_sub_field('year');
                         $year_im_milisecs = strtotime($year);
-                       
+                        
                 ?>
 
+<?php if($year !== 2002 && $year !== 2020) : ?>
 
                         <li><a id="festival-<?php echo $year ?>" href="" class="festival-year-toggler-js-ajax" data-festival-year="<?php echo $year ?>"> <?php esc_html_e($year, 'saulkrasti-jazz-festival') ?></a></li>
 
 
+<?php endif; ?>
 
 
                 <?php

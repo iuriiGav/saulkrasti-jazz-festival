@@ -28,7 +28,7 @@ if (have_rows('baltic_drummers_league_finalists')) :
         $photo = get_sub_field('photo');
 
 ?>
-<a href="" class="card-artist card-artist--100 modal-trigger-js " id="modal-number-<?php echo $i ?>">
+<a href="" class="card-artist card-artist--100 card-artist--100--md-responsive modal-trigger-js " id="modal-number-<?php echo $i ?>">
 
         <div class="card-artist__image">
             <img src="<?php echo esc_url(wp_get_attachment_image_src($photo, 'ig-square')[0]) ?>" alt="<?php esc_html_e(get_post_meta($photo, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">

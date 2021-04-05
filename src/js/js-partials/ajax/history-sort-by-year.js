@@ -39,27 +39,17 @@ export const sortHistoryByYear = () => {
           $(".history-wrapper").remove();
         }
 
-          // animateAjax(
-          //   ".history-by-year-js-ajax-container",
-          //   "history-wrapper__on-screen",
-          //   "history-wrapper__off-screen",
-          //   data,
-          //   ".current-year-artists__history"
-          // );
+          animateAjax(
+            ".history-by-year-js-ajax-container",
+            "history-wrapper__on-screen",
+            "history-wrapper__off-screen",
+            data,
+            ".current-year-artists__history"
+          );
 
 
           $(".history-by-year-js-ajax-container").html(data);
-          console.log($('.modula'))
-
-          var modulaGalleries = $(".modula.modula-gallery");
-             console.log(modulaGalleries.length)
-             $.each(modulaGalleries, function () {
-               var modulaID = $(this).attr("id"),
-                 modulaSettings = $(this).data("config");
-               console.log(modulaID)
-           
-               $("#" + modulaID).modulaGallery(modulaSettings);
-             });
+       
 
 
           $(".ig_loading-spinner").fadeOut(function () {

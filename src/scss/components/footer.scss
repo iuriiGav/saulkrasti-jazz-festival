@@ -69,12 +69,26 @@
   }
 }
 
+
+
 .copyright-text {
-  color: var(--color-white);
-  opacity: 0.4;
+  color:rgba(220,220,220, .5);
+  // opacity: 0.4;
   font-size: 0.8rem;
   text-align: center;
   padding-bottom: 2em;
+}
+
+.revrited-color-footer {
+  color:rgba(220,220,220, .5) !important;
+
+}
+
+.footer-developer-link {
+  &:hover {
+    display: inline-block;
+    transform: scale(1.02);
+  }
 }
 
 

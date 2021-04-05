@@ -314,6 +314,15 @@
    margin: 0 auto;
    min-width: 100%;
 
+   &--md-responsive {
+
+      @media only screen and (max-width: $bp-lg) {
+        max-width: 80%; 
+        min-width: 80%;
+        
+      }
+   }
+
     }
     &__image {
 
