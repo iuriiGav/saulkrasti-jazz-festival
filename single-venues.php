@@ -12,7 +12,7 @@ $website_homepage = explode("/", $url, 3);
 
 <section class="single-venue">
 
-    <h2 class="section-header pb-0 mt-5rem"><?php echo get_field('post_venues_venue_title') ? esc_html__(get_field('post_venues_venue_title'), 'saulkrasti-jazz-festival') :   esc_html__(get_field('post_venues_venue_name'), 'saulkrasti-jazz-festival') ?></h2>
+    <h2 class="section-header pb-0 mt-3rem"><?php echo get_field('post_venues_venue_title') ? esc_html__(get_field('post_venues_venue_title'), 'saulkrasti-jazz-festival') :   esc_html__(get_field('post_venues_venue_name'), 'saulkrasti-jazz-festival') ?></h2>
 
 
     <div class="single-artist__event-venue">
@@ -40,13 +40,7 @@ $website_homepage = explode("/", $url, 3);
     </div>
     <div class="single-venue__links">
         <h4 class="text-center ig_tc-brand"><a href="<?php echo $url ?>"><?php echo $website_homepage[2] ?></a></h4>
-        <?php if (get_field('post_venues_waze_navigation')) : ?>
-            <div class="waze-start-navigation-icon__container">
-                <a class="waze-start-navigation-icon__link-image" href="https://waze.com://ul?ll=<?php echo esc_html_e(get_field('post_venues_waze_navigation'), 'saulkrasti-jazz-festival') ?>&amp;navigate=yes">
-                    <img src="<?php echo get_template_directory_uri() . '/images/social/waze-icon.png' ?>"></a>
-
-            </div>
-        <?php endif; ?>
+     
 
     </div>
 

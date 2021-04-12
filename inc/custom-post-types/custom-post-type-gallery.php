@@ -33,6 +33,7 @@ function ig_saulkrasti_jazz_gallery() {
 		'hierarchical'       => false,
 		'menu_position'      => 6,
 		'supports'           => array( 'title', ),
+		'taxonomies'          => array( 'category', 'post_tag' ),
 	);
 
 	register_post_type( 'gallery', $args );

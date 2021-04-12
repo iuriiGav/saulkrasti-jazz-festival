@@ -3,7 +3,6 @@ import * as $ from "jquery";
 
 
 const swiperFunc = () => {
-  console.log('swiperFunc')
   return new Swiper(".swiper-container", {
     // Optional parameters
     direction: "horizontal",
@@ -90,13 +89,15 @@ if($(this).data("type-of-link") === 'full_bio') {
         success: function (data) {
          
           $(".modal").html(data);
+if($('iframe').length> 0) {
+  $('iframe').wrap('<div class="ig-ajax-js-video-container"></div>')
+}
+
           $(".ig_loading-spinner").fadeOut(function () {
             $(".ig_loading-spinner").remove();
           });
 
                   
-console.log('hello');
-console.log($('.swiper-container'))
        const swiper =  swiperFunc();
          
         },
@@ -156,8 +157,6 @@ console.log($('.swiper-container'))
               $(".ig_loading-spinner").remove();
             });
 
-console.log('hello');
-            console.log($('.swiper-container'))
        const swiper =  swiperFunc();
 
           },

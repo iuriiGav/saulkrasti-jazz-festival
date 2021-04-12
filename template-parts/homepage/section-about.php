@@ -7,7 +7,7 @@
             </div>
         </div>
         
-        <div class="btn-wrapper-80__left md-none">
+        <div class="btn-wrapper-80__left md-none my-5">
     
             <button class="btnc btnc-brand-square"><a href="<?php echo ig_saulkrasti_jazz_get_page_url('page-templates/page-about')?>"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?></a> </button>
 

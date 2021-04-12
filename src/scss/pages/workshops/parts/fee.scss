@@ -29,7 +29,7 @@
     justify-content: space-between;
     flex-direction: column;
     text-align: center;
-    min-height: 35rem;
+    min-height: 25rem;
     margin-bottom: 2em;
 
     @media only screen and (max-width: $bp-sm) {
@@ -45,8 +45,13 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    min-height: 100px
+padding: 3em;
+    color: var(--color-brand);
   }
+  // &__hr {
+  //   margin-top: -4rem;
+  //   margin-bottom: -4rem;
+  // }
   &__note {
     margin-bottom: 2em;
   }

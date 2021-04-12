@@ -85,14 +85,17 @@ $args_artists = array(
 
 if($gallery->have_posts()) : while($gallery->have_posts()): $gallery->the_post();
 
-if(get_field('gallery_main_gallery') === 'true') :
+$gallery_name = get_bloginfo("language") === 'en-GB' ? get_field('gallery_name_in_english') : get_field('gallery_name');
+$gallery_title = $gallery_name ? $gallery_name : ig_gav_get_global_text('global_gallery_heading') . ' ' . esc_html__(get_field('post_gallery_gallery_year'), 'saulkrasti-jazz-festival');
+
+
 ?>
 
-<button class="btnc btnc-brand-square btnc--30 ig_m-2em btnc-xl"><a target="_blank" href="<?php the_permalink(); ?>"><?php echo ig_gav_get_global_text('btn_text_see_gallery') ?></a></button>
+<button class="btnc btnc-brand-square btnc--30 ig_m-1em btnc-xl ig_fs-2rem"><a target="_blank" href="<?php the_permalink(); ?>"><?php echo $gallery_title ?></a></button>
 
 <?php
 
-endif; endwhile; wp_reset_postdata(); endif; 
+ endwhile; wp_reset_postdata(); endif; 
  
  ?>
 

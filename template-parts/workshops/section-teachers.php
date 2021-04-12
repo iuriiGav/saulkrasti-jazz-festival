@@ -1,7 +1,7 @@
 <div class="section-with-side-links">
 
 <div class="side-links__wrapper side-links__wrapper--height">
-<ul class="side-links__list side-links__list--col">
+<ul class="side-links__list side-links__list--fixed-height side-links__list--col side-links__list--col--teachers ig_transition-all">
 <?php
 
 if( have_rows('teachers_available_masterclass_instrument_options') ):

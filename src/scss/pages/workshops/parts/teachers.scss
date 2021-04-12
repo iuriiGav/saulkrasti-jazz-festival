@@ -60,6 +60,20 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
+
+    &--fixed-height {
+justify-content: flex-start;
+& li {
+  padding: 1.5em;
+}
+
+@media only screen and (max-width: $bp-md) {
+justify-content: space-around;
+& li {
+  padding: 0.5em;
+}
+}
+    }
     
     @media only screen and (max-width: $bp-lg) {
       background-color: var(--color-dark);
@@ -108,6 +122,10 @@
         left: 0;
         transform: none;
     }
+
+    // &--teachers {
+
+    // }
     }
   }
   &__header {
@@ -239,6 +257,8 @@
     visibility: visible;
     opacity: 1;
     transform: translateX(-50%);
+    position: initial;
+    transform: none;
     @media only screen and (max-width: $bp-md) {
       position: initial;
       transform: none;
@@ -248,10 +268,12 @@
       visibility: visible;
       opacity: 1;
       transform: translateX(-50%);
-      @media only screen and (max-width: $bp-md) {
-        position: initial;
+      position: initial;
         transform: none;
-      }
+      // @media only screen and (max-width: $bp-md) {
+      //   position: initial;
+      //   transform: none;
+      // }
     }
   }
 

@@ -56,7 +56,7 @@ get_header(); ?>
             $artist_photo = get_field('post_artists_artists_photo');
         ?>
 
-            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5  d-flex">
+            <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5  d-flex">
                 <a href="<?php the_permalink() ?>" class="d-flex mx-auto">
                     <div class="card-artist card-artist--100">
 

@@ -327,7 +327,7 @@
     &__image {
 
       &--min-height {
-        min-height: 50%;
+        // min-height: 50%;
       }
 
     }
@@ -340,6 +340,9 @@
     padding: 1.5em;
     display: flex;
     justify-content: center;
+    & h4 {
+      word-wrap: break-word;
+    }
 
     &--flex {
       display: flex;

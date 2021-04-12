@@ -29,7 +29,7 @@
                         <div class="price-cards__header">
                             <h3><?php esc_html_e($title, 'saulkrasti-jazz-festival') ?></h3>
                         </div>
-                        <hr>
+                        <hr class="price-cards__hr">
                         <div class="price-cards__note">
                             <h6 class="ig-h7"><?php esc_html_e($note, 'saulkrasti-jazz-festival') ?></h6>
                         </div>
@@ -39,7 +39,9 @@
                         <div class="price-cards__details">
                             <p><?php esc_html_e($details, 'saulkrasti-jazz-festival') ?></p>
                         </div>
-                        <div class="price-cards__link"><h3><a href="#application-section-target"><?php echo ig_gav_get_global_text('btn_text_apply') ?></a></h3></div>
+                        <!-- <div class="price-cards__link"><h3><?php echo ig_gav_get_global_text('btn_text_apply') ?></h3></div> -->
+                        
+                        <!-- <div class="price-cards__link"><h3><a href="#application-section-target"><?php echo ig_gav_get_global_text('btn_text_apply') ?></a></h3></div> -->
                     </div>
                 </div>
 

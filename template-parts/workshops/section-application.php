@@ -2,7 +2,7 @@
 
     <div class="side-links__wrapper side-links__wrapper--height">
 
-        <ul class="side-links__list side-links__list--col">
+        <ul class="side-links__list side-links__list--fixed-height side-links__list--col ig_transition-all">
             <?php
 
             if (have_rows('application_content_sections')) :
