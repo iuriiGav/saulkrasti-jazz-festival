@@ -40,3 +40,15 @@
             padding: 0 2em
         }
 }
+
+.modal-content__text--pad {
+    & a  {
+        color: var(--color-brand);
+
+    }
+
+    & p  a  {
+        color: var(--color-brand);
+
+    }
+}

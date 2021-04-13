@@ -153,6 +153,9 @@ if($('iframe').length> 0) {
           type: "POST",
           success: function (data) {
             $(".modal").html(data);
+            if($('iframe').length> 0) {
+              $('iframe').wrap('<div class="ig-ajax-js-video-container"></div>')
+            }
             $(".ig_loading-spinner").fadeOut(function () {
               $(".ig_loading-spinner").remove();
             });

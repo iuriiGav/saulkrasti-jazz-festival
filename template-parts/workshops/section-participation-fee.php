@@ -41,7 +41,6 @@
                         </div>
                         <!-- <div class="price-cards__link"><h3><?php echo ig_gav_get_global_text('btn_text_apply') ?></h3></div> -->
                         
-                        <!-- <div class="price-cards__link"><h3><a href="#application-section-target"><?php echo ig_gav_get_global_text('btn_text_apply') ?></a></h3></div> -->
                     </div>
                 </div>
 

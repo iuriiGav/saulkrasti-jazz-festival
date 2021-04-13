@@ -41,7 +41,7 @@
 
         <div class="row">
 
-            <div class="col-md-3 col-xs-6 quick-links__logo-addresses position-relative">
+            <div class="col-md-2 col-xs-6 quick-links__logo-addresses position-relative">
                 <div class="quick-links__logo">
                     <a class="navbar-brand d-flex flex-column text-font-secondary" href="<?php echo esc_url(get_home_url()) ?>">
 
@@ -60,7 +60,7 @@
                 </div>
             </div><!-- .quick-links__logo-addresses -->
 
-            <div class="col-md-6 md-none quick-links__nav-menu">
+            <div class="col-md-8 md-none quick-links__nav-menu">
 
                 <?php
                 wp_nav_menu(array(
@@ -80,7 +80,7 @@
 
             </div>
 
-            <div class="col-md-3 col-xs-6 quick-links__address-bank-details">
+            <div class="col-md-2 col-xs-6 quick-links__address-bank-details">
                 <div class="quick-links__info">
                     <div class="quick-links__address">
 
@@ -116,6 +116,34 @@
             get_template_part('template-parts/social-links/mailchimp-contact-form-small');
             ?>
         </div>
+
+        <div class="d-md-only extra-links-mobile">
+
+        <?php
+            $global_texts_page_ID = ig_saulkrasti_jazz_get_id_of_page_by_template('page-buttons');
+
+            if (have_rows('global_footer_extra_links', $global_texts_page_ID[0])) :
+
+
+
+                while (have_rows('global_footer_extra_links', $global_texts_page_ID[0])) : the_row();
+
+                    $link = get_sub_field('link');
+
+            ?>
+
+                    <p><a href="<?php echo esc_url($link['url']) ?>"><?php echo esc_html_e($link['title'], 'saulkrasti-jazz-festival') ?></a></p>
+
+
+            <?php
+                endwhile;
+
+
+            endif;
+
+            ?>
+        </div>
+
         <p class="copyright-text"><?php esc_html_e(get_field('options_copyright_text', 'options'), 'saulkrasti-jazz-festival') ?> <?php echo date("Y"), ' ', '|', ' ', esc_html_e(get_field('options_website_developed_by_text', 'options'), 'saulkrasti-jazz-festival') ?>
     
         <?php if(get_field('options_developer_link', 'options')) : ?>

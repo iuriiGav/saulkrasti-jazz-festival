@@ -93,9 +93,12 @@ $query_args = array(
         array(
             'taxonomy' => 'wall_of_fame',
             'field' => 'Yes',
-            'terms' => 23
+            'terms' => 23,
+          
         )
     ),
+    'orderby' => 'publish_date',
+    'order' => 'ASC',
 
 
 

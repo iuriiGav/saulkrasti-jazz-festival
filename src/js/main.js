@@ -65,7 +65,6 @@ if($('#developer-email-link-js').length > 0) {
     
     e.preventDefault();
     
-    console.log('hello')
     $('#developer-email-link-js').hide();
     $('#developer-email-link-js').remove();
     $('.copyright-text').append(` <a id="developer-email-link-js--after" href="mailto: iurii.gavryliuk@gmail.com"></a>`)

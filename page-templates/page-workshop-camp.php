@@ -2,16 +2,25 @@
 /* 
 * Template Name: Workshop Camp
 */
-get_header(); ?>
+get_header(); 
 
-<section class="about-workshops mt-5rem full-screen-cover" style="background-color: var(--color-dark)">
+$about_workshops_name = get_bloginfo("language") === 'en-GB' ? 'about-workshops' : 'meistarklases';
+$about_camp_name = get_bloginfo("language") === 'en-GB' ? 'workshops-camp' : 'nometne';
+$about_teachers_name = get_bloginfo("language") === 'en-GB' ? 'teachers' : 'pasniedzeji';
+$about_payment_name = get_bloginfo("language") === 'en-GB' ? 'payment' : 'dalibas-maksa';
+$about_application_name = get_bloginfo("language") === 'en-GB' ? 'application' : 'pieteiksanas';
+
+
+?>
+
+<section id="<?php echo $about_workshops_name ?>" class="about-workshops mt-5rem full-screen-cover ig_scroll-margin-workshops" style="background-color: var(--color-dark)">
     <h2 class="section-header section-header--less-padding"><?php esc_html_e(get_field('about_workshops_header'), 'saulkrasti-jazz-festival') ?></h2>
     <?php get_template_part('template-parts/workshops/section', 'about-workshops'); ?>
 
 </section>
 
 
-<section class="workshop__camp full-screen-cover" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_workshop_page_workshop_camp_cover', 'options')
+<section id="<?php echo $about_camp_name?>" class="workshop__camp full-screen-cover ig_scroll-margin-workshops" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_workshop_page_workshop_camp_cover', 'options')
                                                                                                                                             ?>)">
     <h2 class="section-header section-header--less-padding"><?php esc_html_e(get_field('workshop_workshop_camp_header'), 'saulkrasti-jazz-festival') ?></h2>
     <?php get_template_part('template-parts/workshops/section', 'workshop-camp'); ?>
@@ -27,21 +36,21 @@ option with bg-image
 </section> -->
 
 
-<section class="workshop__teachers full-screen-cover full-screen-cover__static" style="background-color: var(--color-dark)">
+<section id="<?php echo  $about_teachers_name?>" class="workshop__teachers full-screen-cover full-screen-cover__static ig_scroll-margin-workshops" style="background-color: var(--color-dark)">
     <?php get_template_part('template-parts/workshops/section', 'teachers'); ?>
 
 </section>
 
 <?php endif; ?>
 
-<section  class="participation-fee full-screen-cover" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_workshop_page_participation_fee_cover', 'options')
+<section id="<?php echo $about_payment_name?>"  class="participation-fee full-screen-cover ig_scroll-margin-workshops" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_workshop_page_participation_fee_cover', 'options')
                                                                                                                                             ?>)">>
 
 <?php get_template_part('template-parts/workshops/section', 'participation-fee'); ?>
 
 </section>
 
-<section id="application-section-target" class="participation-fee full-screen-cover full-screen-cover" style="background-color: var(--color-dark)">>
+<section id="<?php echo $about_application_name?>" class="participation-fee full-screen-cover full-screen-cover ig_scroll-margin-workshops" style="background-color: var(--color-dark)">>
 
 <?php get_template_part('template-parts/workshops/section', 'application'); ?>
 

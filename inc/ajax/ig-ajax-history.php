@@ -12,18 +12,6 @@ $page_Id = url_to_postid($page_template_url);
 
   
 
-
-
-
-
-
-
-
-
-  
-
-
-
     $query_args = array(
 
         'post_type' => 'artists',
@@ -36,7 +24,9 @@ $page_Id = url_to_postid($page_template_url);
             )
         ),
        
-
+        'meta_key'			=> 'post_artists_artist_name',
+        'orderby'			=> 'meta_value',
+        'order'				=> 'ASC'
 
 
     );
