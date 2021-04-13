@@ -6,6 +6,9 @@
   &__static {
     background-attachment: scroll !important;
   }
+  &__top-left {
+    background-position: top left !important;
+  }
   @media only screen and (max-width: $bp-md) {
     background-attachment: scroll !important;
   }
@@ -63,6 +66,9 @@
 }
 .ig_mt-5rem {
   margin-top: 5rem;
+}
+.ig_mt-8rem {
+  margin-top: 8rem !important;
 }
 .mt-3rem {
   margin-top: 3rem;
@@ -360,4 +366,28 @@
 
 .ig_fs-2rem {
 font-size: 2rem;
+}
+
+// #ig_gav-loader {
+//   border: 12px solid #f3f3f3;
+//   border-radius: 50%;
+//   border-top: 12px solid #444444;
+//   width: 70px;
+//   height: 70px;
+//   animation: spin 1s linear infinite;
+// }
+
+// @keyframes spin {
+//   100% {
+//       transform: rotate(360deg);
+//   }
+// }
+
+.ig_gav-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
