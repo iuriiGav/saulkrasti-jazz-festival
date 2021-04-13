@@ -72,7 +72,7 @@ $venues = ig_saulkrasti_jazz_current_venues(-1);
 
                             </div>
                             <div class="card-artist__text card-artist__text--flex ">
-                                    <h3 class="text-center"><?php esc_html_e($venue_name, 'saulkrasti-jazz-festival') ?></h3>
+                                    <h3 class="text-center venue-header-letter-spacing"><?php esc_html_e($venue_name, 'saulkrasti-jazz-festival') ?></h3>
                                 <div class="single-artist__event-venue--address-lines ig_pt-1em">
                                     <?php if ($venue_title && $venue_title !== $original_venue_name) : ?>
                                         <p><?php esc_html_e($original_venue_name, 'saulkrasti-jazz-festival') ?></p>

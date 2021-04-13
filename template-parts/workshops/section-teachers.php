@@ -76,7 +76,7 @@ else :
   </div>
 
 <?php if($teacher_link) : ?>
-    <div class="content-card__btn btnc btnc-brand"><a href="<?php echo esc_url($teacher_link)?>" target="_blank"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?> </a></div>
+    <div class="content-card__btn btnc btnc-brand extra-padding-after-z-suggestion"><a href="<?php echo esc_url($teacher_link)?>" target="_blank"><?php echo ig_gav_get_global_text('btn_text_learn_more') ?> </a></div>
     <?php endif; ?>
     
 </div>
