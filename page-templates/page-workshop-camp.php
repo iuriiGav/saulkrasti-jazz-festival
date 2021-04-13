@@ -12,6 +12,7 @@ $about_application_name = get_bloginfo("language") === 'en-GB' ? 'application' :
 
 
 ?>
+<main class="page-workshops-no-overflow">
 
 <section id="<?php echo $about_workshops_name ?>" class="about-workshops mt-5rem full-screen-cover ig_scroll-margin-workshops" style="background-color: var(--color-dark)">
     <h2 class="section-header section-header--less-padding"><?php esc_html_e(get_field('about_workshops_header'), 'saulkrasti-jazz-festival') ?></h2>
@@ -55,5 +56,8 @@ option with bg-image
 <?php get_template_part('template-parts/workshops/section', 'application'); ?>
 
 </section>
+
+</main>
+
 
 <?php get_footer(); ?>

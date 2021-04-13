@@ -97,9 +97,9 @@ $query_args = array(
           
         )
     ),
-    'orderby' => 'publish_date',
-    'order' => 'ASC',
-
+    'meta_key'			=> 'post_artists_artist_name',
+        'orderby'			=> 'meta_value',
+        'order'				=> 'ASC'
 
 
 );

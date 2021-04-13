@@ -35,7 +35,19 @@
                 $full_bio = get_field('post_artists_artists_page_type') === 'full_bio';
                 $link_to_artist = get_field('post_artists_artists_page_type') === 'link_to_artist';
                 $no_page = get_field('post_artists_artists_page_type') === 'no_page';
+                $type_of_link_page = null;
 
+
+                if ($full_bio === true) :
+                    $type_of_link_page = 'full_bio';
+                elseif ($link_to_artist === true) :
+                    $type_of_link_page = 'link_to_artist';
+                elseif ($no_page === true) :
+                    $type_of_link_page = 'no_page';
+                endif;
+
+
+            
 
 
 
@@ -82,23 +94,22 @@
 
 
              <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-5 d-flex single-artist-card-target-for-hover">
-             <a class="artist-link-target-js-ajax <?php echo $artist_card_link === null ? 'this-card-has-no-action-js' : null ?> d-flex ig_min-w-100" <?php echo $is_blank_page ? 'target="_blank"' : null ?> href="<?php echo $artist_card_link ?>" style="<?php echo $artist_card_link === null ? ' pointer-events: none;  cursor: default;' : null ?>" data-artist-id="<?php the_ID() ?>" 
-                     data-type-of-link="<?php echo $type_of_link_page ? $type_of_link_page : 'no-data'?>">
-                 <div class="card-artist card-artist--100">
+                 <a class="artist-link-target-js-ajax <?php echo $artist_card_link === null ? 'this-card-has-no-action-js' : null ?> d-flex ig_min-w-100" <?php echo $is_blank_page ? 'target="_blank"' : null ?> href="<?php echo $artist_card_link ?>" style="<?php echo $artist_card_link === null ? ' pointer-events: none;  cursor: default;' : null ?>" data-artist-id="<?php the_ID() ?>" data-type-of-link="<?php echo $type_of_link_page ? $type_of_link_page : 'no-data' ?>">
+                     <div class="card-artist card-artist--100">
 
-<?php $type_of_link_page = esc_html__(get_field('post_artists_artists_page_type'), 'saulkrasti-jazz-festival'); ?>
+                         <?php $type_of_link_page = esc_html__(get_field('post_artists_artists_page_type'), 'saulkrasti-jazz-festival'); ?>
 
-                   
+
 
                          <div class="card-artist__image card-artist__image--min-height">
-                             <?php if($artist_photo) : ?>
-                             <img src="<?php echo esc_url(wp_get_attachment_image_src($artist_photo, 'ig-square')[0]) ?>" alt="<?php esc_html_e(get_post_meta($photo, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
-<?php else : 
-    $random_image_ID = ig_gav_random_image_ID();
-    ?>
-    <img src="<?php echo esc_url(wp_get_attachment_image_src($random_image_ID, 'ig-square')[0]) ?>" alt="">
+                             <?php if ($artist_photo) : ?>
+                                 <img src="<?php echo esc_url(wp_get_attachment_image_src($artist_photo, 'ig-square')[0]) ?>" alt="<?php esc_html_e(get_post_meta($photo, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
+                             <?php else :
+                                    $random_image_ID = ig_gav_random_image_ID();
+                                ?>
+                                 <img src="<?php echo esc_url(wp_get_attachment_image_src($random_image_ID, 'ig-square')[0]) ?>" alt="">
 
-<?php endif; ?>
+                             <?php endif; ?>
                          </div>
                          <div class="card-artist__text card-artist__text--flex ">
                              <h4 class="text-center"><?php esc_html_e($artist_name, 'saulkrasti-jazz-festival') ?></h4>
@@ -107,7 +118,7 @@
 
 
                          </div>
-                 </div>
+                     </div>
                  </a>
              </div>
 

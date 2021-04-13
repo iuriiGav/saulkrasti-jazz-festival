@@ -308,6 +308,12 @@
       max-width: 80%;
    margin: 0 auto;
 
+   &--in-venue-about-festival {
+       @media only screen and (max-width: $bp-lg) {
+         max-width: 100%;
+       }
+   }
+
     }
     &--100 {
       max-width: 100%;

@@ -1,6 +1,4 @@
-.workshop__teachers {
-  min-height: 100vh;
-}
+
 
 .section-with-side-links {
   display: flex;
@@ -41,7 +39,7 @@
 
     }
     &--height {
-      min-height: 100vh;
+      // min-height: 100vh;
         @media only screen and (max-width: $bp-md) {
           order: 2;
           width: 100%;
