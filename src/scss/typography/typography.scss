@@ -78,10 +78,10 @@ div ol li {
 a.dropdown-item {
   font-family: var(--font-secondary);
   color: var(--color-gray-light);
-  font-size: 1rem;
+  font-size: .9rem;
   font-weight: 700;
   text-transform: uppercase;
-  @media only screen and (max-width: $bp-md) {
+  @media only screen and (max-width: $bp-lg) {
     font-size: 2rem;
   }
 }

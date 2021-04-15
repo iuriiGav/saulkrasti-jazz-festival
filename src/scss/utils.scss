@@ -53,6 +53,18 @@
     display: block;
   }
 }
+.d-lg-only {
+  display: none;
+  @media only screen and (max-width: $bp-lg) {
+    display: flex;
+  }
+}
+
+.d-lg-none--flex {
+  @media only screen and (max-width: $bp-lg) {
+    display: none;
+  }
+}
 
 .d-xl-only {
   display: none;

@@ -36,7 +36,17 @@
                 'walker' => new bootstrap_5_wp_nav_menu_walker()
             ));
             ?>
+             <div class="header-social-icons__in-collapse d-lg-only">
+                        <?php get_template_part('template-parts/social-links/social', 'facebook'); ?>
+                        <?php get_template_part('template-parts/social-links/social', 'youtube'); ?>
+
+                    </div>
         </div>
+        <div class="header-social-icons d-lg-none--flex">
+                        <?php get_template_part('template-parts/social-links/social', 'facebook'); ?>
+                        <?php get_template_part('template-parts/social-links/social', 'youtube'); ?>
+
+                    </div>
     </div>
 </nav>
 

@@ -94,8 +94,13 @@
 a.dropdown-item {
   padding-right: 2em;
   white-space: nowrap;
+    @media only screen and (max-width: $bp-lg) {
+  padding-right: 0;
+      
+    }
   
 }
+
 
 .ig-main-navbar li.menu-item a.nav-link .active {
   color: var(--color-white);
@@ -178,4 +183,67 @@ justify-content: center;
   &__link-text{
 color: var(--color-white);
   }
+}
+
+
+.header-social-icons {
+  display: flex;
+  justify-content: flex-start;
+
+  & div {
+    padding-right: .5em;
+
+  }
+  
+& div a img {
+    flex: 1 1 0px;
+    max-width: 28px;
+    padding-right: .2em;
+    transition: all 0.2s ease-in-out;
+
+      @media only screen and (max-width: $bp-xxl) {
+    max-width: 22px;        
+      }
+
+  }
+
+  & div:hover {
+    transform: scale(1.2);
+  }
+
+
+ 
+}
+
+
+.header-social-icons__in-collapse {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: .4em;
+  // margin-left: -30px;
+  padding-bottom: 2em;
+
+  & div {
+    max-width: 28px;
+  margin-right: 1em;
+  }
+  
+& div a img {
+    flex: initial;
+    max-width: 28px;
+    padding-right: .2em;
+    transition: all 0.2s ease-in-out;
+
+      @media only screen and (max-width: $bp-xxl) {
+    max-width: 28px;        
+      }
+
+  }
+
+  & div:hover {
+    transform: scale(1.2);
+  }
+
+  
+ 
 }
