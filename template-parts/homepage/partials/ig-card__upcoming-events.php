@@ -6,7 +6,7 @@ $venue_name = get_field('post_venues_venue_title', $venue_ID) ? get_field('post_
 $is_free_concert = ig_saulkrasti_jazz_get_radio_value('post_events_is_it_a_free_concert');
 $concert_date_in_milisecs = get_field('post_events_concert_date', false, false);
 $day = date('D', strtotime($concert_date_in_milisecs));
-$concert_day_language_dependent = ig_get_day_of_the_week_depending_on_language($day); 
+$concert_day_language_dependent = ig_get_day_of_the_week_depending_on_language($day);
 $in_show_all_ajax = $args['show_all'];
 $current_event_ID = get_the_ID();
 
@@ -43,8 +43,8 @@ $current_event_ID = get_the_ID();
                     <h6 class="ig-card__day"><?php echo $concert_day_language_dependent ?></h6>
                 </div>
             </div>
-            <a target="_blank" href="<?php the_permalink($venue_ID)?>">
-            <h6 class="ig-card__venue-name"><?php esc_html_e($venue_name, 'saulkrasti-jazz-festival') ?></h6>
+            <a target="_blank" href="<?php the_permalink($venue_ID) ?>">
+                <h6 class="ig-card__venue-name"><?php esc_html_e($venue_name, 'saulkrasti-jazz-festival') ?></h6>
             </a>
         </div>
         <div class="ig-card__artists">
@@ -58,8 +58,14 @@ $current_event_ID = get_the_ID();
 
                     <div class="ig-card__multyartist-event">
 
-                        <h5 class="ig-card__event-name medium-title"> <?php echo get_field('post_artists_artist_name',  get_sub_field('artist')) ?> </h5>
+                        <h5 class="ig-card__event-name medium-title"> <?php echo get_field('post_artists_artist_name',  get_sub_field('artist')) ?> <span class="ig-card__artist-country">(
+                                <?php echo get_field('post_artists_country',  get_sub_field('artist')) ?>
+                                )</span> </h5>
+
+
+
                     </div>
+
 
                 <?php
                     // Load sub field value.

@@ -213,8 +213,21 @@
       }
     }
   }
+
+
+
+
   &__multyartist-event {
     display: flex;
+  }
+  &__artist-country {
+    font-size: 1rem;
+    @media only screen and (max-width: $bp-lg) {
+      font-size: 1.2rem;
+    }
+    @media only screen and (max-width: $bp-md) {
+      font-size: 1.4rem;
+    }
   }
   &__multyartist-time {
     padding-right: 0.5em;
@@ -471,3 +484,19 @@ transform: scale(1.02);
     @include active-link-reaction();
    }
  }
+
+
+
+ .ig-card__artists {
+  & .ig-card__multyartist-event:not(:last-of-type) {
+display: flex;
+flex-direction: column;
+    &:after {
+      content: "* * *";
+      color: var(--color-rare);
+      text-align: center;
+
+
+    }
+  }
+}
