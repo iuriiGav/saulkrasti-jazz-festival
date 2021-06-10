@@ -140,3 +140,21 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+.upcoming-events__program-info-text {
+    text-align: center;
+    color: var(--color-gray-light);
+    padding-bottom: 2em;
+
+    a {
+    color: var(--color-brand);
+    text-decoration: underline;
+    display: inline-block;
+    transition: all 0.2s ease;
+    &:hover {
+        transform: scale(1.02);
+
+    }
+    }
+}

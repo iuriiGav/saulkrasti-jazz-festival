@@ -14,7 +14,7 @@ function filter_ajax()
 
     $today = date('Ymd');
 
-   
+
 
     $args = array(
 
@@ -33,7 +33,7 @@ function filter_ajax()
     );
     if ($venueID !== 'non-venue-choice') :
         $args['meta_query']['value'] = $venueID;
-        
+
     endif;
 
     if (isset($dateFromAjax)) :
@@ -45,6 +45,13 @@ function filter_ajax()
 
     $ajax_adjusted_events = new WP_Query($args);
 
+    if ($ajax_adjusted_events->post_count === 0) :
+
+        ig_gav_print_message_if_there_are_no_events_at_location();
+
+
+    endif;
+
     while ($ajax_adjusted_events->have_posts()) : $ajax_adjusted_events->the_post();
         $day_of_the_week = date("w", get_field('post_events_concert_date'));
         $concert_date = ig_saulkrasti_jazz_split_date_to_arr('post_events_concert_date'); // name of the month also awailable but needs to be adjusted
@@ -55,24 +62,25 @@ function filter_ajax()
         $concert_day_language_dependent = ig_get_day_of_the_week_depending_on_language($day);
 
 
-        if(!$showAll) :
+        if (!$showAll) :
+
 ?>
-<div class="col-xl-3 col-lg-4  upcoming-events__wrapp-for-single upcoming-events-js-ajax-container">
+            <div class="col-xl-3 col-lg-4  upcoming-events__wrapp-for-single upcoming-events-js-ajax-container">
 
-<?php get_template_part('template-parts/homepage/partials/ig-card__upcoming-events'); ?>
-
-
-</div>
-<?php elseif($showAll) : ?>
-    <div class="col-xl-4 col-lg-4  upcoming-events__wrapp-for-single upcoming-events-js-ajax-container">
-
-<?php get_template_part('template-parts/homepage/partials/ig-card__upcoming-events', false, array('show_all' => true)); ?>
+                <?php get_template_part('template-parts/homepage/partials/ig-card__upcoming-events'); ?>
 
 
-</div>
-<?php else : ?>
+            </div>
+        <?php elseif ($showAll) : ?>
+            <div class="col-xl-4 col-lg-4  upcoming-events__wrapp-for-single upcoming-events-js-ajax-container">
 
-<?php endif; ?>
+                <?php get_template_part('template-parts/homepage/partials/ig-card__upcoming-events', false, array('show_all' => true)); ?>
+
+
+            </div>
+        <?php else : ?>
+
+        <?php endif; ?>
 
 <?php endwhile;
     wp_reset_postdata();
