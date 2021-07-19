@@ -159,3 +159,15 @@
     bottom: 10%;
   }
 }
+
+.hero__important-message {
+  width: 80%;
+  margin: 0 auto;
+  color: var(--color-white);
+  padding-top: 10%;
+  font-size: 1.4rem;
+  p img {
+    display: inline-block;
+    margin-right: .4rem;
+  }
+}

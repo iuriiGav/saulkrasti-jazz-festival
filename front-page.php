@@ -12,6 +12,7 @@ $show_current_events_section = get_field_object('options_show_upcoming_events_se
     <!--OPTION 2: linear-gradient(180deg, rgba(18, 17, 19, 0.2) 0%, rgba(0, 0, 0, 0.62) 100%), -->
         <section class="hero full-screen-cover" style="background:  linear-gradient(180deg, rgba(18, 17, 19, 0.2) 0%, rgba(0, 0, 0, 0.62) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_homepage_hero_image_cover', 'options')
                                                                                 ?>)">
+            <?php get_template_part('template-parts/homepage/section', 'hero-message'); ?>
 
             <?php get_template_part('template-parts/homepage/section', 'hero'); ?>
 
