@@ -9,6 +9,13 @@
   margin: 0 auto 2em auto;
   overflow: hidden;
 
+  &:blank {
+  min-height: 0;
+  padding: 0;
+  display: none;
+
+  }
+
 
 
   &__full {
@@ -20,6 +27,10 @@
 
     @media only screen and (max-width: $bp-md) {
       padding: 2em;
+    }
+
+    &:empty {
+      padding: 0;
     }
    
   }
@@ -288,11 +299,16 @@
 .ig-card__just-content {
   display: block;
   width: 80%;
-  min-height: 7rem;
+  // min-height: 7rem;
   background-color: var(--color-white);
   border-radius: 4px;
   margin: 0 auto 2em auto;
   overflow: hidden;
+  &:empty {
+  min-height: 0;
+  padding: 0;
+
+  }
  }
 
  .card-artist {
