@@ -44,6 +44,10 @@ option with bg-image
 
 <?php endif; ?>
 
+
+
+<?php if(get_field('options_content_show_mastercalss_participation_fee', 'options') === 'true') : ?>
+
 <section id="<?php echo $about_payment_name?>"  class="participation-fee full-screen-cover ig_scroll-margin-workshops" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_workshop_page_participation_fee_cover', 'options')
                                                                                                                                             ?>)">>
 
@@ -51,11 +55,17 @@ option with bg-image
 
 </section>
 
+<?php endif; ?>
+
+<?php if(get_field('options_content_show_masterclasses_application_sections', 'options') === 'true') : ?>
+
 <section id="<?php echo $about_application_name?>" class="participation-fee full-screen-cover full-screen-cover ig_scroll-margin-workshops" style="background-color: var(--color-dark)">>
 
 <?php get_template_part('template-parts/workshops/section', 'application'); ?>
 
 </section>
+
+<?php endif; ?>
 
 </main>
 
