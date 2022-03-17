@@ -146,5 +146,5 @@ elseif(get_field('post_events_concert_title')) :   ?>
     
     
     </div>
-
+    <?php echo wp_kses_post(wpautop(get_field('post_events_text_information_about_event'))) ?>
 </div>
