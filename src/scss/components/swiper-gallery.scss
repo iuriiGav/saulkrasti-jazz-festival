@@ -32,6 +32,10 @@
     align-self: center;
   }
 
+  &__full-width {
+    max-width: 100%;
+  }
+
 
   &--80  {
     padding-bottom: 5rem;

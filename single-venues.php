@@ -37,10 +37,52 @@ $website_homepage = explode("/", $url, 3);
         <div class="col-lg-6 single-venue__photo" style="background-image: url(<?php echo esc_url(wp_get_attachment_image_src(get_field('post_venues_venue_image'), 'square')[0]); ?>)">
 
         </div>
+        <?php
+        if (!empty(get_field('post_venues_additional_information_text'))) : ?>
+
+            <div class="col-lg-12">
+                <div class="ig-card ig-card__100 ig-card__inner-padding" style="display: block;">
+                    <?php echo wp_kses_post(wpautop(get_field('post_venues_additional_information_text'))) ?>
+
+                </div>
+            </div>
+        <?php
+        endif;
+        ?>
+
+<?php if (have_rows('post_venues_additional_photo_or_photos')) : ?>
+<div class="col-lg-12">
+<div class="swiper-container swiper-container__full-width swiper-container__mobile-horizonal">
+            <div class="swiper-wrapper">
+
+
+                <?php if (have_rows('post_venues_additional_photo_or_photos')) : while (have_rows('post_venues_additional_photo_or_photos')) : the_row();
+                        $image = get_sub_field('image');
+                ?>
+
+
+                        <div class="swiper-slide swiper-slide--80">
+                            <img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'full')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'saulkrasti-jazz-festival') ?>">
+                        </div>
+                <?php endwhile;
+                endif; ?>
+
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+
+</div>
+
+<?php endif; ?>
+
+
     </div>
     <div class="single-venue__links">
         <h4 class="text-center ig_tc-brand"><a href="<?php echo $url ?>"><?php echo $website_homepage[2] ?></a></h4>
-     
+
 
     </div>
 

@@ -10,7 +10,7 @@ function ig_saulkrasti_jazz_scripts()
 
 
     // Main Stylesheet
-    wp_enqueue_style('saulkrasti-jazz-style', get_stylesheet_uri(), array(), '3.1.3');
+    wp_enqueue_style('saulkrasti-jazz-style', get_stylesheet_uri(), array(), '3.1.4');
 
     wp_enqueue_script('jquery');
 
