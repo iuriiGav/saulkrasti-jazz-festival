@@ -46,29 +46,24 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
             <div class="taxonomy-triggers-container--wrapper">
                 <div class="tax-wrapper">
                     <div class="taxonomy-triggers-container">
-                        <?php if (is_front_page()) : ?>
 
                             <a id="ig-sort-by-venue" href="" class="sort-by-toggler sort-by-toggler__active">
                                 <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
                             </a>
 
-                        <?php else : ?>
-                            <a id="ig-sort-by-venue" href="" class="sort-by-toggler">
-                                <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
-                            </a>
-                        <?php endif; ?>
+                      
 
                         <a id="ig-sort-by-date" href="" class="sort-by-toggler">
                             <?php echo ig_gav_get_global_text('btn_text_sort_by_date') ?>
                         </a>
-                        <a id="ig-sort-show-all" href="" class="sort-by-toggler <?php echo $args['page_concerts'] ? 'sort-by-toggler__active' : null ?>  show-all-concerts-js-ajax">
+                        <a id="ig-sort-show-all" href="" class="sort-by-toggler show-all-concerts-js-ajax">
                             <?php echo ig_gav_get_global_text('btn_text_sort_show_all') ?>
                         </a>
 
                     </div><!-- .taxonomy-triggers-container -->
 
 
-                    <div class="sort-by-venue <?php echo is_front_page() ?  'sort-by-menu--on-screen' : 'sort-by-menu--off-screen'; ?>">
+                    <div class="sort-by-venue sort-by-menu--on-screen">
 
                         <div class="sort-by-options sort-by-options__venue">
                             <?php
@@ -89,7 +84,8 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                                     <h5 class="sort-by-options"> <a href="" class="sort-by-options__link sort-by-venue-js-ajax <?php echo $main_stage_in_position === 1 ?  'sort-by-options__link--active' : null; ?>" data-venue-id="<?php echo get_the_ID(); ?>"><?php echo  $venue_name ?></a></h5>
 
                                 <?php else : ?>
-                                    <h5 class="sort-by-options"> <a href="" class="sort-by-options__link sort-by-venue-js-ajax" data-venue-id="<?php echo get_the_ID(); ?>"><?php echo  $venue_name ?></a></h5>
+                                    <h5 class="sort-by-options"> <a href="" class="sort-by-options__link sort-by-venue-js-ajax <?php echo $main_stage_in_position === 1 ?  'sort-by-options__link--active' : null; ?>" data-venue-id="<?php echo get_the_ID(); ?>"><?php echo  $venue_name ?></a></h5>
+
 
 
                             <?php
@@ -122,7 +118,7 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
 
                 <?php
 
-                $querried_concerts = is_front_page() ? $main_stage_concerts : $all_upcoming_events;
+                $querried_concerts = $main_stage_concerts;
 
 
                 if ($querried_concerts->post_count === 0) :
