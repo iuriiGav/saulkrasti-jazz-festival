@@ -20,6 +20,7 @@ $about_application_name = get_bloginfo("language") === 'en-GB' ? 'application' :
 
 </section>
 
+<?php if(get_field('options_content_show_masterclasses_camp_section', 'options') === 'true') : ?>
 
 <section id="<?php echo $about_camp_name?>" class="workshop__camp full-screen-cover ig_scroll-margin-workshops" style="background:  linear-gradient(180deg, #141211 0%, rgba(49, 39, 35, 0.84) 100%), url(<?php ig_saulkrasti_jazz_image_from_field('options_workshop_page_workshop_camp_cover', 'options')
                                                                                                                                             ?>)">
@@ -28,6 +29,10 @@ $about_application_name = get_bloginfo("language") === 'en-GB' ? 'application' :
 
 </section>
 
+<?php else: ?>
+    <?php the_field('workshop_camp_gallery_shortcode') ?>
+
+<?php endif; ?>
 
 <?php if(get_field_object('teachers_show_section')['value'] === 'true') : ?>
 <!-- <section class="workshop__teachers full-screen-cover full-screen-cover__static" style="background-image: url(<?php ig_saulkrasti_jazz_image_from_field('options_workshop_page_teachers_cover', 'options')

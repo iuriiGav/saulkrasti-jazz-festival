@@ -166,6 +166,12 @@
   color: var(--color-white);
   padding-top: 10%;
   font-size: 1.4rem;
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: var(--color-brand);
+    }
+  }
   p img {
     display: inline-block;
     margin-right: .4rem;
