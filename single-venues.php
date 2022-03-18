@@ -41,7 +41,7 @@ $website_homepage = explode("/", $url, 3);
         if (!empty(get_field('post_venues_additional_information_text'))) : ?>
 
             <div class="col-lg-12">
-                <div class="ig-card ig-card__100 ig-card__inner-padding" style="display: block;">
+                <div id="post-venues-additional-text" class="ig-card ig-card__100 ig-card__inner-padding" style="display: block;">
                     <?php echo wp_kses_post(wpautop(get_field('post_venues_additional_information_text'))) ?>
 
                 </div>
