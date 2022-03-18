@@ -1,3 +1,5 @@
+<?php if(get_field('options_show_about_festival_section_in_homepage', 'options') === 'true') : ?>
+
 <div class="row homepage-workshops__wrapper ">
     <div class="col-md-5 homepage-workshops__see-through about-us-small-gallery__workshop-sections d-flex md-none">
 
@@ -43,3 +45,5 @@
 </div>
     </div>
 </div>
+
+<?php endif;
