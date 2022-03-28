@@ -12,6 +12,14 @@ get_header(); ?>
 
 
 </section>
+<?php if(get_field_object('baltic_drummers_league__show_this_section')['value'] === 'true') : ?>
+<section class="drummers-league-container bgc-dark">
+    <?php get_template_part('template-parts/baltic-drummers-league/section', 'current-bdl-artists'); ?>
+
+
+</section>
+<?php endif; ?>
+
 <section class="drummers-league-details bgc-dark">
     <?php get_template_part('template-parts/baltic-drummers-league/section', 'bdl-details'); ?>
 
