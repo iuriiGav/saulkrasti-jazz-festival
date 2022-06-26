@@ -15,6 +15,7 @@ $main_stage_concerts_count = $main_stage_concerts->found_posts;
 $venues = ig_saulkrasti_jazz_current_venues(-1);
 $current_year = date("Y");
 $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concerts');
+$oprional_text_in_events_block = ig_gav_get_global_text_wp_kses_filter('global_optional_message_that_will_be_displayed_in_the_upcoming_events_section');
 
 
 ?>
@@ -47,11 +48,11 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                 <div class="tax-wrapper">
                     <div class="taxonomy-triggers-container">
 
-                            <a id="ig-sort-by-venue" href="" class="sort-by-toggler sort-by-toggler__active">
-                                <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
-                            </a>
+                        <a id="ig-sort-by-venue" href="" class="sort-by-toggler sort-by-toggler__active">
+                            <?php echo ig_gav_get_global_text('btn_text_sort_by_venue') ?>
+                        </a>
 
-                      
+
 
                         <a id="ig-sort-by-date" href="" class="sort-by-toggler">
                             <?php echo ig_gav_get_global_text('btn_text_sort_by_date') ?>
@@ -118,6 +119,20 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
 
                 <?php
 
+                if ($oprional_text_in_events_block) : ?>
+
+                    <div class="sub-section-header sub-section-header__lowercase">
+                        <?php
+
+                        echo $oprional_text_in_events_block;
+                        ?>
+
+                    </div>
+
+                    <?php
+
+                endif;
+
                 $querried_concerts = $main_stage_concerts;
 
 
@@ -133,7 +148,7 @@ $page_concerts_url = ig_saulkrasti_jazz_get_page_url('page-templates/page-concer
                 while ($querried_concerts->have_posts()) : $querried_concerts->the_post();
 
                     if ($args['page_concerts']) :
-                ?>
+                    ?>
 
                         <div class="col-xl-4 col-lg-4  upcoming-events__wrapp-for-single upcoming-events-js-ajax-container">
 

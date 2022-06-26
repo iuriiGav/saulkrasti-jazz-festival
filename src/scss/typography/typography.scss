@@ -149,6 +149,9 @@ div ol li a {
     @media only screen and (max-width: $bp-sm) {
       padding-bottom: .5em;
     }
+    &__lowercase {
+      text-transform: none;
+    }
 }
 
 .medium-title {
